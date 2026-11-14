@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <title>Ciro Muiruri — Signature</title>
-  <!-- Beautiful type for local preview. Paste only the table into email clients. -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Josefin+Sans:wght@300;400;500&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
@@ -12,12 +11,30 @@
     @font-face { font-family: "Josefin Sans"; src: url("fonts/josefin-300.ttf") format("truetype"); font-weight: 300; }
     @font-face { font-family: "Josefin Sans"; src: url("fonts/josefin-400.ttf") format("truetype"); font-weight: 400; }
     @font-face { font-family: "Lato"; src: url("fonts/lato-400.ttf") format("truetype"); font-weight: 400; }
-    body { margin: 0; padding: 32px; background: #cfcfcf; }
+    body { margin: 0; padding: 32px; background: #cfcfcf; font-family: Lato, Arial, sans-serif; }
+    .actions { margin-top: 20px; max-width: 680px; }
+    .copy-button {
+      border: none; border-radius: 6px; cursor: pointer;
+      background: #174C3C; color: #fff;
+      width: 200px; height: 48px; font-size: 13px; font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .copy-button:hover { background: #0f3328; }
+    .hint { margin-top: 10px; font-size: 12px; color: #555; line-height: 1.5; max-width: 520px; }
+    .hidden-iframe { position: absolute; left: -9999px; width: 1px; height: 1px; border: 0; }
+    .custom-alert {
+      position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      background: #fff; color: #333; padding: 14px 22px; border-radius: 8px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.15); border: 1px solid #ddd;
+      z-index: 9999; display: none; opacity: 0; transition: opacity 0.3s ease;
+      font-size: 14px; text-align: center;
+    }
+    .custom-alert.show { display: block; opacity: 1; }
   </style>
 </head>
 <body>
 
-<!-- ========== COPY FROM HERE (table only) ========== -->
+<div id="pendo-signature">
 <table cellpadding="0" cellspacing="0" border="0" width="680" style="width:680px; max-width:680px; background-color:#061126; font-family:'Lato', Arial, Helvetica, sans-serif; color:#ffffff; border-collapse:collapse;">
   <tr>
     <!-- PROFILE PHOTO + top-left swoosh -->
@@ -50,7 +67,6 @@
     <!-- RIGHT CONTENT -->
     <td valign="middle" style="padding:25px 25px 25px 20px;">
 
-      <!-- NAME — elegant high-contrast serif -->
       <div style="font-family:'Cormorant Garamond', 'Times New Roman', Times, Georgia, serif; font-size:36px; font-weight:700; letter-spacing:4px; color:#d2b36c; line-height:1.15; text-transform:uppercase;">
         Ciro Muiruri
       </div>
@@ -61,13 +77,11 @@
         </tr>
       </table>
 
-      <!-- PROFESSIONAL TITLE — airy geometric sans -->
       <div style="font-family:'Josefin Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif; font-size:11px; font-weight:300; line-height:1.9; letter-spacing:2.4px; color:#ffffff; text-transform:uppercase;">
         Founder &amp; Director<br>
         Pendo International Projects
       </div>
 
-      <!-- LOGO -->
       <table cellpadding="0" cellspacing="0" border="0" style="margin-top:18px; margin-bottom:16px;">
         <tr>
           <td valign="middle" style="padding-right:15px; border-right:1px solid #b99a57;">
@@ -89,7 +103,6 @@
         </tr>
       </table>
 
-      <!-- TAGLINE -->
       <table cellpadding="0" cellspacing="0" border="0" width="100%">
         <tr>
           <td style="border-top:1px solid #b99a57; padding-top:12px; padding-bottom:12px;">
@@ -103,7 +116,6 @@
         </tr>
       </table>
 
-      <!-- CONTACT DETAILS — clean readable sans -->
       <table cellpadding="0" cellspacing="0" border="0" style="font-family:'Lato', Arial, Helvetica, sans-serif; font-size:13px; font-weight:400; letter-spacing:0.6px; color:#ffffff;">
 
         <tr>
@@ -144,21 +156,59 @@
     </td>
   </tr>
 
-  <!-- Bottom-right swoosh -->
   <tr>
     <td colspan="2" align="right" style="padding:0 10px 4px 0; line-height:0; font-size:0; text-align:right; background-color:#061126;">
       <img src="https://raw.githubusercontent.com/armidadjuluken47/pendoint/main/signature/swoosh-br.png" width="80" alt="" style="display:block; width:80px; height:auto; border:0; margin-left:auto;" />
     </td>
   </tr>
 
-  <!-- BOTTOM ACCENT -->
   <tr>
     <td colspan="2" style="height:5px; background-color:#08776d; font-size:1px; line-height:1px;">
       &nbsp;
     </td>
   </tr>
 </table>
-<!-- ========== END COPY ========== -->
+</div>
+
+<div class="actions">
+  <button type="button" class="copy-button" onclick="copySignature()">COPY SIGNATURE</button>
+  <p class="hint">Copies rich HTML for Gmail. Then: Gmail → Settings → Signature → Paste → Save. Images load from GitHub raw URLs.</p>
+</div>
+
+<iframe id="hiddenIframe" class="hidden-iframe" title=""></iframe>
+<div id="custom-alert" class="custom-alert">Signature copied to clipboard!</div>
+
+<script>
+  function copySignature() {
+    var sig = document.getElementById('pendo-signature');
+    var iframe = document.getElementById('hiddenIframe');
+    var html = '<!DOCTYPE html><html><body style="margin:0;padding:0;">' + sig.innerHTML + '</body></html>';
+
+    iframe.contentWindow.document.open();
+    iframe.contentWindow.document.write(html);
+    iframe.contentWindow.document.close();
+
+    iframe.contentWindow.focus();
+    iframe.contentWindow.document.execCommand('selectAll');
+    var ok = iframe.contentWindow.document.execCommand('copy');
+
+    if (!ok && navigator.clipboard && window.ClipboardItem) {
+      // Fallback for newer browsers
+      var blob = new Blob([sig.innerHTML], { type: 'text/html' });
+      navigator.clipboard.write([new ClipboardItem({ 'text/html': blob })]).then(showCustomAlert).catch(showCustomAlert);
+      return;
+    }
+    showCustomAlert();
+  }
+
+  function showCustomAlert() {
+    var alertBox = document.getElementById('custom-alert');
+    alertBox.classList.add('show');
+    setTimeout(function () {
+      alertBox.classList.remove('show');
+    }, 3000);
+  }
+</script>
 
 </body>
 </html>
