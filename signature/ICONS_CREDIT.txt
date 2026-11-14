@@ -1,0 +1,5 @@
+Icons (gold #d2b36c) via https://api.iconify.design/
+
+- Mail: Lucide — MIT — https://lucide.dev/icons/mail
+- Globe: Lucide — MIT — https://lucide.dev/icons/globe
+- LinkedIn: Simple Icons — CC0 — https://simpleicons.org/icons/linkedin
