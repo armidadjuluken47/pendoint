@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ciro Muiruri — Signature</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    @font-face { font-family: "Playfair Display"; src: url("fonts/playfair-variable.ttf") format("truetype"); font-weight: 400 900; }
+    @font-face { font-family: "Montserrat"; src: url("fonts/montserrat-variable.ttf") format("truetype"); font-weight: 100 900; }
+    body { margin: 0; padding: 32px; background: #cfcfcf; font-family: Montserrat, Arial, sans-serif; }
+    .actions { margin-top: 20px; max-width: 680px; }
+    .copy-button {
+      border: none; border-radius: 6px; cursor: pointer;
+      background: #174C3C; color: #fff;
+      width: 200px; height: 48px; font-size: 13px; font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .copy-button:hover { background: #0f3328; }
+    .hint { margin-top: 10px; font-size: 12px; color: #555; line-height: 1.5; max-width: 520px; }
+    .hidden-iframe { position: absolute; left: -9999px; width: 1px; height: 1px; border: 0; }
+    .custom-alert {
+      position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      background: #fff; color: #333; padding: 14px 22px; border-radius: 8px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.15); border: 1px solid #ddd;
+      z-index: 9999; display: none; opacity: 0; transition: opacity 0.3s ease;
+      font-size: 14px; text-align: center;
+    }
+    .custom-alert.show { display: block; opacity: 1; }
+  </style>
+</head>
+<body>
+
+<div id="pendo-signature">
+<table cellpadding="0" cellspacing="0" border="0" width="680" style="width:680px; max-width:680px; background-color:#061126; font-family:'Montserrat', Arial, Helvetica, sans-serif; color:#ffffff; border-collapse:collapse;">
+  <tr>
+    <!-- PROFILE PHOTO + top-left swoosh -->
+    <td width="235" valign="top" style="width:215px; padding:0; vertical-align:top;">
+      <table cellpadding="0" cellspacing="0" border="0" width="100%">
+        <tr>
+          <td style="padding:6px 0 0 6px; line-height:0; font-size:0;">
+            <img src="https://raw.githubusercontent.com/armidadjuluken47/pendoint/main/signature/swoosh-tl.png" width="72" alt="" style="display:block; width:72px; height:auto; border:0;" />
+          </td>
+        </tr>
+        <tr>
+          <td align="center" style="padding:8px 16px 24px 16px;">
+                  <img
+                    src="https://raw.githubusercontent.com/armidadjuluken47/pendoint/main/signature/ciro-portrait.png"
+                    width="200"
+                    height="258"
+                    alt="Ciro Muiruri"
+                    style="display:block; width:200px; height:258px; border:0;"
+                  />
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <!-- RIGHT CONTENT -->
+    <td valign="middle" style="padding:25px 25px 25px 20px;">
+
+      <div style="font-family:'Playfair Display', Georgia, 'Times New Roman', Times, serif; font-size:36px; font-weight:700; letter-spacing:4px; color:#d2b36c; line-height:1.15; text-transform:uppercase;">
+        Ciro Muiruri
+      </div>
+
+      <table cellpadding="0" cellspacing="0" border="0" width="100%">
+        <tr>
+          <td width="65%" style="border-top:2px solid #b99a57; padding-top:12px;"></td>
+        </tr>
+      </table>
+
+      <div style="font-family:'Montserrat', 'Helvetica Neue', Arial, Helvetica, sans-serif; font-size:11px; font-weight:300; line-height:1.9; letter-spacing:2.4px; color:#ffffff; text-transform:uppercase;">
+        Founder &amp; Director<br>
+        Pendo International Projects
+      </div>
+
+      <table cellpadding="0" cellspacing="0" border="0" style="margin-top:18px; margin-bottom:16px;">
+        <tr>
+          <td valign="middle" style="padding-right:15px; border-right:1px solid #b99a57;">
+            <img
+              src="https://raw.githubusercontent.com/armidadjuluken47/pendoint/main/signature/pendo-logo.png"
+              width="85"
+              alt="Pendo International Projects"
+              style="display:block; width:85px; max-height:75px; object-fit:contain; border:0;"
+            />
+          </td>
+          <td valign="middle" style="padding-left:18px;">
+            <div style="font-family:'Playfair Display', Georgia, 'Times New Roman', Times, serif; font-size:22px; font-weight:700; letter-spacing:4px; color:#d2b36c; text-transform:uppercase;">
+              Pendo
+            </div>
+            <div style="font-family:'Montserrat', 'Helvetica Neue', Arial, Helvetica, sans-serif; font-size:9px; font-weight:400; letter-spacing:3.5px; color:#d2b36c; margin-top:6px; text-transform:uppercase;">
+              International Projects
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <table cellpadding="0" cellspacing="0" border="0" width="100%">
+        <tr>
+          <td style="border-top:1px solid #b99a57; padding-top:12px; padding-bottom:12px;">
+            <span style="font-family:'Montserrat', 'Helvetica Neue', Arial, Helvetica, sans-serif; font-size:10px; font-weight:400; letter-spacing:2px; color:#d2b36c; text-transform:uppercase;">
+              School for families &nbsp;•&nbsp; Charity for community
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-top:1px solid #344052; padding-top:12px;"></td>
+        </tr>
+      </table>
+
+      <table cellpadding="0" cellspacing="0" border="0" style="font-family:'Montserrat', Arial, Helvetica, sans-serif; font-size:13px; font-weight:400; letter-spacing:0.6px; color:#ffffff;">
+
+        <tr>
+          <td width="44" valign="middle" style="padding:7px 0; width:44px;">
+            <img src="https://raw.githubusercontent.com/armidadjuluken47/pendoint/main/signature/icon-email.png" width="26" height="26" alt="" style="display:block; border:0; width:26px; height:26px;" />
+          </td>
+          <td valign="middle" style="padding:7px 0;">
+            <a href="mailto:ciro@pendointl.org" style="color:#ffffff; text-decoration:none; font-family:'Montserrat', Arial, Helvetica, sans-serif; letter-spacing:0.6px;">
+              ciro@pendointl.org
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td width="44" valign="middle" style="padding:7px 0;">
+            <img src="https://raw.githubusercontent.com/armidadjuluken47/pendoint/main/signature/icon-linkedin.png" width="26" height="26" alt="" style="display:block; border:0; width:26px; height:26px;" />
+          </td>
+          <td valign="middle" style="padding:7px 0;">
+            <a href="https://www.linkedin.com/company/pendo-international-projects/" style="color:#ffffff; text-decoration:none; font-family:'Montserrat', Arial, Helvetica, sans-serif; letter-spacing:0.6px;">
+              LinkedIn
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td width="44" valign="middle" style="padding:7px 0;">
+            <img src="https://raw.githubusercontent.com/armidadjuluken47/pendoint/main/signature/icon-web.png" width="26" height="26" alt="" style="display:block; border:0; width:26px; height:26px;" />
+          </td>
+          <td valign="middle" style="padding:7px 0;">
+            <a href="https://www.pendointl.org" style="color:#ffffff; text-decoration:none; font-family:'Montserrat', Arial, Helvetica, sans-serif; letter-spacing:0.6px;">
+              www.pendointl.org
+            </a>
+          </td>
+        </tr>
+
+      </table>
+
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" align="right" style="padding:0 10px 4px 0; line-height:0; font-size:0; text-align:right; background-color:#061126;">
+      <img src="https://raw.githubusercontent.com/armidadjuluken47/pendoint/main/signature/swoosh-br.png" width="80" alt="" style="display:block; width:80px; height:auto; border:0; margin-left:auto;" />
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" style="height:5px; background-color:#08776d; font-size:1px; line-height:1px;">
+      &nbsp;
+    </td>
+  </tr>
+</table>
+</div>
+
+<div class="actions">
+  <button type="button" class="copy-button" onclick="copySignature()">COPY SIGNATURE</button>
+  <p class="hint">Copies rich HTML for Gmail. Then: Gmail → Settings → Signature → Paste → Save. Images load from GitHub raw URLs.</p>
+</div>
+
+<iframe id="hiddenIframe" class="hidden-iframe" title=""></iframe>
+<div id="custom-alert" class="custom-alert">Signature copied to clipboard!</div>
+
+<script>
+  function copySignature() {
+    var sig = document.getElementById('pendo-signature');
+    var iframe = document.getElementById('hiddenIframe');
+    var html = '<!DOCTYPE html><html><body style="margin:0;padding:0;">' + sig.innerHTML + '</body></html>';
+
+    iframe.contentWindow.document.open();
+    iframe.contentWindow.document.write(html);
+    iframe.contentWindow.document.close();
+
+    iframe.contentWindow.focus();
+    iframe.contentWindow.document.execCommand('selectAll');
+    var ok = iframe.contentWindow.document.execCommand('copy');
+
+    if (!ok && navigator.clipboard && window.ClipboardItem) {
+      // Fallback for newer browsers
+      var blob = new Blob([sig.innerHTML], { type: 'text/html' });
+      navigator.clipboard.write([new ClipboardItem({ 'text/html': blob })]).then(showCustomAlert).catch(showCustomAlert);
+      return;
+    }
+    showCustomAlert();
+  }
+
+  function showCustomAlert() {
+    var alertBox = document.getElementById('custom-alert');
+    alertBox.classList.add('show');
+    setTimeout(function () {
+      alertBox.classList.remove('show');
+    }, 3000);
+  }
+</script>
+
+</body>
+</html>
