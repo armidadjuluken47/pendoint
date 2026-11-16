@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pendo — Theme F: Linen Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/shared.css" />
+  <style>
+    :root {
+      /* Kutoa dark = hsl(214.55, 41.77%, 30.98%) */
+      --ink: #2e4a70;
+      --ink-deep: #243a5a;
+      --mist: #e8eef5;
+      --foam: #f5f8fb;
+      --leaf: #1b6b52;
+      --leaf-deep: #0e3d30;
+      --sky: #6ec4d9;      /* Kutoa lightAccent-ish */
+      --teal: #23b8b0;     /* Kutoa darkAccent-ish */
+      --ember: #ce8b40;    /* Kutoa warm accent */
+      --line: rgba(46, 74, 112, 0.12);
+      --linen-light: url('assets/linen-light.jpg');
+      --linen-slate: url('assets/linen-slate.jpg');
+      --linen-size: 420px;
+    }
+
+    body {
+      margin: 0;
+      font-family: Manrope, system-ui, sans-serif;
+      color: var(--ink-deep);
+      background-color: var(--foam);
+      background-image:
+        radial-gradient(ellipse 80% 50% at 8% -8%, rgba(27, 107, 82, 0.12), transparent 55%),
+        radial-gradient(ellipse 55% 40% at 100% 0%, rgba(46, 74, 112, 0.1), transparent 50%),
+        var(--linen-light);
+      background-size: auto, auto, var(--linen-size);
+      background-repeat: no-repeat, no-repeat, repeat;
+      line-height: 1.6;
+    }
+
+    .header-bar {
+      background: rgba(245, 248, 251, 0.82);
+      border-bottom-color: var(--line);
+      background-image: var(--linen-light);
+      background-size: var(--linen-size);
+      background-blend-mode: soft-light;
+    }
+    .site-nav a { color: var(--ink-deep); font-weight: 700; font-size: 0.8rem; letter-spacing: -0.01em; }
+    .btn-donate {
+      background: var(--leaf); color: #fff; border-radius: 999px;
+      box-shadow: 0 4px 14px rgba(27, 107, 82, 0.3);
+      font-family: Syne, sans-serif; letter-spacing: -0.02em;
+    }
+    .btn-donate:hover { background: var(--leaf-deep); box-shadow: 0 8px 20px rgba(27, 107, 82, 0.35); }
+
+    .announce {
+      background-color: var(--ink); color: #c5d4e8;
+      background-image: var(--linen-slate);
+      background-size: var(--linen-size);
+      background-blend-mode: multiply;
+      font-family: Syne, sans-serif; font-size: 0.75rem; letter-spacing: 0.06em;
+    }
+
+    /* Hero — big type + asymmetric media */
+    .hero {
+      max-width: 1200px; margin: 0 auto;
+      padding: clamp(40px, 7vw, 80px) max(20px, 4vw) 48px;
+      display: grid; grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(28px, 5vw, 56px); align-items: end;
+    }
+    .hero-kicker {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.78rem; font-weight: 700; color: var(--leaf);
+      margin-bottom: 18px;
+    }
+    .hero-kicker::before {
+      content: ""; width: 28px; height: 2px; background: var(--leaf);
+    }
+    .hero h1 {
+      font-family: Syne, sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.6rem, 6.5vw, 4.6rem);
+      line-height: 0.95;
+      letter-spacing: -0.045em;
+      margin: 0 0 24px;
+      color: var(--ink-deep);
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(120deg, var(--leaf), #2a9a74);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero .lead {
+      font-size: 1.05rem; color: #4a5568; max-width: 34em; margin: 0 0 28px;
+      font-weight: 500;
+    }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn-ink {
+      background: var(--leaf); color: #fff; border-radius: 999px;
+      font-family: Syne, sans-serif; font-weight: 700; letter-spacing: -0.02em;
+    }
+    .btn-ghost {
+      background: transparent; color: var(--ink-deep);
+      border: 1.5px solid var(--ink); border-radius: 999px;
+      font-family: Syne, sans-serif; font-weight: 700; letter-spacing: -0.02em;
+    }
+
+    .hero-media { position: relative; }
+    .hero-media .main {
+      width: 100%; aspect-ratio: 4/5; object-fit: cover;
+      border-radius: 28px; box-shadow: var(--shadow-lg);
+    }
+    .float-chip {
+      position: absolute; left: -18px; bottom: 28px;
+      background: #fff; border-radius: 18px; padding: 16px 18px;
+      box-shadow: var(--shadow); max-width: 200px;
+      border: 1px solid var(--line);
+      animation: floaty 5s ease-in-out infinite;
+    }
+    .float-chip strong {
+      display: block; font-family: Syne, sans-serif; font-size: 1.35rem;
+      letter-spacing: -0.03em; line-height: 1; margin-bottom: 4px;
+      color: var(--leaf);
+    }
+    .float-chip span { font-size: 0.75rem; color: #5a6660; font-weight: 600; }
+    @keyframes floaty {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* Marquee strip */
+    .marquee {
+      overflow: hidden; border-block: 1px solid var(--line);
+      background: rgba(255,255,255,0.78); padding: 14px 0; margin: 24px 0 0;
+      backdrop-filter: blur(8px);
+    }
+    .marquee-track {
+      display: flex; gap: 48px; width: max-content;
+      animation: scroll 28s linear infinite;
+      font-family: Syne, sans-serif; font-weight: 700;
+      font-size: 0.9rem; letter-spacing: -0.02em; color: var(--leaf-deep);
+      text-transform: uppercase;
+    }
+    .marquee-track span { opacity: 0.35; }
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* Bento pathways */
+    .bento {
+      max-width: 1200px; margin: 0 auto;
+      padding: clamp(56px, 8vw, 96px) max(20px, 4vw);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    }
+    .bento .intro {
+      grid-column: 1 / -1; margin-bottom: 8px;
+    }
+    .bento .intro h2 {
+      font-family: Syne, sans-serif; font-weight: 800;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      letter-spacing: -0.04em; line-height: 1.05; margin: 0 0 10px;
+    }
+    .bento .intro p { margin: 0; color: #4a5550; max-width: 40em; font-weight: 500; }
+    .tile {
+      border-radius: 24px; padding: 36px 32px; min-height: 220px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      transition: transform 0.35s var(--ease), box-shadow 0.35s;
+      border: 1px solid var(--line);
+    }
+    .tile:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .tile.parents { background: rgba(255,255,255,0.92); backdrop-filter: blur(6px); }
+    .tile.support {
+      background-color: var(--ink); color: #e4ecf6; border: none;
+      background-image: var(--linen-slate);
+      background-size: var(--linen-size);
+      background-blend-mode: multiply;
+    }
+    .tile .label {
+      font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.55;
+    }
+    .tile.support .label { color: var(--sky); opacity: 1; }
+    .tile h3 {
+      font-family: Syne, sans-serif; font-weight: 800;
+      font-size: clamp(1.5rem, 2.5vw, 1.85rem);
+      letter-spacing: -0.03em; margin: 12px 0 10px; line-height: 1.1;
+    }
+    .tile p { margin: 0 0 20px; font-weight: 500; opacity: 0.85; }
+    .tile a {
+      font-family: Syne, sans-serif; font-weight: 700;
+      text-decoration: none; letter-spacing: -0.02em;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .tile.parents a { color: var(--leaf); }
+    .tile.support a { color: #fff; }
+
+    /* Giant stats */
+    .giant-stats {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 max(20px, 4vw) clamp(56px, 8vw, 88px);
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+    }
+    .gstat {
+      background: rgba(255,255,255,0.92); border: 1px solid var(--line);
+      border-radius: 20px; padding: 28px 24px;
+      backdrop-filter: blur(6px);
+    }
+    .gstat strong {
+      display: block; font-family: Syne, sans-serif; font-weight: 800;
+      font-size: clamp(2.4rem, 5vw, 3.5rem); letter-spacing: -0.05em;
+      line-height: 1; color: var(--leaf); margin-bottom: 8px;
+    }
+    .gstat span { font-size: 0.88rem; font-weight: 600; color: #5a6660; }
+
+    /* Programs as horizontal cards */
+    .programs {
+      background-color: var(--ink); color: #c8d6e8;
+      background-image: var(--linen-slate);
+      background-size: var(--linen-size);
+      background-blend-mode: multiply;
+      padding: clamp(64px, 9vw, 100px) max(20px, 4vw);
+    }
+    .programs-inner { max-width: 1200px; margin: 0 auto; }
+    .programs h2 {
+      font-family: Syne, sans-serif; font-weight: 800;
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      letter-spacing: -0.04em; margin: 0 0 40px; color: #fff;
+    }
+    .prog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .prog {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px; padding: 28px 24px;
+      transition: background 0.3s;
+    }
+    .prog:hover { background: rgba(255,255,255,0.08); }
+    .prog .n {
+      font-family: Syne, sans-serif; font-weight: 800;
+      font-size: 2rem; color: var(--sky); letter-spacing: -0.04em;
+      line-height: 1; margin-bottom: 16px;
+    }
+    .prog h3 {
+      font-family: Syne, sans-serif; font-weight: 700;
+      font-size: 1.15rem; letter-spacing: -0.02em;
+      color: #fff; margin: 0 0 10px;
+    }
+    .prog p { margin: 0; font-size: 0.92rem; opacity: 0.8; }
+
+    /* Model */
+    .model-wrap {
+      max-width: 1200px; margin: 0 auto;
+      padding: clamp(64px, 9vw, 96px) max(20px, 4vw);
+    }
+    .model-wrap > h2 {
+      font-family: Syne, sans-serif; font-weight: 800;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      letter-spacing: -0.04em; margin: 0 0 28px; max-width: 16em;
+    }
+    .model-card {
+      border-radius: 20px; background: rgba(255,255,255,0.94); border: 1px solid var(--line);
+      backdrop-filter: blur(6px);
+    }
+    .model-card h3 {
+      font-family: Syne, sans-serif; font-weight: 700;
+      letter-spacing: -0.02em; color: var(--leaf-deep);
+    }
+
+    /* Story + impact split */
+    .viz-split {
+      max-width: 1200px; margin: 0 auto 24px;
+      padding: 0 max(20px, 4vw);
+      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 16px;
+    }
+    .viz-card {
+      border-radius: 24px; overflow: hidden; position: relative;
+      min-height: 320px;
+    }
+    .viz-card img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+    .viz-card .overlay {
+      position: relative; z-index: 1; height: 100%; min-height: 320px;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 32px; background: linear-gradient(to top, rgba(36, 58, 90, 0.94), transparent 55%);
+      color: #fff;
+    }
+    .viz-card h3 {
+      font-family: Syne, sans-serif; font-weight: 800;
+      font-size: 1.5rem; letter-spacing: -0.03em; margin: 0 0 8px;
+    }
+    .viz-card a { color: var(--sky); font-weight: 700; text-decoration: none; font-family: Syne, sans-serif; }
+
+    .enroll-band {
+      max-width: 1200px; margin: 0 auto 64px;
+      padding: 0 max(20px, 4vw);
+    }
+    .enroll-inner {
+      background-color: var(--ink-deep);
+      background-image:
+        linear-gradient(135deg, rgba(46, 74, 112, 0.72), rgba(36, 58, 90, 0.88)),
+        var(--linen-slate);
+      background-size: auto, var(--linen-size);
+      background-blend-mode: normal, multiply;
+      border-radius: 28px; padding: clamp(36px, 5vw, 56px);
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 24px; color: #fff;
+    }
+    .enroll-inner h2 {
+      font-family: Syne, sans-serif; font-weight: 800;
+      font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+      letter-spacing: -0.03em; margin: 0 0 8px;
+    }
+    .enroll-inner p { margin: 0; opacity: 0.9; font-weight: 500; }
+    .enroll-inner .btn {
+      background: #fff; color: var(--ink-deep); border-radius: 999px;
+      font-family: Syne, sans-serif; font-weight: 700;
+    }
+
+    .partners-strip { background: transparent; }
+    .partners-strip p { font-family: Syne, sans-serif; letter-spacing: 0.08em; }
+
+    .site-footer {
+      background-color: var(--ink-deep); color: #9aabbf;
+      background-image: var(--linen-slate);
+      background-size: var(--linen-size);
+      background-blend-mode: multiply;
+    }
+    .site-footer a { color: #e4ecf6; }
+    .site-footer h4 {
+      font-family: Syne, sans-serif; color: #7a92b0; opacity: 1;
+    }
+    .foot-logo { filter: brightness(0) invert(1); }
+
+    @media (max-width: 900px) {
+      .hero, .bento, .giant-stats, .prog-grid, .viz-split { grid-template-columns: 1fr; }
+      .hero { padding: 32px 20px 36px; gap: 28px; align-items: start; }
+      .hero h1 { font-size: clamp(2.2rem, 11vw, 3.2rem); }
+      .hero h1 br { display: none; }
+      .cta-row { flex-direction: column; }
+      .cta-row .btn { width: 100%; justify-content: center; }
+      .hero-media .main { aspect-ratio: 16/11; max-height: 320px; border-radius: 20px; }
+      .float-chip { left: 12px; bottom: 12px; padding: 12px 14px; }
+      .tile { min-height: 0; padding: 28px 22px; }
+      .enroll-inner { flex-direction: column; align-items: stretch; text-align: center; padding: 32px 22px; }
+      .enroll-inner .btn { width: 100%; }
+      .viz-card, .viz-card .overlay { min-height: 260px; }
+      .programs { padding: 56px 20px; }
+      .model-wrap { padding: 56px 20px; }
+      .nav-toggle { color: var(--ink-deep); }
+    }
+
+    @media (max-width: 480px) {
+      .giant-stats { gap: 10px; }
+      .marquee-track { font-size: 0.78rem; gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="theme-badge">THEME F — LINEN<a href="index.html">All themes</a></div>
+  <div class="announce">2026 · Child &amp; Family Development Hub</div>
+
+  <header class="header-bar">
+    <div class="site-header">
+      <a class="logo-link" href="#"><img class="site-logo" src="assets/pendo-logo.png" alt="Pendo" /></a>
+      <nav class="site-nav" id="site-nav">
+        <a href="#">Our School</a>
+        <a href="#">Admissions</a>
+        <a href="#">Impact</a>
+        <a href="#">Pendo Sisters</a>
+        <a href="#">Stories</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn-donate" href="#">Donate</a>
+        <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <p class="hero-kicker">School · Charity · Community</p>
+      <h1>Early childhood,<br /><em>built with care.</em></h1>
+      <p class="lead">Pendo School Kenya is run by a Canadian charity—so parents get a clear school path, and supporters get a clear giving path. Same campus. No confusion.</p>
+      <div class="cta-row">
+        <a class="btn btn-ink btn-arrow" href="#">Explore the school</a>
+        <a class="btn btn-ghost btn-arrow" href="#">Support the mission</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img class="main" src="assets/pendo-classroom.jpg" alt="Classroom at Pendo School Kenya" />
+      <div class="float-chip">
+        <strong>Under 7</strong>
+        <span>Ages we teach every day</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div>Play · Meals · Curriculum · WASH · Teacher training · Hub 2026 · Sponsor a Seat · Pendo Sisters · Kenya · Canada ·&nbsp;</div>
+      <div>Play · Meals · Curriculum · WASH · Teacher training · Hub 2026 · Sponsor a Seat · Pendo Sisters · Kenya · Canada ·&nbsp;</div>
+    </div>
+  </div>
+
+  <section class="bento">
+    <div class="intro">
+      <h2>Two doors. One mission.</h2>
+      <p>Pick the path that matches why you’re here—enrollment or generosity. We keep them visually separate so nobody lands in the wrong story.</p>
+    </div>
+    <article class="tile parents">
+      <div>
+        <div class="label">Parents</div>
+        <h3>Curious about our school?</h3>
+        <p>Curriculum, staff, daily life, facilities, and fees—written for families deciding where their child belongs.</p>
+      </div>
+      <a href="#" class="btn-arrow">Admissions</a>
+    </article>
+    <article class="tile support">
+      <div>
+        <div class="label">Supporters</div>
+        <h3>Want to fuel the work?</h3>
+        <p>Impact, Sponsor a Seat, Hub progress, and stories from Kenya and Canada.</p>
+      </div>
+      <a href="#" class="btn-arrow">Donate</a>
+    </article>
+  </section>
+
+  <section class="giant-stats">
+    <div class="gstat"><strong>2018</strong><span>Ground broken in Kenya</span></div>
+    <div class="gstat"><strong>7+</strong><span>Classrooms &amp; growing</span></div>
+    <div class="gstat"><strong>Hub</strong><span>Opening 2026</span></div>
+  </section>
+
+  <section class="programs">
+    <div class="programs-inner">
+      <h2>What we do</h2>
+      <div class="prog-grid">
+        <article class="prog">
+          <div class="n">01</div>
+          <h3>Pendo School Kenya</h3>
+          <p>Early childhood under 7—play, meals, WASH, and the national curriculum with real care.</p>
+        </article>
+        <article class="prog">
+          <div class="n">02</div>
+          <h3>Teacher training</h3>
+          <p>Equipping educators across Kenya so quality isn’t locked to one campus.</p>
+        </article>
+        <article class="prog">
+          <div class="n">03</div>
+          <h3>Pendo Sisters</h3>
+          <p>Canada—refugee mothers, wellbeing, reunification. Not mixed with school admissions.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="model-wrap">
+    <h2>How fees, charity &amp; giving fit together</h2>
+    <div class="model-trio">
+      <div class="model-card"><h3>School fees</h3><p>Affordable fees for daily learning families can plan around.</p></div>
+      <div class="model-card"><h3>Canadian charity</h3><p>Pendo International Projects operates the school and mission.</p></div>
+      <div class="model-card"><h3>Sponsor a Seat</h3><p>Gifts keep quality within reach—meals, training, Hub.</p></div>
+    </div>
+  </section>
+
+  <section class="viz-split">
+    <article class="viz-card">
+      <img src="assets/pendo-kids.jpg" alt="Students" />
+      <div class="overlay">
+        <h3>Stories from campus</h3>
+        <p style="margin:0 0 12px;opacity:0.9;font-weight:500;">Classrooms, meals, play—the warmth parents already feel on Instagram.</p>
+        <a href="#" class="btn-arrow">Read stories</a>
+      </div>
+    </article>
+    <article class="viz-card">
+      <img src="assets/pendo-hero.jpg" alt="Impact" />
+      <div class="overlay">
+        <h3>Our impact</h3>
+        <p style="margin:0 0 12px;opacity:0.9;font-weight:500;">Milestones, partners, and the people behind affordable quality.</p>
+        <a href="#" class="btn-arrow">See impact</a>
+      </div>
+    </article>
+  </section>
+
+  <section class="enroll-band">
+    <div class="enroll-inner">
+      <div>
+        <h2>Looking to enroll?</h2>
+        <p>Visit, meet staff, understand fees—then take the next step.</p>
+      </div>
+      <a class="btn btn-arrow" href="#">Admissions &amp; fees</a>
+    </div>
+  </section>
+
+  <section class="partners-strip">
+    <p>Our partners</p>
+    <img src="assets/pendo-partners.jpg" alt="Partners" width="480" />
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <img class="foot-logo" src="assets/pendo-logo.png" alt="Pendo" />
+        <p>High-quality affordable early childhood education in Kenya—operated by a Canadian registered charity.</p>
+      </div>
+      <div>
+        <h4>Parents</h4>
+        <p><a href="#">Our School</a><br /><a href="#">Admissions</a><br /><a href="#">Staff</a></p>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <p><a href="#">Donate</a><br /><a href="#">Sponsor a Seat</a><br /><a href="#">Pendo Sisters</a></p>
+        <p style="margin-top:12px;"><a href="mailto:ciro@pendointl.org">ciro@pendointl.org</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">Theme F — Linen Studio · Poly Haven Rough Linen (CC0) · Mockup only</div>
+  </footer>
+  <script src="assets/mockup.js"></script>
+</body>
+</html>

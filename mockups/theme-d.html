@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pendo — Theme D: Kutoa-inspired</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/shared.css" />
+  <style>
+    body { margin: 0; font-family: "Source Sans 3", sans-serif; color: #2a2a2a; background: #f0ebe3; line-height: 1.65; }
+    .header-bar { background: rgba(255,255,255,0.94); }
+    .site-nav a { color: #333; }
+    .btn-donate { background: #b85c4a; color: #fff; }
+    .eyebrow { color: #b85c4a; }
+
+    .hero-stack {
+      max-width: 780px; margin: 0 auto; padding: 72px 24px 48px; text-align: center;
+      position: relative;
+    }
+    .hero-stack h1 {
+      font-family: Lora, serif; font-size: clamp(2rem, 4.2vw, 3rem);
+      font-weight: 600; line-height: 1.15; margin-bottom: 22px; color: #1a1a1a;
+    }
+    .hero-stack .lead { font-size: 1.12rem; color: #4a4a4a; margin-bottom: 8px; max-width: 38em; margin-left: auto; margin-right: auto; }
+
+    .duo-wrap { max-width: 920px; margin: -8px auto 64px; padding: 0 20px; }
+    .duo {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow); background: #fff;
+    }
+    .duo a {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 36px 28px; text-align: center; text-decoration: none;
+      color: #1a1a1a; min-height: 140px;
+      border-right: 1px solid #e8e2d9;
+      transition: background 0.3s var(--ease);
+    }
+    .duo a:last-child { border-right: none; }
+    .duo a:hover { background: #faf7f2; }
+    .duo strong { font-size: 1.05rem; font-weight: 700; }
+    .duo span { display: block; font-weight: 400; font-size: 0.88rem; color: #666; margin-top: 10px; max-width: 22em; }
+
+    .split {
+      display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 0;
+      max-width: 1180px; margin: 0 auto 0; background: #fff;
+      box-shadow: var(--shadow-sm);
+    }
+    .split .img-wrap { min-height: 380px; }
+    .split .img-wrap img { width: 100%; height: 100%; object-fit: cover; min-height: 380px; }
+    .split .copy { padding: clamp(32px, 5vw, 56px); display: flex; flex-direction: column; justify-content: center; }
+    .split h2 { font-family: Lora, serif; font-size: clamp(1.4rem, 2.5vw, 1.85rem); margin-bottom: 18px; }
+    .split p { color: #555; margin: 0 0 14px; font-size: 0.98rem; }
+
+    .since { text-align: center; padding: 72px 24px; background: #e4ddd3; }
+    .since h2 { font-family: Lora, serif; font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 14px; }
+
+    .stats-wrap { max-width: 720px; margin: -36px auto 64px; padding: 0 20px; position: relative; z-index: 2; }
+    .stat strong { color: #3d4f4a; font-family: Lora, serif; }
+
+    .cta-band { background: #3d4f4a; color: #f5f1ea; text-align: center; padding: 64px 24px; }
+    .cta-band h3 { font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px; opacity: 0.9; }
+    .cta-band h2 { font-family: Lora, serif; font-size: clamp(1.25rem, 2.5vw, 1.65rem); font-weight: 600; max-width: 32em; margin: 0 auto 24px; line-height: 1.35; }
+    .cta-band .btn { background: #b85c4a; color: #fff; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.06em; box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+
+    .services { max-width: 920px; margin: 0 auto; padding: 80px 24px; }
+    .services > h2 { text-align: center; font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: #777; margin-bottom: 48px; }
+    .svc { display: grid; grid-template-columns: 64px 1fr; gap: 24px; padding: 36px 0; border-bottom: 1px solid #c9c0b5; align-items: start; }
+    .svc:last-child { border-bottom: none; }
+    .svc .n { font-family: Lora, serif; font-size: 2.25rem; color: #b85c4a; line-height: 1; }
+    .svc h3 { font-family: Lora, serif; font-size: 1.3rem; margin: 0 0 10px; }
+    .svc p { margin: 0; color: #555; }
+
+    .belief.section { background: #fff; }
+    .belief h2 { font-family: Lora, serif; font-size: clamp(1.4rem, 2.8vw, 1.9rem); text-align: center; margin-bottom: 28px; max-width: 28em; margin-left: auto; margin-right: auto; }
+    .model-card h3 { font-family: Lora, serif; color: #3d4f4a; }
+
+    .quote-block blockquote { font-family: Lora, serif; color: #444; }
+    .quote-block cite { color: #b85c4a; }
+
+    .story-teaser h2 { font-family: Lora, serif; font-size: 1.5rem; margin-bottom: 12px; }
+    .story-teaser p { color: #555; margin-bottom: 16px; }
+
+    .impact-block {
+      display: grid; grid-template-columns: 1fr 1fr; max-width: 1180px; margin: 0 auto;
+      box-shadow: var(--shadow);
+    }
+    .impact-block .dark { background: #2a2a2a; color: #eee; padding: clamp(40px, 6vw, 64px); display: flex; flex-direction: column; justify-content: center; }
+    .impact-block h2 { font-family: Lora, serif; font-size: 1.65rem; margin-bottom: 16px; }
+    .impact-block img { width: 100%; height: 100%; object-fit: cover; min-height: 320px; }
+
+    .site-footer { background: #1a1a1a; color: #bbb; }
+    .site-footer a { color: #e8ddd3; }
+    .site-footer h4 { color: #888; }
+
+    .sponsor-bar {
+      background: linear-gradient(135deg, #3d4f4a, #2a3835);
+      color: #f5f1ea; text-align: center; padding: 48px 24px;
+    }
+    .sponsor-bar h2 { font-family: Lora, serif; margin: 0 0 12px; font-size: 1.35rem; }
+    .sponsor-bar .btn { background: #fff; color: #3d4f4a; margin-top: 8px; }
+
+    @media (max-width: 768px) {
+      .duo, .split, .impact-block { grid-template-columns: 1fr; }
+      .duo a { border-right: none; border-bottom: 1px solid #e8e2d9; min-height: 120px; padding: 28px 22px; }
+      .duo a:last-child { border-bottom: none; }
+      .hero-stack { padding: 40px 20px 32px; }
+      .duo-wrap { margin-bottom: 40px; }
+      .split .img-wrap, .split .img-wrap img { min-height: 240px; }
+      .split .copy { padding: 28px 22px; }
+      .since { padding: 48px 20px; }
+      .stats-wrap { margin: -24px auto 48px; }
+      .cta-band { padding: 48px 20px; }
+      .cta-band .btn { width: 100%; max-width: 300px; }
+      .services { padding: 56px 20px; }
+      .svc { grid-template-columns: 48px 1fr; gap: 16px; padding: 28px 0; }
+      .impact-block img { min-height: 220px; }
+      .sponsor-bar { padding: 40px 20px; }
+      .sponsor-bar .btn { width: 100%; max-width: 280px; }
+      .nav-toggle { color: #3d4f4a; }
+    }
+  </style>
+</head>
+<body>
+  <div class="theme-badge">THEME D — KUTOA<a href="index.html">All themes</a></div>
+  <div class="announce" style="background:#3d4f4a;color:#f0ebe3;">2026: New Pendo Child &amp; Family Development Hub</div>
+
+  <header class="header-bar">
+    <div class="site-header">
+      <a class="logo-link" href="#"><img class="site-logo" src="assets/pendo-logo.png" alt="Pendo" /></a>
+      <nav class="site-nav" id="site-nav">
+        <a href="#">Our School</a>
+        <a href="#">Admissions</a>
+        <a href="#">Impact</a>
+        <a href="#">Pendo Sisters</a>
+        <a href="#">Stories</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn-donate" href="#">Donate</a>
+        <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-stack">
+    <p class="eyebrow">Pendo School Kenya · Canadian charity</p>
+    <h1>Making quality early education accessible and affordable for all.</h1>
+    <p class="lead">Families pay affordable fees. Donations and Sponsor a Seat keep excellence within reach—for meals, training, facilities, and the Hub.</p>
+  </section>
+
+  <div class="duo-wrap">
+    <div class="duo">
+      <a href="#"><strong>Curious about our school?</strong><span>Curriculum, staff, daily life, facilities &amp; fees</span></a>
+      <a href="#"><strong>Want to support our work?</strong><span>Impact, Sponsor a Seat &amp; ways to give</span></a>
+    </div>
+  </div>
+
+  <section class="split">
+    <div class="img-wrap img-frame">
+      <img src="assets/pendo-hero.jpg" alt="Students at Pendo School Kenya" />
+    </div>
+    <div class="copy">
+      <p class="eyebrow" style="color:#b85c4a;">Who we are</p>
+      <h2>We believe every child deserves the best start in life.</h2>
+      <p>We increase access to affordable, high-quality early childhood care and education in Kenya’s low-income communities.</p>
+      <p>Play, nutritious meals, WASH, and the Kenya National Curriculum—blended with care that helps parents know exactly what they’re choosing.</p>
+      <a class="btn btn-arrow" href="#" style="background:#3d4f4a;color:#fff;width:fit-content;margin-top:8px;">Our School</a>
+    </div>
+  </section>
+
+  <section class="since">
+    <h2>Changing lives and building hope since 2018.</h2>
+    <p style="max-width:40em;margin:0 auto;color:#444;">From groundbreaking to seven classrooms, a new campus, and the Child &amp; Family Development Hub opening in 2026.</p>
+  </section>
+
+  <div class="stats-wrap">
+    <div class="stats-row">
+      <div class="stat"><strong>2018</strong><span>Ground broken</span></div>
+      <div class="stat"><strong>7+</strong><span>Classrooms today</span></div>
+      <div class="stat"><strong>Hub</strong><span>Opening 2026</span></div>
+    </div>
+  </div>
+
+  <section class="cta-band">
+    <h3>Looking to enroll?</h3>
+    <h2>Visit, ask questions, and understand fees—before you take the next step.</h2>
+    <a class="btn btn-arrow" href="#">Admissions &amp; fees</a>
+  </section>
+
+  <section class="services" id="programs">
+    <h2>Our programs</h2>
+    <article class="svc">
+      <span class="n">01</span>
+      <div>
+        <h3>Pendo School Kenya</h3>
+        <p>Early childhood under age 7—curriculum, meals, play, WASH, and a nurturing community.</p>
+      </div>
+    </article>
+    <article class="svc">
+      <span class="n">02</span>
+      <div>
+        <h3>Teacher training</h3>
+        <p>Equipping educators across Kenya with skills, support, and resources for every child.</p>
+      </div>
+    </article>
+    <article class="svc">
+      <span class="n">03</span>
+      <div>
+        <h3>Pendo Sisters — Canada</h3>
+        <p><em>No Mother Should Wait Alone</em>—wellbeing and the mother–child bond for refugee mothers.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="belief section container">
+    <h2>How school, charity &amp; giving work together</h2>
+    <div class="model-trio">
+      <div class="model-card"><h3>School fees</h3><p>Families pay affordable fees for daily learning and care.</p></div>
+      <div class="model-card"><h3>Canadian charity</h3><p>Pendo International Projects operates the school and mission.</p></div>
+      <div class="model-card"><h3>Sponsor a Seat</h3><p>Donations keep fees accessible and fund meals &amp; the Hub.</p></div>
+    </div>
+  </section>
+
+  <section class="section-tight quote-block">
+    <blockquote>“Every child—regardless of where they’re from—deserves the best start in life. That’s the work we show up for every day.”</blockquote>
+    <cite>Pendo International Projects</cite>
+  </section>
+
+  <section class="partners-strip">
+    <p>Our partners</p>
+    <img src="assets/pendo-partners.jpg" alt="Pendo partners" width="520" />
+  </section>
+
+  <section class="section container story-teaser">
+    <div class="story-thumb">
+      <img src="assets/pendo-kids.jpg" alt="Latest story" />
+    </div>
+    <div>
+      <p class="eyebrow" style="color:#b85c4a;">Stories &amp; insights</p>
+      <h2>Life at Pendo School Kenya</h2>
+      <p>Follow classrooms, meals, play, and Hub progress—the same warmth families see on Instagram, on your website.</p>
+      <a class="btn btn-arrow" href="#" style="background:#b85c4a;color:#fff;">Read stories</a>
+    </div>
+  </section>
+
+  <section class="impact-block">
+    <div class="dark">
+      <h2>Let’s talk about our impact.</h2>
+      <p>Milestones, partners, and the people who make affordable quality possible—in Kenya and from Canada.</p>
+      <a href="#" style="color:#e8b4a8;font-weight:700;margin-top:20px;display:inline-block;" class="btn-arrow">See our impact →</a>
+    </div>
+    <img src="assets/pendo-classroom.jpg" alt="Classroom" />
+  </section>
+
+  <section class="sponsor-bar">
+    <h2>Sponsor a Seat</h2>
+    <p style="max-width:36em;margin:0 auto;opacity:0.9;font-size:0.95rem;">Give a child a place at Pendo School Kenya—and help keep quality education affordable.</p>
+    <a class="btn btn-arrow" href="#">Give today</a>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <img class="foot-logo" src="assets/pendo-logo.png" alt="Pendo" />
+        <p>High-quality affordable early childhood education in Kenya, operated by a Canadian registered charity.</p>
+      </div>
+      <div>
+        <h4>For parents</h4>
+        <p><a href="#">Our School</a><br/><a href="#">Admissions</a><br/><a href="#">Staff</a></p>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <p><a href="#">Donate</a><br/><a href="#">Sponsor a Seat</a><br/><a href="#">Pendo Sisters</a></p>
+        <p style="margin-top:12px;"><a href="mailto:ciro@pendointl.org">ciro@pendointl.org</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">Layout inspired by kutoaproject.org · Photos &amp; logo from pendointl.org · Mockup only</div>
+  </footer>
+  <script src="assets/mockup.js"></script>
+</body>
+</html>

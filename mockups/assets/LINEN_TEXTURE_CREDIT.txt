@@ -1,0 +1,13 @@
+Linen textures used in Theme F (Linen Studio)
+
+Source: Poly Haven — Rough Linen
+URL: https://polyhaven.com/a/rough_linen
+License: CC0 1.0 (public domain — free for commercial use, no attribution required)
+
+Files:
+- linen-rough.jpg  — original 1K diffuse download
+- linen-light.jpg  — desaturated / light page-background variant
+- linen-slate.jpg  — tinted to Pendo/Kutoa slate (#2E4A70) for dark sections
+
+Inspired by the woven linen background treatment on kutoaproject.org
+(KutoaProject_LinenBackground_DarkGrey.webp — not redistributed here).

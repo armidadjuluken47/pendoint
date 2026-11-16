@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pendo International Projects — Brand Guidelines v1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: "Classico";
+      src: url("assets/fonts/classico-bold.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --navy: #2e4a70;
+      --teal: #23b0b9;
+      --sky: #72c7e2;
+      --ember: #ce8b40;
+      --foam: #f9fbfc;
+      --marble: #e6e9ee;
+      --white: #ffffff;
+      --ink: #2e4a70;
+      --muted: rgba(46, 74, 112, 0.72);
+      --classico: "Classico", "Optima", "Segoe UI", Candara, Georgia, serif;
+      --sans: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+      --wide: "Oswald", "Montserrat", sans-serif;
+      --page-w: 1120px;
+      --page-h: 670px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: #c5ccd4;
+      font-family: var(--sans);
+      color: var(--navy);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .deck {
+      padding: 28px 16px 64px;
+      display: flex; flex-direction: column; align-items: center; gap: 22px;
+    }
+    .deck-label {
+      width: min(100%, var(--page-w));
+      font-family: var(--wide);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--navy);
+      opacity: 0.7;
+    }
+
+    .page {
+      width: min(100%, var(--page-w));
+      aspect-ratio: 1120 / 670;
+      height: auto;
+      background: var(--foam);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(46, 74, 112, 0.18);
+    }
+
+    .num {
+      font-family: var(--classico);
+      font-size: clamp(5rem, 14vw, 9.5rem);
+      line-height: 0.9;
+      color: rgba(249, 251, 252, 0.88);
+      letter-spacing: -0.02em;
+    }
+    .sec-title {
+      font-family: var(--classico);
+      font-weight: 400;
+      font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+      color: #fff;
+      margin: 0 0 0.7rem;
+    }
+    .sec-title span { color: var(--ember); }
+    .sec-body {
+      font-size: clamp(0.85rem, 1.1vw, 1rem);
+      line-height: 1.65;
+      color: rgba(255,255,255,0.9);
+      max-width: 34ch;
+      margin: 0;
+    }
+
+    .opener {
+      display: grid;
+      grid-template-columns: 0.9fr 1.2fr;
+      align-items: center;
+      height: 100%;
+      padding: 0 6% 0 7%;
+      gap: 2rem;
+      background:
+        linear-gradient(135deg, rgba(46,74,112,0.92), rgba(46,74,112,0.88)),
+        url("assets/linen-light.jpg") center / cover;
+      background-blend-mode: multiply, normal;
+      background-color: var(--navy);
+    }
+    .opener::after {
+      content: "";
+      position: absolute;
+      right: -8%; bottom: -35%;
+      width: 55%; height: 90%;
+      border: 28px solid rgba(35,176,185,0.22);
+      border-radius: 50% 40% 60% 45%;
+      transform: rotate(-18deg);
+      pointer-events: none;
+    }
+    .opener::before {
+      content: "";
+      position: absolute;
+      left: -10%; top: -40%;
+      width: 40%; height: 70%;
+      border: 22px solid rgba(206,139,64,0.18);
+      border-radius: 45% 55% 40% 60%;
+      transform: rotate(12deg);
+      pointer-events: none;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      height: 100%;
+    }
+    .panel {
+      padding: clamp(1.5rem, 3.5vw, 2.6rem) clamp(1.4rem, 3vw, 2.4rem);
+      position: relative;
+      z-index: 1;
+    }
+    .panel.white { background: var(--foam); }
+    .panel.navy { background: var(--navy); color: #fff; }
+    .panel.teal { background: var(--teal); color: #fff; }
+    .panel.ember { background: var(--ember); color: #fff; }
+    .panel.marble {
+      background: var(--marble);
+      background-image: url("assets/linen-light.jpg");
+      background-size: 320px;
+      background-blend-mode: soft-light;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--classico);
+      font-weight: 400;
+      margin: 0;
+      line-height: 1.15;
+    }
+    .eyebrow {
+      font-family: var(--wide);
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin: 0 0 0.65rem;
+      font-weight: 500;
+    }
+    .panel.navy .eyebrow,
+    .panel.teal .eyebrow,
+    .panel.ember .eyebrow { color: rgba(255,255,255,0.75); }
+
+    .headline {
+      font-size: clamp(1.55rem, 2.8vw, 2.35rem);
+      color: var(--navy);
+      margin-bottom: 0.85rem;
+    }
+    .headline em {
+      font-style: normal;
+      color: var(--ember);
+    }
+    .panel.navy .headline,
+    .panel.teal .headline { color: #fff; }
+
+    .copy {
+      font-size: clamp(0.82rem, 1.05vw, 0.95rem);
+      line-height: 1.65;
+      color: var(--muted);
+      margin: 0 0 0.75rem;
+      max-width: 42ch;
+    }
+    .panel.navy .copy,
+    .panel.teal .copy,
+    .panel.ember .copy { color: rgba(255,255,255,0.9); }
+
+    .wave {
+      position: absolute;
+      left: -5%; bottom: -18%;
+      width: 70%; height: 55%;
+      border: 18px solid rgba(46,74,112,0.07);
+      border-radius: 50% 40% 55% 45%;
+      transform: rotate(-12deg);
+      pointer-events: none;
+    }
+
+    /* Cover */
+    .cover {
+      background: var(--navy);
+      background-image:
+        linear-gradient(160deg, rgba(46,74,112,0.94), rgba(35,176,185,0.35)),
+        url("assets/linen-light.jpg");
+      background-size: cover;
+      background-blend-mode: multiply, soft-light;
+      color: #fff;
+      padding: 7% 7% 6%;
+      display: flex; flex-direction: column; justify-content: space-between;
+      height: 100%;
+    }
+    .cover-brand {
+      display: flex; align-items: center; gap: 0.9rem;
+    }
+    .cover-brand img {
+      height: 52px; width: auto;
+      filter: brightness(0) invert(1);
+    }
+    .cover-brand span {
+      font-family: var(--wide);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      line-height: 1.35;
+    }
+    .cover h1 {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      max-width: 10ch;
+      color: #fff;
+    }
+    .cover h1 span { color: var(--ember); display: block; }
+    .cover-meta {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      font-family: var(--wide);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+    }
+    .cover-path {
+      position: absolute;
+      right: -5%; top: 8%;
+      width: 48%; height: 78%;
+      border: 36px solid rgba(206,139,64,0.35);
+      border-radius: 48% 42% 55% 40%;
+      transform: rotate(16deg);
+      pointer-events: none;
+    }
+    .cover-path.teal {
+      right: 8%; bottom: -30%; top: auto;
+      width: 42%; height: 60%;
+      border-color: rgba(35,176,185,0.28);
+      transform: rotate(-22deg);
+    }
+
+    /* Contents */
+    .contents {
+      display: grid;
+      grid-template-columns: 1fr 0.85fr;
+      height: 100%;
+    }
+    .contents-list {
+      padding: 8% 8% 6%;
+      background: var(--foam);
+    }
+    .contents-list h2 {
+      font-size: 2rem;
+      color: var(--navy);
+      margin-bottom: 1.4rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-family: var(--wide);
+      font-weight: 500;
+    }
+    .toc { list-style: none; margin: 0; padding: 0; }
+    .toc > li {
+      font-family: var(--classico);
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin: 0 0 0.85rem;
+    }
+    .toc ul {
+      list-style: none;
+      margin: 0.35rem 0 0.9rem 0.85rem;
+      padding: 0;
+    }
+    .toc ul li {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin: 0.25rem 0;
+    }
+    .toc ul li::before { content: "– "; color: var(--ember); }
+    .contents-art {
+      background: var(--navy);
+      background-image: url("assets/linen-light.jpg");
+      background-size: cover;
+      background-blend-mode: multiply;
+      position: relative;
+      overflow: hidden;
+    }
+    .contents-art .giant {
+      position: absolute;
+      right: -8%; top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--classico);
+      font-size: clamp(10rem, 28vw, 18rem);
+      color: rgba(35,176,185,0.35);
+      line-height: 0.8;
+    }
+
+    /* Logo pages */
+    .logo-lockup {
+      display: flex; align-items: center; gap: 1.1rem;
+      background: #fff;
+      border: 1px dashed rgba(46,74,112,0.25);
+      padding: 1.4rem 1.5rem;
+    }
+    .logo-lockup img { height: 72px; width: auto; }
+    .logo-lockup .wm {
+      font-family: var(--wide);
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      line-height: 1.4;
+      color: var(--navy);
+    }
+    .guides {
+      margin-top: 1rem;
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-family: var(--wide);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .dont-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.85rem;
+      height: 100%;
+      padding: 6% 5%;
+      align-content: center;
+    }
+    .dont {
+      background: #fff;
+      border: 1px solid rgba(46,74,112,0.1);
+      padding: 1rem 0.9rem 1.1rem;
+      text-align: center;
+      min-height: 140px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 0.55rem;
+    }
+    .dont .badge {
+      font-family: var(--wide);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ember);
+    }
+    .dont p {
+      margin: 0;
+      font-size: 0.82rem;
+      color: var(--navy);
+      line-height: 1.35;
+    }
+    .dont .fake-logo {
+      font-family: var(--wide);
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      color: var(--navy);
+      opacity: 0.55;
+    }
+    .dont.bad .fake-logo { transform: scaleX(1.45); }
+    .dont.rot .fake-logo { transform: rotate(18deg); }
+    .dont.crop .fake-logo { overflow: hidden; max-width: 4.5ch; white-space: nowrap; }
+
+    /* Type */
+    .type-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.3fr;
+      height: 100%;
+    }
+    .type-spec {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      height: 100%;
+      color: #fff;
+    }
+    .type-col {
+      padding: 1.4rem 1.1rem;
+      border-left: 1px dashed rgba(255,255,255,0.25);
+    }
+    .type-col:first-child { border-left: 0; }
+    .type-col .w {
+      font-family: var(--wide);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 0.55rem;
+    }
+    .type-col .sample {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1;
+      margin-bottom: 0.7rem;
+    }
+    .type-col .alpha {
+      font-size: 0.62rem;
+      line-height: 1.45;
+      letter-spacing: 0.04em;
+      opacity: 0.85;
+      word-break: break-all;
+    }
+
+    /* Colour */
+    .color-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1fr 1fr;
+      height: 100%;
+    }
+    .swatch {
+      padding: 8% 8% 7%;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .swatch h3 {
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
+    }
+    .swatch .codes {
+      font-size: 0.78rem;
+      line-height: 1.7;
+      font-family: var(--sans);
+    }
+    .swatch .tone {
+      font-family: var(--wide);
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-top: 1rem;
+      opacity: 0.85;
+    }
+
+    /* Photo story */
+    .story {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      height: 100%;
+    }
+    .story-photo {
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .story-photo .cap {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      padding: 1rem 1.2rem;
+      background: linear-gradient(transparent, rgba(46,74,112,0.85));
+      color: #fff;
+      font-family: var(--wide);
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    /* Apps */
+    .apps {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      padding: 6% 5%;
+      height: 100%;
+      align-content: center;
+      background: var(--foam);
+    }
+    .app-card {
+      background: #fff;
+      border: 1px solid rgba(46,74,112,0.1);
+      padding: 1.25rem 1.15rem;
+      min-height: 200px;
+    }
+    .app-card .tag {
+      font-family: var(--wide);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.7rem;
+    }
+    .app-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.55rem;
+      color: var(--navy);
+    }
+    .app-card p {
+      margin: 0;
+      font-size: 0.82rem;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+    .app-preview {
+      margin-top: 1rem;
+      height: 72px;
+      background: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      font-family: var(--wide);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .app-preview.ember { background: var(--ember); }
+    .app-preview.teal { background: var(--teal); }
+
+    /* Thanks */
+    .thanks {
+      height: 100%;
+      padding: 8% 8% 7%;
+      background: var(--navy);
+      background-image:
+        linear-gradient(150deg, rgba(46,74,112,0.95), rgba(46,74,112,0.88)),
+        url("assets/linen-light.jpg");
+      background-blend-mode: multiply, soft-light;
+      color: #fff;
+      display: flex; flex-direction: column; justify-content: center;
+      position: relative;
+    }
+    .thanks h2 {
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      margin-bottom: 1rem;
+    }
+    .thanks p {
+      max-width: 42ch;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.88);
+      margin: 0 0 0.85rem;
+      font-size: 0.95rem;
+    }
+    .thanks .tagline {
+      font-family: var(--classico);
+      color: var(--ember);
+      font-size: 1.25rem;
+      margin: 1.2rem 0 1.5rem;
+    }
+    .thanks a {
+      color: var(--sky);
+      text-decoration: none;
+      font-size: 0.92rem;
+    }
+    .thanks-path {
+      position: absolute;
+      left: -8%; bottom: -30%;
+      width: 50%; height: 70%;
+      border: 30px solid rgba(206,139,64,0.22);
+      border-radius: 48% 40% 55% 42%;
+      pointer-events: none;
+    }
+
+    .rule {
+      width: 48px; height: 3px; background: var(--ember); border: 0; margin: 0 0 1rem;
+    }
+    .rule.light { background: rgba(255,255,255,0.45); }
+
+    @page {
+      size: 297mm 178mm;
+      margin: 0;
+    }
+    @media print {
+      body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .deck { padding: 0; gap: 0; }
+      .deck-label { display: none; }
+      .page {
+        box-shadow: none;
+        width: 297mm;
+        max-width: none;
+        height: 178mm;
+        aspect-ratio: auto;
+        page-break-after: always;
+        break-after: page;
+        break-inside: avoid;
+      }
+      .page:last-child { page-break-after: auto; }
+    }
+
+    @media (max-width: 720px) {
+      .page { aspect-ratio: auto; min-height: 520px; }
+      .split, .contents, .type-grid, .color-grid, .story { grid-template-columns: 1fr; }
+      .dont-grid, .apps { grid-template-columns: 1fr; }
+      .opener { grid-template-columns: 1fr; }
+      .num { font-size: 5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="deck">
+    <div class="deck-label">Pendo International Projects · Brand Guidelines v1.0 </div>
+
+    <!-- 1 Cover -->
+    <section class="page" aria-label="Cover">
+      <div class="cover">
+        <div class="cover-path" aria-hidden="true"></div>
+        <div class="cover-path teal" aria-hidden="true"></div>
+        <div class="cover-brand">
+          <img src="assets/pendo-logo.png" alt="" />
+          <span>Pendo<br />International<br />Projects</span>
+        </div>
+        <h1>Brand <span>Guidelines</span></h1>
+        <div class="cover-meta">
+          <span>Visual identity · Digital &amp; print</span>
+          <span>v 1.0</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 Contents -->
+    <section class="page" aria-label="Contents">
+      <div class="contents">
+        <div class="contents-list">
+          <h2>Content</h2>
+          <ul class="toc">
+            <li>Brand overview</li>
+            <li>
+              Logo &amp; wordmark
+              <ul>
+                <li>free space &amp; lockups</li>
+                <li>do’s &amp; don’ts</li>
+              </ul>
+            </li>
+            <li>Typography</li>
+            <li>
+              Colours
+              <ul>
+                <li>colour usage</li>
+              </ul>
+            </li>
+            <li>
+              Applications
+              <ul>
+                <li>digital · stationery · signature</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="contents-art" aria-hidden="true">
+          <div class="giant">P</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 01 opener -->
+    <section class="page" aria-label="01 Brand Overview">
+      <div class="opener">
+        <div class="num">01</div>
+        <div>
+          <h2 class="sec-title">Brand <span>Overview</span></h2>
+          <p class="sec-body">This is the strategic foundation of our guidelines. It defines what Pendo International Projects is and what we stand for—so every visual and verbal decision stays purposeful and consistent across Kenya and Canada.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 Overview story -->
+    <section class="page" aria-label="P is for Pendo">
+      <div class="story">
+        <div class="panel white" style="display:flex;flex-direction:column;justify-content:center;">
+          <div class="wave" aria-hidden="true"></div>
+          <p class="eyebrow">Who we are</p>
+          <h2 class="headline">P is for <em>Pendo</em></h2>
+          <p class="copy">Pendo International Projects is a Canadian registered charity advancing high-quality, affordable early childhood education in Kenya and maternal well-being for refugee mothers in Canada.</p>
+          <p class="copy">We increase access to care and learning rooted in dignity, community, and every child’s potential—through Pendo School Kenya, the Child &amp; Family Development Hub, and Pendo Sisters.</p>
+          <p class="copy">This brand book is the master blueprint for visual identity in digital and print.</p>
+        </div>
+        <div class="story-photo" style="background-image:url('assets/hero-kids.jpg')">
+          <div class="cap">Building stronger futures in Kenya and Canada</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 02 logo opener -->
+    <section class="page" aria-label="02 Brand Logo">
+      <div class="opener">
+        <div class="num">02</div>
+        <div>
+          <h2 class="sec-title">Brand <span>Logo</span></h2>
+          <p class="sec-body">The logo section defines every allowed version, size, spacing and prohibition. It protects the single most visible mark of Pendo—so it always appears clear, consistent, and trustworthy.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 Free space -->
+    <section class="page" aria-label="Logo free space">
+      <div class="split">
+        <div class="panel white" style="display:flex;flex-direction:column;justify-content:center;">
+          <div class="wave" aria-hidden="true"></div>
+          <p class="eyebrow">Logo &amp; wordmark</p>
+          <h2 class="headline">Free <em>space</em></h2>
+          <p class="copy">We use a primary logo mark with the Pendo name. Keep clear space around the lockup equal to at least the height of the mark’s inner emblem.</p>
+          <p class="copy">On light backgrounds use the full-colour logo. On navy or photography, use a white / reversed treatment. Never crowd the mark with other logos or dense type.</p>
+        </div>
+        <div class="panel marble" style="display:flex;flex-direction:column;justify-content:center;align-items:center;">
+          <div class="logo-lockup">
+            <img src="assets/pendo-logo.png" alt="Pendo logo" />
+            <div class="wm">Pendo<br />International<br />Projects</div>
+          </div>
+          <div class="guides">Symbol + wordmark · minimum clear space</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 Dos donts -->
+    <section class="page" aria-label="Logo dos and donts">
+      <div style="height:100%;display:flex;flex-direction:column;">
+        <div class="panel white" style="padding-bottom:0.5rem;">
+          <p class="eyebrow">Correct usage</p>
+          <h2 class="headline" style="margin-bottom:0;">Do’s &amp; <em>don’ts</em></h2>
+        </div>
+        <div class="dont-grid">
+          <div class="dont">
+            <div class="badge">Do</div>
+            <div class="fake-logo" style="opacity:1;color:var(--navy);">PENDO</div>
+            <p>Keep the logo clear and proportional</p>
+          </div>
+          <div class="dont crop">
+            <div class="badge">Don’t</div>
+            <div class="fake-logo">PENDO INT</div>
+            <p>Don’t crop the logo</p>
+          </div>
+          <div class="dont bad">
+            <div class="badge">Don’t</div>
+            <div class="fake-logo">PENDO</div>
+            <p>Don’t stretch or squash</p>
+          </div>
+          <div class="dont">
+            <div class="badge">Don’t</div>
+            <div class="fake-logo" style="background:repeating-linear-gradient(45deg,#eee,#eee 4px,#ddd 4px,#ddd 8px);padding:0.35rem 0.6rem;">PENDO</div>
+            <p>Don’t apply texture or pattern</p>
+          </div>
+          <div class="dont rot">
+            <div class="badge">Don’t</div>
+            <div class="fake-logo">PENDO</div>
+            <p>Don’t rotate the logo</p>
+          </div>
+          <div class="dont">
+            <div class="badge">Don’t</div>
+            <div class="fake-logo" style="text-shadow:4px 4px 0 rgba(46,74,112,0.25);">PENDO</div>
+            <p>Don’t apply drop shadows</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 03 type opener -->
+    <section class="page" aria-label="03 Typography">
+      <div class="opener">
+        <div class="num">03</div>
+        <div>
+          <h2 class="sec-title">Typography</h2>
+          <p class="sec-body">Our system pairs Classico for display with Montserrat for body and Oswald for wide labels—clarity, warmth, and a strong brand voice across media.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 Type specimens -->
+    <section class="page" aria-label="Primary typeface">
+      <div class="type-grid">
+        <div class="panel white" style="display:flex;flex-direction:column;justify-content:center;">
+          <div class="wave" aria-hidden="true"></div>
+          <p class="eyebrow">Primary display</p>
+          <h2 class="headline">Classico</h2>
+          <p class="copy">Classico is the primary display face for Pendo—used for headlines, section titles, and hero statements. It stands in for the refined heading voice of our Kutoa-inspired system.</p>
+          <p class="copy">Body and UI use Montserrat. Navigation, buttons, and eyebrows use Oswald (wide caps).</p>
+          <hr class="rule" />
+          <p class="copy" style="margin:0;"><strong style="color:var(--navy);">Fallback:</strong> Optima / Georgia for Classico · Helvetica Neue / Arial for sans</p>
+        </div>
+        <div class="type-spec" style="background:var(--navy);">
+          <div class="type-col">
+            <div class="w">Display · Classico</div>
+            <div class="sample" style="font-family:var(--classico);">Aa</div>
+            <div class="alpha" style="font-family:var(--classico);">ABCDEFGHIJKLM<br />abcdefghijklm<br />0123456789</div>
+          </div>
+          <div class="type-col" style="background:rgba(35,176,185,0.18);">
+            <div class="w">Body · Montserrat</div>
+            <div class="sample" style="font-family:var(--sans);font-weight:500;">Aa</div>
+            <div class="alpha">ABCDEFGHIJKLM<br />abcdefghijklm<br />0123456789</div>
+          </div>
+          <div class="type-col" style="background:rgba(206,139,64,0.2);">
+            <div class="w">Wide · Oswald 500</div>
+            <div class="sample" style="font-family:var(--wide);font-weight:500;">Aa</div>
+            <div class="alpha" style="font-family:var(--wide);letter-spacing:0.08em;">ABCDEFGHIJKLM<br />0123456789</div>
+          </div>
+          <div class="type-col">
+            <div class="w">Hierarchy</div>
+            <div style="font-family:var(--classico);font-size:1.35rem;margin:0.4rem 0 0.55rem;">Headline</div>
+            <div style="font-family:var(--wide);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--sky);margin-bottom:0.55rem;">Section label</div>
+            <div style="font-size:0.78rem;line-height:1.5;opacity:0.9;">Body copy stays readable at 14–16px with comfortable line height.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 04 colour opener -->
+    <section class="page" aria-label="04 Brand Colour">
+      <div class="opener">
+        <div class="num">04</div>
+        <div>
+          <h2 class="sec-title">Brand <span>Colour</span></h2>
+          <p class="sec-body">Colour carries trust, warmth, and clarity. Navy anchors the brand; teal signals care and growth; ember highlights action and hope.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11 Colour usage -->
+    <section class="page" aria-label="Colour usage">
+      <div class="color-grid">
+        <div class="panel white" style="display:flex;flex-direction:column;justify-content:center;">
+          <div class="wave" aria-hidden="true"></div>
+          <p class="eyebrow">Colour usage</p>
+          <h2 class="headline">Navy leads.<br /><em>Teal &amp; ember</em> support.</h2>
+          <p class="copy">Use navy for primary fields, headlines, and footer chrome. Teal for accents, links, and labels. Ember for CTAs, active states, and emphasis rules.</p>
+          <p class="copy">Foam / marble neutrals keep layouts breathable—especially behind photography and long reading text.</p>
+        </div>
+        <div class="swatch" style="background:var(--navy);color:#fff;">
+          <div>
+            <h3>Navy</h3>
+            <div class="codes">
+              HEX #2E4A70<br />
+              RGB 46 / 74 / 112<br />
+              HSL 215° 42% 31%
+            </div>
+          </div>
+          <div class="tone">Trust · Authority · Anchor</div>
+        </div>
+        <div style="display:grid;grid-template-rows:1fr 1fr;">
+          <div class="swatch" style="background:var(--teal);color:#fff;">
+            <div>
+              <h3>Teal</h3>
+              <div class="codes">
+                HEX #23B0B9<br />
+                RGB 35 / 176 / 185
+              </div>
+            </div>
+            <div class="tone">Care · Clarity</div>
+          </div>
+          <div class="swatch" style="background:var(--ember);color:#fff;">
+            <div>
+              <h3>Ember</h3>
+              <div class="codes">
+                HEX #CE8B40<br />
+                RGB 206 / 139 / 64
+              </div>
+            </div>
+            <div class="tone">Warmth · Action</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12 Foam + sky strip -->
+    <section class="page" aria-label="Neutral colours">
+      <div class="split">
+        <div class="swatch" style="background:var(--foam);border-right:1px solid rgba(46,74,112,0.08);">
+          <div>
+            <p class="eyebrow">Neutral</p>
+            <h3 style="color:var(--navy);">Foam</h3>
+            <div class="codes" style="color:var(--muted);">
+              HEX #F9FBFC<br />
+              RGB 249 / 251 / 252<br />
+              Page backgrounds · content panels
+            </div>
+          </div>
+          <div class="tone" style="color:var(--teal);">Light · Breathable</div>
+        </div>
+        <div class="swatch" style="background:var(--sky);color:var(--navy);">
+          <div>
+            <p class="eyebrow" style="color:rgba(46,74,112,0.7);">Accent</p>
+            <h3>Sky</h3>
+            <div class="codes">
+              HEX #72C7E2<br />
+              RGB 114 / 199 / 226<br />
+              Soft highlights · secondary links
+            </div>
+          </div>
+          <div class="tone">Open · Hopeful</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13 05 applications opener -->
+    <section class="page" aria-label="05 Applications">
+      <div class="opener">
+        <div class="num">05</div>
+        <div>
+          <h2 class="sec-title">Applications</h2>
+          <p class="sec-body">These patterns apply the system to everyday touchpoints—web, email signature, and print—so Pendo stays recognisable at a glance.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14 Applications -->
+    <section class="page" aria-label="Application cards">
+      <div class="apps">
+        <article class="app-card">
+          <div class="tag">Digital</div>
+          <h3>Website</h3>
+          <p>Navy sticky header, Classico headlines, ember active underline, dual Kenya / Canada program storytelling.</p>
+          <div class="app-preview">Home · Programs · Impact</div>
+        </article>
+        <article class="app-card">
+          <div class="tag">Email</div>
+          <h3>Signature</h3>
+          <p>Navy photo column, ember spine, teal labels/icons, foam content panel—compact and Gmail-safe.</p>
+          <div class="app-preview ember">Ciro Muiruri · Founder</div>
+        </article>
+        <article class="app-card">
+          <div class="tag">Print</div>
+          <h3>Stationery</h3>
+          <p>Letterhead and cards: logo top-left, navy rule, ember accent, Montserrat body. Keep generous clear space.</p>
+          <div class="app-preview teal">Letterhead · Card</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 15 Thanks -->
+    <section class="page" aria-label="Thank you">
+      <div class="thanks">
+        <div class="thanks-path" aria-hidden="true"></div>
+        <h2>Thank you</h2>
+        <p>For reviewing version 1.0 of the Pendo International Projects Brand Guidelines. This document equips teams and partners to express the brand with clarity and consistency.</p>
+        <p>For clarifications, approvals, or asset requests, reach out anytime.</p>
+        <div class="tagline">Building stronger futures in Kenya and Canada.</div>
+        <a href="mailto:ciro@pendointl.org">ciro@pendointl.org</a>
+        <div style="margin-top:0.45rem;"><a href="https://www.pendointl.org">www.pendointl.org</a></div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

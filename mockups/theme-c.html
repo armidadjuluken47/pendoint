@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pendo — Theme C: Impact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/shared.css" />
+  <style>
+    body { margin: 0; font-family: "Work Sans", sans-serif; color: #1a1a1a; background: #F5F0E6; line-height: 1.6; }
+    .hero-full {
+      min-height: 88vh;
+      background: linear-gradient(to bottom, rgba(13,40,24,0.45), rgba(13,40,24,0.88)),
+        url('assets/pendo-hero.jpg') center/cover;
+      color: #fff; display: flex; flex-direction: column;
+    }
+    .header-bar { background: transparent; border: none; position: relative; z-index: 2; }
+    .header-bar.is-scrolled { background: rgba(13,40,24,0.92); box-shadow: 0 8px 32px rgba(0,0,0,0.25); }
+    .hero-full .site-nav a { color: rgba(255,255,255,0.95); }
+    .hero-full .site-logo { filter: brightness(0) invert(1); height: 44px; }
+    .btn-donate { background: #C87555; color: #fff; }
+    .hero-body { flex: 1; display: flex; align-items: flex-end; padding: 48px max(20px,4vw) 72px; max-width: 960px; margin: 0 auto; width: 100%; }
+    .hero-body .eyebrow { color: #e8c4b0; }
+    .hero-body h1 { font-family: "Libre Baskerville", serif; font-size: clamp(2.2rem, 5vw, 3.5rem); line-height: 1.08; margin-bottom: 20px; }
+    .hero-body p { font-size: 1.05rem; opacity: 0.92; max-width: 36em; margin-bottom: 28px; }
+    .split-cta a {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 14px 24px; font-weight: 700; font-size: 0.8rem;
+      text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em; margin-right: 8px;
+    }
+    .split-cta .a { background: #C87555; color: #fff; }
+    .split-cta .b { border: 1px solid rgba(255,255,255,0.5); color: #fff; }
+    .split-cta a:hover { transform: translateY(-2px); }
+
+    .identity { background: #fff; padding: 56px 24px; text-align: center; }
+    .identity h2 { font-family: "Libre Baskerville", serif; color: #174C3C; margin-bottom: 12px; }
+    .identity p { max-width: 40em; margin: 0 auto; color: #444; }
+
+    .stat strong { color: #174C3C; font-family: "Libre Baskerville", serif; }
+
+    .grid-three { display: grid; grid-template-columns: repeat(3, 1fr); background: #0d2818; color: #F5F0E6; }
+    .grid-three article { padding: 40px 28px; border-right: 1px solid rgba(255,255,255,0.1); transition: background 0.3s; }
+    .grid-three article:hover { background: rgba(255,255,255,0.04); }
+    .grid-three h3 { font-family: "Libre Baskerville", serif; color: #C87555; font-size: 1.1rem; margin-bottom: 10px; }
+    .grid-three p { font-size: 0.9rem; opacity: 0.88; }
+
+    .sisters { display: grid; grid-template-columns: 1fr 1fr; }
+    .sisters img { width: 100%; height: 100%; object-fit: cover; min-height: 300px; }
+    .sisters-copy { padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; background: #F5F0E6; }
+    .sisters-copy h2 { font-family: "Libre Baskerville", serif; color: #0d2818; font-size: 1.65rem; margin: 12px 0; }
+
+    .model-card h3 { font-family: "Libre Baskerville", serif; color: #174C3C; }
+
+    .sponsor-bar {
+      background: #174C3C; color: #F5F0E6; text-align: center; padding: 56px 24px;
+    }
+    .sponsor-bar h2 { font-family: "Libre Baskerville", serif; margin: 0 0 12px; }
+    .sponsor-bar .btn { background: #C87555; color: #fff; }
+
+    .site-footer { background: #0d2818; }
+    .site-footer a { color: #e8dfd0; }
+    .site-footer h4 { color: #8faf9f; }
+    .foot-logo { filter: brightness(0) invert(1); }
+
+    @media (max-width: 800px) {
+      .grid-three, .sisters { grid-template-columns: 1fr; }
+      .grid-three article { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+      .hero-full { min-height: auto; }
+      .hero-body { padding: 28px 20px 48px; align-items: flex-start; }
+      .hero-body h1 { font-size: clamp(1.85rem, 8vw, 2.4rem); }
+      .split-cta { display: flex; flex-direction: column; gap: 10px; }
+      .split-cta a { margin: 0; text-align: center; justify-content: center; }
+      .sisters-copy { padding: 36px 24px; }
+      .sisters img { min-height: 220px; max-height: 280px; }
+      .sponsor-bar { padding: 40px 20px; }
+      .sponsor-bar .btn { width: 100%; max-width: 280px; }
+      .nav-toggle { color: #fff; }
+      .header-bar.is-scrolled .nav-toggle,
+      .header-bar.nav-drawer-open .nav-toggle { color: #174C3C; }
+    }
+  </style>
+</head>
+<body>
+  <div class="theme-badge">THEME C — IMPACT<a href="index.html">All themes</a></div>
+  <section class="hero-full">
+    <header class="header-bar">
+      <div class="site-header" style="max-width:1200px">
+        <a class="logo-link" href="#"><img class="site-logo" src="assets/pendo-logo.png" alt="Pendo" /></a>
+        <nav class="site-nav" id="site-nav">
+          <a href="#">Our School</a><a href="#">Admissions</a><a href="#">Impact</a><a href="#">Pendo Sisters</a><a href="#">Stories</a>
+        </nav>
+        <div class="header-actions">
+          <a class="btn-donate" href="#">Donate</a>
+          <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="hero-body">
+      <div>
+        <p class="eyebrow">Kenya · Canada · one mission</p>
+        <h1>School for families. Charity for community. Hope for mothers.</h1>
+        <p>Pendo School Kenya, Pendo International Projects, and Pendo Sisters—three clear stories on one site.</p>
+        <div class="split-cta">
+          <a class="a btn-arrow" href="#">Our school</a>
+          <a class="b btn-arrow" href="#">Support</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="identity">
+    <h2>How it works</h2>
+    <p>Families pay affordable fees. Donations and Sponsor a Seat keep quality within reach and fund meals, teacher training, and the Child &amp; Family Development Hub (2026).</p>
+  </section>
+
+  <section class="section-tight container">
+    <div class="stats-row">
+      <div class="stat"><strong>2018</strong><span>Since groundbreaking</span></div>
+      <div class="stat"><strong>3</strong><span>Pillars of work</span></div>
+      <div class="stat"><strong>Hub</strong><span>Opening 2026</span></div>
+    </div>
+  </section>
+
+  <section class="section-tight container">
+    <div class="model-trio">
+      <div class="model-card"><h3>School fees</h3><p>Daily learning parents can plan for.</p></div>
+      <div class="model-card"><h3>Charity</h3><p>Canadian registered charity behind the school.</p></div>
+      <div class="model-card"><h3>Giving</h3><p>Sponsor a Seat &amp; one-time gifts.</p></div>
+    </div>
+  </section>
+
+  <section class="grid-three">
+    <article><h3>01 — The school</h3><p>Curriculum, daily life, admissions for parents.</p></article>
+    <article><h3>02 — The mission</h3><p>Impact, educator training, partners, Hub.</p></article>
+    <article><h3>03 — Pendo Sisters</h3><p>Canada—separate from school enrollment.</p></article>
+  </section>
+
+  <section class="sisters">
+    <div class="sisters-copy">
+      <small style="font-weight:700;color:#C87555;text-transform:uppercase;letter-spacing:0.1em;">Canada</small>
+      <h2>No Mother Should Wait Alone</h2>
+      <p>Supporting refugee mothers separated from their children overseas—its own pathway, not mixed with admissions.</p>
+      <a class="btn-donate btn-arrow" href="#" style="display:inline-block;width:fit-content;margin-top:12px;">Pendo Sisters</a>
+    </div>
+    <img src="assets/pendo-kids.jpg" alt="Pendo community" />
+  </section>
+
+  <section class="sponsor-bar">
+    <h2>Sponsor a Seat</h2>
+    <p style="max-width:32em;margin:0 auto 20px;opacity:0.92;">Help a child access meals, materials, and care while we grow the Hub.</p>
+    <a class="btn btn-arrow" href="#">Give today</a>
+  </section>
+
+  <section class="partners-strip"><p>Our partners</p><img src="assets/pendo-partners.jpg" alt="Partners" width="480" /></section>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div><img class="foot-logo" src="assets/pendo-logo.png" alt="" /><p>Pendo International Projects</p></div>
+      <div><h4>Parents</h4><a href="#">School</a> · <a href="#">Admissions</a></div>
+      <div><h4>Canada</h4><a href="#">Pendo Sisters</a></div>
+      <div><h4>Contact</h4><a href="mailto:ciro@pendointl.org">ciro@pendointl.org</a></div>
+    </div>
+    <div class="footer-bottom">Theme C — Impact · full-bleed storytelling</div>
+  </footer>
+  <script src="assets/mockup.js"></script>
+</body>
+</html>

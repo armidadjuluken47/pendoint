@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pendo — Choose a theme</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/shared.css" />
+  <style>
+    body {
+      font-family: Inter, sans-serif; max-width: 800px; margin: 0 auto;
+      padding: 48px 24px 80px; color: #242A27; background: linear-gradient(180deg, #F8F6F0 0%, #fff 40%);
+    }
+    h1 { font-family: "DM Serif Display", serif; color: #174C3C; font-weight: 400; font-size: clamp(1.75rem, 4vw, 2.25rem); }
+    .sub { color: #444; margin-bottom: 6px; font-size: 1.02rem; }
+    .note {
+      font-size: 0.9rem; color: #666; margin-bottom: 36px; padding: 16px 18px;
+      background: #fff; border-radius: var(--radius); border-left: 4px solid #C87555;
+      box-shadow: var(--shadow-sm);
+    }
+    .cards { display: flex; flex-direction: column; gap: 16px; }
+    a.card {
+      display: grid; grid-template-columns: 120px 1fr; gap: 20px; align-items: center;
+      padding: 20px 22px; border-radius: var(--radius-lg); text-decoration: none; color: inherit;
+      border: 2px solid #DCE8DC; background: #fff;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s var(--ease);
+    }
+    a.card:hover { border-color: #174C3C; box-shadow: var(--shadow); transform: translateY(-2px); }
+    a.card.featured { border-color: #C87555; background: #F8F6F0; }
+    a.card img { width: 120px; height: 76px; object-fit: cover; border-radius: 10px; }
+    .tag { font-size: 0.72rem; font-weight: 700; color: #C87555; text-transform: uppercase; letter-spacing: 0.06em; }
+    strong { display: block; color: #174C3C; margin: 6px 0 4px; font-size: 1.15rem; }
+    span.desc { font-size: 0.9rem; color: #555; line-height: 1.5; }
+    .open-hint { font-size: 0.82rem; color: #888; margin-top: 28px; text-align: center; }
+    @media (max-width: 520px) {
+      body { padding: 28px 16px 64px; }
+      a.card { grid-template-columns: 1fr; padding: 16px; }
+      a.card img { width: 100%; height: 140px; }
+    }
+  </style>
+</head>
+<body>
+  <img src="assets/pendo-logo.png" alt="Pendo" style="height:52px;margin-bottom:24px;" />
+  <h1>Website theme presentation</h1>
+  <p class="sub">Six homepage directions for Ciro — real logo and photos from pendointl.org.</p>
+  <p class="note">Each mockup includes dual parent/supporter paths, stats, school–charity–giving clarity, partners, sticky header, and a full footer. <strong>Kutoa Clone</strong> matches kutoaproject.org fonts/colors/layout with Pendo content; <strong>D–F</strong> are earlier directions.</p>
+  <div class="cards">
+    <a class="card featured" href="kutoa-clone/" target="_blank" style="border-color:#23b0b9;">
+      <img src="kutoa-clone/assets/hero-kids.jpg" alt="" />
+      <div>
+        <span class="tag" style="color:#23b0b9;">New — Exact Kutoa system</span>
+        <strong>Kutoa Clone · Homepage</strong>
+        <span class="desc">Playfair + Montserrat + script accents, navy/teal/ember, linen hero, dual CTAs, belief band, 01–03 services, impact, footer — Pendo photos &amp; copy.</span>
+      </div>
+    </a>
+    <a class="card" href="kutoa-clone/safari.html" target="_blank" style="border-color:#ce8b40;">
+      <img src="kutoa-clone/assets/safari/hero-wildebeest.jpg" alt="" />
+      <div>
+        <span class="tag" style="color:#ce8b40;">New — Safari package</span>
+        <strong>Safari of a Lifetime</strong>
+        <span class="desc">Auction safari page in Kutoa clone style — wildlife, culture, luxury, host, hub visit, inclusions &amp; bid strip.</span>
+      </div>
+    </a>
+    <a class="card" href="theme-d.html" target="_blank">
+      <img src="assets/pendo-hero.jpg" alt="" />
+      <div>
+        <span class="tag">Kutoa-inspired</span>
+        <strong>Theme D · Kutoa-inspired</strong>
+        <span class="desc">Linen palette, dual questions, 01–02–03 programs, quote, story teaser, impact split, Sponsor a Seat.</span>
+      </div>
+    </a>
+    <a class="card" href="theme-f.html" target="_blank" style="border-color:#2e4a70;">
+      <img src="assets/linen-slate.jpg" alt="" />
+      <div>
+        <span class="tag" style="color:#2e4a70;">New — Linen texture</span>
+        <strong>Theme F · Linen Studio</strong>
+        <span class="desc">Theme E layout + Poly Haven woven linen on page and dark sections (Kutoa-style fabric feel).</span>
+      </div>
+    </a>
+    <a class="card" href="theme-e.html" target="_blank" style="border-color:#1b6b52;">
+      <img src="assets/pendo-classroom.jpg" alt="" />
+      <div>
+        <span class="tag" style="color:#1b6b52;">Modern</span>
+        <strong>Theme E · Studio</strong>
+        <span class="desc">Syne + Manrope, Pendo green accents + Kutoa slate darks, bento pathways, marquee — no fabric texture.</span>
+      </div>
+    </a>
+    <a class="card" href="theme-a.html" target="_blank">
+      <img src="assets/pendo-kids.jpg" alt="" />
+      <div>
+        <span class="tag">Theme A</span>
+        <strong>Heritage</strong>
+        <span class="desc">Forest green editorial, DM Serif hero, pathway cards, terracotta accents.</span>
+      </div>
+    </a>
+    <a class="card" href="theme-b.html" target="_blank">
+      <img src="assets/pendo-classroom.jpg" alt="" />
+      <div>
+        <span class="tag">Theme B</span>
+        <strong>Clarity</strong>
+        <span class="desc">Mint and white, rounded Fraunces type, friendly centered hero, numbered program list.</span>
+      </div>
+    </a>
+    <a class="card" href="theme-c.html" target="_blank">
+      <img src="assets/pendo-hero.jpg" alt="" />
+      <div>
+        <span class="tag">Theme C</span>
+        <strong>Impact</strong>
+        <span class="desc">Full-bleed photo hero, dark bands, magazine contrast, Sisters spotlight.</span>
+      </div>
+    </a>
+  </div>
+  <p class="open-hint">Open any theme in a new tab · use “All themes” badge bottom-left to return here.</p>
+</body>
+</html>

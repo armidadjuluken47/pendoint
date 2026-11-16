@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Safari of a Lifetime — Pendo International Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: "Classico";
+      src:
+        url("assets/fonts/classico-bold.woff2") format("woff2"),
+        url("assets/fonts/classico-bold.woff") format("woff");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --navy: hsl(214.55, 41.77%, 30.98%);
+      --teal: hsl(183.6, 68.18%, 43.14%);
+      --sky: hsl(194.46, 65.88%, 66.67%);
+      --ember: #ce8b40;
+      --magenta: #a3237b;
+      --foam: hsl(200, 33.33%, 98.24%);
+      --linen: url("assets/linen-light.jpg");
+      --linen-slate: url("assets/linen-slate.jpg");
+      --linen-size: 420px;
+      --max: 1180px;
+      --classico: "Classico", "Optima", "Segoe UI", Candara, sans-serif;
+      --serif: var(--classico);
+      --sans: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+      --wide: "Oswald", "Montserrat", sans-serif;
+      --script: "Great Vibes", cursive;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--classico);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--navy);
+      background: var(--foam);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(100% - 2.5rem, var(--max)); margin-inline: auto; }
+
+    .announce {
+      background: var(--navy); color: #dce5ef; text-align: center;
+      font-size: 0.78rem; letter-spacing: 0.04em;
+      padding: 0.65rem 2.5rem 0.65rem 1.25rem; position: relative;
+    }
+    .announce a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+    .announce .x {
+      position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+      background: none; border: 0; color: #fff; cursor: pointer; font-size: 1.1rem;
+    }
+
+    .site-header {
+      background: rgba(249, 251, 252, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(46, 74, 112, 0.08);
+      position: sticky; top: 0; z-index: 50;
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; padding: 0; width: min(100% - 1.5rem, 1280px); margin-inline: auto;
+      min-height: 68px;
+    }
+    .brand { display: flex; align-items: center; flex-shrink: 0; padding: 0.55rem 0; }
+    .brand img { height: 48px; width: auto; }
+    .header-actions {
+      display: flex; align-items: center; gap: 0.65rem; flex-shrink: 0;
+      margin-left: auto; padding: 0.55rem 0;
+    }
+    .nav {
+      display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;
+      justify-content: center; flex: 1;
+    }
+    .nav > a,
+    .nav-item > .nav-trigger {
+      font-family: var(--wide); font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--navy);
+      background: none; border: 0; padding: 1.1rem 0; cursor: pointer;
+    }
+    .nav > a:hover,
+    .nav-item > .nav-trigger:hover,
+    .nav > a.is-active { color: var(--teal); }
+    .nav-item { position: relative; display: flex; align-items: center; align-self: stretch; height: 100%; }
+    .nav-trigger { display: inline-flex; align-items: center; gap: 0.35rem; height: 100%; }
+    .nav-trigger::after {
+      content: ""; width: 0; height: 0;
+      border-left: 4px solid transparent; border-right: 4px solid transparent;
+      border-top: 5px solid currentColor; opacity: 0.7;
+    }
+    .submenu {
+      visibility: hidden; opacity: 0; pointer-events: none;
+      position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+      min-width: 220px; z-index: 60; transition: opacity 0.15s, visibility 0.15s;
+    }
+    .submenu::before { content: ""; display: block; height: 10px; }
+    .submenu-inner {
+      background: #fff; border: 1px solid rgba(46,74,112,0.12);
+      box-shadow: 0 12px 28px rgba(46,74,112,0.12); padding: 0.45rem 0;
+    }
+    .submenu a {
+      display: block; padding: 0.7rem 1.15rem; font-family: var(--sans);
+      font-size: 0.82rem; color: var(--navy); white-space: nowrap;
+    }
+    .submenu a:hover { background: rgba(35,176,185,0.1); color: var(--teal); }
+    .nav-item:hover .submenu,
+    .nav-item:focus-within .submenu,
+    .nav-item.open .submenu { visibility: visible; opacity: 1; pointer-events: auto; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: var(--wide); font-weight: 500; letter-spacing: 0.16em;
+      text-transform: uppercase; font-size: 0.8rem; padding: 0.95rem 1.65rem;
+      border: 0; cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+    .btn:hover, .btn:focus-visible { opacity: 0.8; }
+    .btn-navy { background: var(--navy); color: #fff; }
+    .btn-ember { background: var(--ember); color: #fff; }
+    .btn-white { background: #fff; color: var(--navy); }
+    .btn-outline {
+      background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.7);
+    }
+    .menu-toggle {
+      display: none; background: none; border: 1px solid rgba(46,74,112,0.25);
+      padding: 0.45rem 0.7rem; font-family: var(--wide); letter-spacing: 0.12em;
+      text-transform: uppercase; font-size: 0.7rem; color: var(--navy); cursor: pointer;
+    }
+
+    .eyebrow {
+      font-family: var(--wide); font-size: 0.72rem; letter-spacing: 0.28em;
+      text-transform: uppercase; margin: 0 0 1rem; font-weight: 500;
+    }
+    .script { font-family: var(--script); font-size: 1.2em; color: var(--ember); }
+
+    /* Hero */
+    .safari-hero {
+      position: relative;
+      min-height: min(78vh, 720px);
+      display: grid; place-items: center;
+      text-align: center; color: #fff;
+      background:
+        linear-gradient(rgba(46,74,112,0.62), rgba(46,74,112,0.72)),
+        url("assets/safari/hero-wildebeest.jpg") center / cover no-repeat;
+      padding: clamp(3rem, 8vw, 5.5rem) 1.25rem;
+    }
+    .safari-hero h1 {
+      font-family: var(--classico); font-weight: 400;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      line-height: 1.15; margin: 0 0 0.75rem; letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .safari-hero .lede {
+      font-family: var(--classico); font-style: italic; font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+      color: var(--ember); margin: 0 0 1.1rem;
+    }
+    .safari-hero p {
+      max-width: 42ch; margin: 0 auto 1.6rem;
+      color: rgba(255,255,255,0.92); font-size: 0.98rem;
+    }
+
+    /* Pillars */
+    .pillars {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      background: var(--foam); background-image: var(--linen); background-size: var(--linen-size);
+      border-bottom: 1px solid rgba(46,74,112,0.1);
+    }
+    .pillar {
+      text-align: center; padding: clamp(1.8rem, 4vw, 2.6rem) 1rem;
+      border-right: 1px solid rgba(46,74,112,0.1);
+    }
+    .pillar:last-child { border-right: 0; }
+    .pillar-icon {
+      width: 42px; height: 42px; margin: 0 auto 0.85rem;
+      border: 1.5px solid var(--teal); border-radius: 50%;
+      display: grid; place-items: center; color: var(--teal); font-size: 1rem;
+    }
+    .pillar h3 {
+      font-family: var(--wide); font-size: 0.78rem; letter-spacing: 0.2em;
+      text-transform: uppercase; margin: 0 0 0.4rem; font-weight: 500;
+    }
+    .pillar p { margin: 0; font-size: 0.88rem; color: rgba(46,74,112,0.85); max-width: 22ch; margin-inline: auto; }
+
+    /* Experience cards */
+    .exp-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+    }
+    .exp-card {
+      position: relative; min-height: 360px;
+      background-size: cover; background-position: center;
+      color: #fff; display: flex; align-items: flex-end;
+      padding: 1.8rem 1.4rem;
+    }
+    .exp-card::before {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(transparent 20%, rgba(46,74,112,0.88));
+    }
+    .exp-card > * { position: relative; z-index: 1; }
+    .exp-card h3 {
+      font-family: var(--wide); letter-spacing: 0.22em; text-transform: uppercase;
+      font-size: 0.85rem; margin: 0 0 0.55rem; font-weight: 500;
+    }
+    .exp-card p { margin: 0 0 0.85rem; font-size: 0.9rem; line-height: 1.6; max-width: 32ch; }
+    .exp-card .more {
+      font-family: var(--wide); font-size: 0.72rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--ember);
+      border-bottom: 1px solid var(--ember); padding-bottom: 2px;
+    }
+
+    /* Host */
+    .host {
+      display: grid; grid-template-columns: 1fr 1fr;
+      background: var(--foam); background-image: var(--linen); background-size: var(--linen-size);
+    }
+    .host-copy {
+      padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.4rem, 4vw, 3.5rem);
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .host-copy h2 {
+      font-family: var(--classico); font-weight: 400;
+      font-size: clamp(1.8rem, 3vw, 2.6rem); margin: 0 0 1rem; line-height: 1.25;
+    }
+    .host-copy p { margin: 0 0 1rem; max-width: 42ch; }
+    .host-sign {
+      font-family: var(--script); font-size: 2rem; color: var(--teal); margin-top: 0.5rem;
+    }
+    .host-photo {
+      min-height: 420px;
+      background:
+        linear-gradient(rgba(46,74,112,0.15), rgba(46,74,112,0.35)),
+        url("assets/safari/lions.jpg") center / cover no-repeat;
+      position: relative;
+    }
+    .host-photo .portrait {
+      position: absolute; right: 8%; bottom: 8%;
+      width: min(42%, 220px);
+      border: 3px solid var(--ember);
+      background: var(--navy);
+    }
+
+    /* Pendo experience */
+    .pendo-exp {
+      display: grid; grid-template-columns: 1.05fr 0.95fr;
+      background: var(--navy); color: #fff;
+    }
+    .pendo-exp-photo {
+      min-height: 380px;
+      background: url("assets/hero-kids.jpg") center / cover no-repeat;
+    }
+    .pendo-exp-copy {
+      padding: clamp(2.5rem, 5vw, 4rem);
+      display: flex; flex-direction: column; justify-content: center;
+      background-image: var(--linen-slate); background-size: var(--linen-size);
+      background-blend-mode: multiply;
+    }
+    .pendo-exp-copy h2 {
+      font-family: var(--classico); font-weight: 400;
+      font-size: clamp(1.7rem, 2.8vw, 2.4rem); margin: 0 0 1rem; line-height: 1.25;
+    }
+    .pendo-exp-copy p { margin: 0 0 0.9rem; color: rgba(255,255,255,0.9); max-width: 40ch; }
+
+    /* Included — modern list + strip gallery */
+    .included {
+      padding: clamp(3.5rem, 8vw, 6rem) 0 0;
+      background: #fff;
+    }
+    .included-head {
+      text-align: center;
+      margin-bottom: clamp(2rem, 4vw, 3rem);
+      padding: 0 1.25rem;
+    }
+    .included-head .eyebrow { color: var(--teal); }
+    .included-head h2 {
+      font-family: var(--classico); font-weight: 400;
+      font-size: clamp(1.9rem, 3.2vw, 2.75rem);
+      margin: 0 0 0.65rem; line-height: 1.2;
+    }
+    .included-head p {
+      margin: 0 auto; max-width: 40ch;
+      color: rgba(46,74,112,0.75); font-size: 0.98rem;
+    }
+    .inc-list {
+      width: min(100% - 2.5rem, 900px);
+      margin: 0 auto 3.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid rgba(46,74,112,0.12);
+    }
+    .inc-row {
+      display: grid;
+      grid-template-columns: 3.25rem 1fr;
+      gap: 1rem;
+      align-items: start;
+      padding: 1.35rem 1.25rem 1.35rem 0.25rem;
+      border-bottom: 1px solid rgba(46,74,112,0.12);
+      transition: background 0.25s ease;
+    }
+    .inc-row:nth-child(odd) { border-right: 1px solid rgba(46,74,112,0.12); padding-right: 1.5rem; }
+    .inc-row:nth-child(even) { padding-left: 1.5rem; }
+    .inc-row:hover { background: rgba(35, 176, 185, 0.06); }
+    .inc-row .num {
+      font-family: var(--classico);
+      font-size: 1.55rem;
+      line-height: 1;
+      color: var(--teal);
+      font-weight: 400;
+      padding-top: 0.15rem;
+    }
+    .inc-row h3 {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 1rem;
+      margin: 0;
+      line-height: 1.45;
+      letter-spacing: 0.01em;
+      color: var(--navy);
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.2fr 1fr;
+      gap: 0;
+      min-height: 220px;
+    }
+    .gallery span {
+      min-height: 220px;
+      background-size: cover;
+      background-position: center;
+      display: block;
+      filter: saturate(0.92);
+      transition: filter 0.35s ease, transform 0.45s ease;
+    }
+    .gallery span:hover {
+      filter: saturate(1.05);
+      transform: scale(1.02);
+      z-index: 1;
+    }
+
+    /* Bid strip */
+    .bid-strip {
+      background: var(--navy); color: #fff;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      text-align: center;
+    }
+    .bid-cell {
+      padding: clamp(1.6rem, 4vw, 2.4rem) 1rem;
+      border-right: 1px solid rgba(255,255,255,0.15);
+    }
+    .bid-cell:last-child { border-right: 0; }
+    .bid-cell .label {
+      font-family: var(--wide); font-size: 0.68rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--sky); margin-bottom: 0.45rem;
+    }
+    .bid-cell .value {
+      font-family: var(--classico); font-size: clamp(1.4rem, 2.5vw, 1.9rem); color: var(--ember);
+    }
+
+    .cta-band {
+      text-align: center;
+      padding: clamp(2.5rem, 5vw, 3.5rem) 1.25rem;
+      background: var(--teal); color: #fff;
+    }
+    .cta-band h2 {
+      font-family: var(--classico); font-weight: 400;
+      font-size: clamp(1.5rem, 2.6vw, 2.1rem); margin: 0 0 1.2rem;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--navy); color: #fff;
+      padding: clamp(2.5rem, 5vw, 3.5rem) 0 2rem;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1fr 1.1fr 1fr; gap: 2rem;
+      padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+    .footer-grid h4 { font-family: var(--wide); font-weight: 500; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; margin: 0 0 1rem; }
+    .footer-links {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem 1rem;
+      font-size: 0.82rem;
+    }
+    .footer-links a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255,255,255,0.35); }
+    .footer-mid { text-align: center; }
+    .footer-logo { height: 56px; width: auto; margin: 0 auto 1.1rem; filter: brightness(0) invert(1); }
+    .footer-mid p { font-size: 0.88rem; max-width: 36ch; margin: 0 auto 1rem; color: rgba(255,255,255,0.9); }
+    .footer-mid .place {
+      font-family: var(--wide); letter-spacing: 0.16em; text-transform: uppercase;
+      font-size: 0.72rem; margin-bottom: 1rem;
+    }
+    .socials { display: flex; gap: 0.75rem; justify-content: center; margin-bottom: 1.2rem; }
+    .socials a {
+      width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.35);
+      display: grid; place-items: center; color: #fff;
+    }
+    .socials a:hover { background: rgba(255,255,255,0.12); opacity: 0.8; }
+    .socials svg { width: 16px; height: 16px; fill: currentColor; }
+    .footer-contact p { margin: 0 0 0.45rem; font-size: 0.88rem; }
+    .footer-contact a { text-decoration: underline; text-underline-offset: 3px; }
+    .footer-bottom {
+      display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+      padding-top: 1.4rem; font-size: 0.75rem; letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.7); text-transform: uppercase;
+    }
+
+    @media (max-width: 980px) {
+      .menu-toggle { display: inline-flex; }
+      .header-inner { position: relative; flex-wrap: wrap; }
+      .header-actions { margin-left: 0; }
+      .nav {
+        display: none; width: 100%; order: 3; flex: none; flex-direction: column;
+        align-items: stretch; gap: 0; padding: 0.35rem 0 0.85rem;
+        border-top: 1px solid rgba(46,74,112,0.1);
+      }
+      .nav.open { display: flex; }
+      .nav > a, .nav-item > .nav-trigger {
+        padding: 0.85rem 0.15rem; text-align: left; width: 100%; justify-content: space-between;
+      }
+      .nav-item { display: block; height: auto; }
+      .submenu {
+        position: static; transform: none; visibility: hidden; opacity: 0;
+        pointer-events: none; width: 100%; max-height: 0; overflow: hidden;
+      }
+      .submenu::before { display: none; }
+      .submenu-inner { box-shadow: none; border: 0; background: rgba(35,176,185,0.06); }
+      .nav-item.open .submenu {
+        visibility: visible; opacity: 1; pointer-events: auto; max-height: 200px; margin-bottom: 0.35rem;
+      }
+      .pillars, .exp-grid, .host, .pendo-exp, .bid-strip, .footer-grid { grid-template-columns: 1fr; }
+      .pillar { border-right: 0; border-bottom: 1px solid rgba(46,74,112,0.1); }
+      .inc-list { grid-template-columns: 1fr; width: min(100% - 1.5rem, 900px); }
+      .inc-row:nth-child(odd) { border-right: 0; padding-right: 0.25rem; }
+      .inc-row:nth-child(even) { padding-left: 0.25rem; }
+      .gallery { grid-template-columns: 1fr 1fr; }
+      .gallery span:last-child { display: none; }
+      .host-photo .portrait { width: min(48%, 180px); }
+    }
+    @media (max-width: 640px) {
+      .gallery { grid-template-columns: 1fr 1fr; min-height: 0; }
+      .gallery span { min-height: 140px; }
+      .brand img { height: 40px; }
+      .header-actions .btn { padding: 0.7rem 0.95rem; font-size: 0.72rem; }
+      .footer-links { grid-template-columns: 1fr; }
+      .footer-bottom { justify-content: center; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="announce" id="announce">
+    <span>Safari of a Lifetime — exclusive auction experience hosted by Ciro Muiruri. <a href="#bid">See bidding details</a>.</span>
+    <button class="x" type="button" aria-label="Close" onclick="document.getElementById('announce').style.display='none'">×</button>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/pendo-logo.png" alt="Pendo International Projects" />
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html#about">About Us</a>
+        <a href="index.html#school">Our School</a>
+        <div class="nav-item" id="programsItem">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="programsMenu" aria-haspopup="true">Programs</button>
+          <div class="submenu" id="programsMenu">
+            <div class="submenu-inner" role="menu">
+              <a href="index.html#hub" role="menuitem">Development Hub</a>
+              <a href="index.html#sisters" role="menuitem">Pendo Sisters</a>
+            </div>
+          </div>
+        </div>
+        <a href="index.html#partner">Partner</a>
+        <a class="is-active" href="safari.html">Safari</a>
+        <a href="index.html#impact">Impact</a>
+        <a href="index.html#connect">Connect</a>
+      </nav>
+      <div class="header-actions">
+        <button class="menu-toggle" type="button" id="menuToggle" aria-expanded="false" aria-controls="nav">Menu</button>
+        <a class="btn btn-navy" href="https://www.pendointl.org/">Donate</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="safari-hero">
+    <div>
+      <p class="eyebrow" style="color:rgba(255,255,255,0.8)">Exclusive · Kenya · For two</p>
+      <h1>The Safari of a Lifetime</h1>
+      <p class="lede">An exclusive luxury Kenyan safari for two.</p>
+      <p>Personally hosted by Ciro Muiruri, Founder of Canadian charity Pendo International Projects—wildlife, culture, and a private look at the impact you help make possible.</p>
+      <a class="btn btn-ember" href="#bid">Place Your Bid →</a>
+    </div>
+  </section>
+
+  <section class="pillars" aria-label="Highlights">
+    <div class="pillar">
+      <div class="pillar-icon">◆</div>
+      <h3>Exclusive</h3>
+      <p>A private luxury itinerary designed for two guests only.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">♥</div>
+      <h3>Authentic</h3>
+      <p>Maasai culture, Mara wildlife, and a host who knows Kenya deeply.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">◎</div>
+      <h3>Meaningful</h3>
+      <p>Your journey supports early childhood education through Pendo.</p>
+    </div>
+  </section>
+
+  <section class="exp-grid" id="experience">
+    <article class="exp-card" style="background-image:url('assets/safari/lions.jpg')">
+      <div>
+        <h3>Wildlife</h3>
+        <p>Private game drives across the Maasai Mara—lions, elephants, and the great migration landscapes.</p>
+        <a class="more" href="#included">Learn more →</a>
+      </div>
+    </article>
+    <article class="exp-card" style="background-image:url('assets/safari/culture2.jpg')">
+      <div>
+        <h3>Culture</h3>
+        <p>Visit a Maasai homestead and experience welcome, story, and community hospitality firsthand.</p>
+        <a class="more" href="#included">Learn more →</a>
+      </div>
+    </article>
+    <article class="exp-card" style="background-image:url('assets/safari/lodge.jpg')">
+      <div>
+        <h3>Luxury</h3>
+        <p>Stay at Sarova Mara Game Camp—comfort after the dust of the day, under wide Kenyan skies.</p>
+        <a class="more" href="#included">Learn more →</a>
+      </div>
+    </article>
+  </section>
+
+  <section class="host" id="host">
+    <div class="host-copy">
+      <p class="eyebrow">Meet your host</p>
+      <h2>Personally hosted by <span class="script">Ciro Muiruri</span></h2>
+      <p>Ciro is Founder &amp; Director of Pendo International Projects. This safari is more than a holiday—it is an invitation into the places, people, and purpose behind the work.</p>
+      <p>Travel with a guide who bridges Canada and Kenya, charity and hospitality, and who will walk you through both the Mara and the mission.</p>
+      <div class="host-sign">Ciro Muiruri</div>
+    </div>
+    <div class="host-photo" role="img" aria-label="Safari wildlife experience">
+      <img class="portrait" src="assets/safari/ciro-host.png" alt="Ciro Muiruri" />
+    </div>
+  </section>
+
+  <section class="pendo-exp" id="hub-visit">
+    <div class="pendo-exp-photo" role="img" aria-label="Pendo Child and Family Development Hub"></div>
+    <div class="pendo-exp-copy">
+      <p class="eyebrow" style="color:rgba(255,255,255,0.75)">An exclusive Pendo experience</p>
+      <h2>Private visit to the Child &amp; Family Development Hub</h2>
+      <p>See Pendo’s work firsthand—classrooms, community, and the new hub that expands what families can access.</p>
+      <p>It is the heart of the package: luxury travel with a clear line of sight to the children and educators your support sustains.</p>
+      <a class="btn btn-white" href="index.html#hub" style="align-self:flex-start;margin-top:0.6rem">About the Hub</a>
+    </div>
+  </section>
+
+  <section class="included" id="included">
+    <div class="included-head">
+      <p class="eyebrow">The package</p>
+      <h2>What’s included</h2>
+      <p>Everything arranged for two guests—from Mara mornings to a private day with Pendo.</p>
+    </div>
+    <div class="inc-list">
+      <article class="inc-row"><span class="num">01</span><h3>3-day, 2-night luxury safari for two</h3></article>
+      <article class="inc-row"><span class="num">02</span><h3>Daily private game drives</h3></article>
+      <article class="inc-row"><span class="num">03</span><h3>Visit to a Maasai homestead</h3></article>
+      <article class="inc-row"><span class="num">04</span><h3>Private visit to Pendo Hub</h3></article>
+      <article class="inc-row"><span class="num">05</span><h3>Personally hosted by Ciro Muiruri</h3></article>
+      <article class="inc-row"><span class="num">06</span><h3>Private transport &amp; driver-guide</h3></article>
+      <article class="inc-row"><span class="num">07</span><h3>All meals throughout your stay</h3></article>
+      <article class="inc-row"><span class="num">08</span><h3>Sarova Mara Game Camp stay</h3></article>
+    </div>
+    <div class="gallery" aria-label="Experience gallery">
+      <span style="background-image:url('assets/safari/suite.jpg')"></span>
+      <span style="background-image:url('assets/safari/pool.jpg')"></span>
+      <span style="background-image:url('assets/safari/lodge.jpg')"></span>
+      <span style="background-image:url('assets/safari/sunset.jpg')"></span>
+      <span style="background-image:url('assets/safari/jeep.jpg')"></span>
+    </div>
+  </section>
+
+  <section class="bid-strip" id="bid">
+    <div class="bid-cell">
+      <div class="label">Estimated fair market value</div>
+      <div class="value">CAD $5,900</div>
+    </div>
+    <div class="bid-cell">
+      <div class="label">Opening bid</div>
+      <div class="value">CAD $2,500</div>
+    </div>
+    <div class="bid-cell">
+      <div class="label">Minimum bid increase</div>
+      <div class="value">CAD $100</div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <h2>Ready to bid on the safari of a lifetime?</h2>
+    <a class="btn btn-white" href="mailto:ciro@pendointl.org?subject=Safari%20of%20a%20Lifetime%20-%20Bid">Place Your Bid →</a>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="safari.html">Safari</a>
+          <a href="index.html#about">About Us</a>
+          <a href="index.html#hub">Development Hub</a>
+          <a href="index.html#school">Our School</a>
+          <a href="index.html#sisters">Pendo Sisters</a>
+          <a href="index.html#partner">Partner</a>
+          <a href="https://www.pendointl.org/">Donate</a>
+        </div>
+      </div>
+      <div class="footer-mid">
+        <img class="footer-logo" src="assets/pendo-logo.png" alt="Pendo International Projects" />
+        <p>A Canadian registered charity changing lives through education, health, and community development.</p>
+        <div class="place">Kenya · Canada</div>
+        <div class="socials">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/pendo-international-projects/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+          </a>
+        </div>
+        <a class="btn btn-white" href="https://www.pendointl.org/">Donate</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <p><strong>Pendo International Projects</strong></p>
+          <p><a href="https://www.pendointl.org/">www.pendointl.org</a></p>
+          <p><a href="mailto:ciro@pendointl.org">ciro@pendointl.org</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <span>© 2026 Pendo International Projects</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById('menuToggle');
+      var nav = document.getElementById('nav');
+      var programsItem = document.getElementById('programsItem');
+      var programsTrigger = programsItem.querySelector('.nav-trigger');
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (!open) {
+          programsItem.classList.remove('open');
+          programsTrigger.setAttribute('aria-expanded', 'false');
+        }
+      });
+      programsTrigger.addEventListener('click', function (e) {
+        if (window.matchMedia('(max-width: 980px)').matches) {
+          e.preventDefault();
+          var open = programsItem.classList.toggle('open');
+          programsTrigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+      });
+      nav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (window.matchMedia('(max-width: 980px)').matches) {
+            nav.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+            programsItem.classList.remove('open');
+            programsTrigger.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

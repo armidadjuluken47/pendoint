@@ -1,0 +1,137 @@
+/* Pendo International Projects — Squarespace Custom CSS
+   Paste: Design → Custom CSS
+   Colors: forest green #174C3C, ivory #F8F6F0, sage #DCE8DC, terracotta #C87555, charcoal #242A27
+*/
+
+/* --- Brand tokens --- */
+:root {
+  --pendo-green: #174C3C;
+  --pendo-green-dark: #0f3328;
+  --pendo-ivory: #F8F6F0;
+  --pendo-sage: #DCE8DC;
+  --pendo-terra: #C87555;
+  --pendo-charcoal: #242A27;
+}
+
+/* --- Typography (pair with code-injection fonts or template fonts) --- */
+h1, h2, h3,
+.header-display-name,
+.sqs-block-html h1,
+.sqs-block-html h2,
+.sqs-block-html h3 {
+  color: var(--pendo-green);
+}
+
+body,
+.sqs-block-html,
+.sqs-block-content p {
+  color: var(--pendo-charcoal);
+}
+
+/* --- Primary buttons (terracotta accent) --- */
+.sqs-block-button-element--medium .sqs-block-button-content,
+.sqs-block-button-element--large .sqs-block-button-content,
+.form-submit-button {
+  background-color: var(--pendo-terra) !important;
+  border-color: var(--pendo-terra) !important;
+  color: #fff !important;
+  border-radius: 4px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.sqs-block-button-element--medium .sqs-block-button-content:hover,
+.sqs-block-button-element--large .sqs-block-button-content:hover {
+  background-color: #b5684a !important;
+  border-color: #b5684a !important;
+}
+
+/* Secondary-style: outline green — add block class "pendo-btn-secondary" in Squarespace if available,
+   or use second button style in editor */
+.sqs-block-button-container.pendo-btn-secondary .sqs-block-button-content {
+  background-color: transparent !important;
+  color: var(--pendo-green) !important;
+  border: 2px solid var(--pendo-green) !important;
+}
+
+/* --- Section helpers (add same class name in Section → Settings → Advanced → Section CSS Class) --- */
+.pendo-band-ivory {
+  background-color: var(--pendo-ivory) !important;
+}
+
+.pendo-band-sage {
+  background-color: var(--pendo-sage) !important;
+}
+
+.pendo-band-green {
+  background-color: var(--pendo-green) !important;
+}
+
+.pendo-band-green h1,
+.pendo-band-green h2,
+.pendo-band-green h3,
+.pendo-band-green p,
+.pendo-band-green .sqs-block-html {
+  color: var(--pendo-ivory) !important;
+}
+
+.pendo-band-green .sqs-block-button-element .sqs-block-button-content {
+  background-color: var(--pendo-terra) !important;
+  border-color: var(--pendo-terra) !important;
+  color: #fff !important;
+}
+
+/* Pathway cards — 2-column section */
+.pendo-pathways .sqs-block-content {
+  padding: 1.25rem;
+}
+
+/* Pull quote / identity statement — wrap text block in section with class pendo-quote */
+.pendo-quote {
+  border-left: 4px solid var(--pendo-terra);
+  background-color: var(--pendo-ivory);
+  padding: 1.5rem 1.75rem !important;
+}
+
+.pendo-quote p {
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--pendo-green);
+  margin: 0;
+}
+
+/* Numbered pillar labels (add <p class="pendo-num">01</p> in HTML block or prefix in heading) */
+.pendo-num {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--pendo-terra);
+  margin-bottom: 0.35rem;
+}
+
+/* Header — subtle green bar feel (template-dependent) */
+.header-nav-item a {
+  font-weight: 500;
+}
+
+/* Footer */
+footer.sections footer-section,
+#footerSections {
+  background-color: var(--pendo-green-dark);
+}
+
+/* Blog / Stories — titles */
+.blog-item-title a {
+  color: var(--pendo-green);
+}
+
+/* Forms */
+.field-element:focus {
+  border-color: var(--pendo-green) !important;
+  box-shadow: 0 0 0 1px var(--pendo-green);
+}
+
+/* Announcement bar — if template supports */
+.sqs-announcement-bar-text {
+  font-weight: 600;
+}

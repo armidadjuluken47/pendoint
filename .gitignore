@@ -1,0 +1,36 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+.cursor/
+
+# Secrets / env
+.env
+.env.*
+!.env.example
+credentials*.json
+*secret*
+
+# Sensitive financial / private client docs
+*Invoice*
+*invoice*
+*Receipt*
+*receipt*
+*PAYMENT*
+*Payment*
+**/Invoice_*.pdf
+**/Receipt_*.pdf
+PAYMENT_AND_START.md
+
+# Python / tooling
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Temp / debug exports
+**/_debug-*.png
+/tmp/
+*.log

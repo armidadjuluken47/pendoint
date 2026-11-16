@@ -1,0 +1,8 @@
+Icons via https://api.iconify.design/ (recolored for signature themes)
+
+- Mail: Lucide — MIT — https://lucide.dev/icons/mail
+- Globe: Lucide — MIT — https://lucide.dev/icons/globe
+- LinkedIn: Simple Icons — CC0 — https://simpleicons.org/icons/linkedin
+
+Gold-on-black: icon-email.png, icon-web.png, icon-linkedin.png (#d2b36c)
+Kutoa teal-on-transparent: icon-email-kutoa.png, icon-web-kutoa.png, icon-linkedin-kutoa.png (#23b0b9)
