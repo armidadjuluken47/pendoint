@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Pendo International Projects</title>
+  <meta name="description" content="Contact Pendo International Projects — Kenya school, Canada charity, and Pendo Sisters. Send a message or email Ciro Muiruri." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: "Classico";
+      src:
+        url("assets/fonts/classico-bold.woff2") format("woff2"),
+        url("assets/fonts/classico-bold.woff") format("woff");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    :root {
+      --navy: hsl(214.55, 41.77%, 30.98%);
+      --teal: hsl(183.6, 68.18%, 43.14%);
+      --sky: hsl(194.46, 65.88%, 66.67%);
+      --ember: #ce8b40;
+      --magenta: #a3237b;
+      --foam: hsl(200, 33.33%, 98.24%);
+      --white: #ffffff;
+      --linen: url("assets/linen-light.jpg");
+      --linen-slate: url("assets/linen-slate.jpg");
+      --linen-size: 420px;
+      --max: 1180px;
+      --classico: "Classico", "Optima", "Segoe UI", Candara, sans-serif;
+      --serif: var(--classico);
+      --sans: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+      --wide: "Oswald", "Montserrat", sans-serif;
+      --script: "Great Vibes", cursive;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: var(--sans); color: var(--navy);
+      background: var(--foam); line-height: 1.65;
+      -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, h4 { font-family: var(--classico); font-weight: 400; line-height: 1.2; margin: 0; }
+    .wrap { width: min(100% - 2.5rem, var(--max)); margin-inline: auto; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: var(--wide); font-weight: 500; letter-spacing: 0.16em;
+      text-transform: uppercase; font-size: 0.8rem; padding: 0.95rem 1.65rem;
+      border: 0; cursor: pointer; transition: opacity 0.2s ease;
+    }
+    .btn:hover, .btn:focus-visible { opacity: 0.8; }
+    .btn-navy { background: var(--navy); color: #fff; }
+    .btn-ember { background: var(--ember); color: #fff; border: 1px solid var(--ember); }
+    .btn-white { background: #fff; color: var(--navy); }
+    .btn-outline-ember {
+      background: transparent; color: var(--navy); border: 1px solid var(--ember);
+    }
+
+    .section-title { text-align: center; font-size: clamp(1.75rem, 3vw, 2.35rem); color: var(--navy); margin: 0 0 0.55rem; }
+    .section-rule { width: 48px; height: 3px; background: var(--ember); margin: 0 auto 2.25rem; border: 0; }
+    .eyebrow {
+      font-family: var(--wide); font-size: 0.72rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--teal); margin: 0 0 0.75rem; font-weight: 500;
+    }
+
+    .announce {
+      background: var(--navy); color: #dce5ef; text-align: center;
+      font-size: 0.78rem; letter-spacing: 0.04em;
+      padding: 0.65rem 2.5rem 0.65rem 1.25rem; position: relative;
+    }
+    .announce a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+    .announce .x {
+      position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+      background: none; border: 0; color: #fff; cursor: pointer; font-size: 1.1rem; line-height: 1;
+    }
+
+    .site-header {
+      background: rgba(249, 251, 252, 0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(46, 74, 112, 0.08);
+      position: sticky; top: 0; z-index: 50;
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; padding: 0; width: min(100% - 1.5rem, 1280px); margin-inline: auto; min-height: 68px;
+    }
+    .brand { display: flex; align-items: center; flex-shrink: 0; padding: 0.55rem 0; }
+    .brand img { height: 48px; width: auto; }
+    .header-actions {
+      display: flex; align-items: center; gap: 0.65rem; flex-shrink: 0;
+      margin-left: auto; padding: 0.55rem 0;
+    }
+    .nav {
+      display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;
+      justify-content: center; flex: 1;
+    }
+    .nav > a, .nav-item > .nav-trigger {
+      font-family: var(--wide); font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--navy);
+      background: none; border: 0; padding: 1.1rem 0; cursor: pointer; position: relative;
+    }
+    .nav > a:hover, .nav-item > .nav-trigger:hover { color: var(--teal); }
+    .nav > a.is-active::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: 1.05rem;
+      height: 2px; background: var(--ember);
+    }
+    .nav-item { position: relative; display: flex; align-items: center; height: 100%; align-self: stretch; }
+    .nav-trigger { display: inline-flex; align-items: center; gap: 0.35rem; height: 100%; }
+    .nav-trigger::after {
+      content: ""; width: 0; height: 0;
+      border-left: 4px solid transparent; border-right: 4px solid transparent;
+      border-top: 5px solid currentColor; opacity: 0.7;
+    }
+    .submenu {
+      visibility: hidden; opacity: 0; pointer-events: none;
+      position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+      min-width: 280px; z-index: 60; transition: opacity 0.15s ease, visibility 0.15s ease;
+    }
+    .submenu::before { content: ""; display: block; height: 10px; }
+    .submenu-inner {
+      background: #fff; border: 1px solid rgba(46, 74, 112, 0.12);
+      box-shadow: 0 12px 28px rgba(46, 74, 112, 0.12); padding: 0.45rem 0;
+    }
+    .submenu a {
+      display: block; padding: 0.7rem 1.15rem; font-family: var(--sans);
+      font-size: 0.82rem; color: var(--navy);
+    }
+    .submenu a:hover { background: rgba(35, 166, 179, 0.1); color: var(--teal); }
+    .nav-item:hover .submenu,
+    .nav-item:focus-within .submenu,
+    .nav-item.open .submenu { visibility: visible; opacity: 1; pointer-events: auto; }
+    .menu-toggle {
+      display: none; background: none; border: 1px solid rgba(46,74,112,0.25);
+      padding: 0.45rem 0.7rem; font-family: var(--wide); letter-spacing: 0.12em;
+      text-transform: uppercase; font-size: 0.7rem; color: var(--navy); cursor: pointer;
+    }
+
+    .contact-hero {
+      position: relative; color: #fff; text-align: center;
+      padding: clamp(3.5rem, 8vw, 5.5rem) 1.25rem;
+      background:
+        linear-gradient(rgba(46,74,112,0.8), rgba(46,74,112,0.84)),
+        url("assets/campus.jpg") center / cover no-repeat;
+    }
+    .contact-hero .eyebrow { color: rgba(255,255,255,0.85); }
+    .contact-hero h1 { font-size: clamp(2.2rem, 4.5vw, 3.3rem); margin: 0 0 0.75rem; }
+    .contact-hero p {
+      margin: 0 auto; max-width: 44ch; color: rgba(255,255,255,0.92); font-size: 1rem;
+    }
+
+    .contact-main {
+      padding: clamp(3rem, 7vw, 4.75rem) 0;
+      background: var(--foam);
+      background-image: var(--linen);
+      background-size: var(--linen-size);
+      background-blend-mode: multiply;
+    }
+    .contact-grid {
+      display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 2rem; align-items: start;
+    }
+
+    .detail-stack { display: flex; flex-direction: column; gap: 1rem; }
+    .detail-card {
+      background: rgba(255,255,255,0.95);
+      border: 1px solid rgba(46,74,112,0.1);
+      padding: 1.45rem 1.35rem;
+    }
+    .detail-card .tag {
+      font-family: var(--wide); font-size: 0.68rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--ember); margin-bottom: 0.4rem;
+    }
+    .detail-card h2 { font-size: 1.35rem; margin-bottom: 0.65rem; }
+    .detail-card p {
+      margin: 0 0 0.55rem; font-size: 0.92rem; color: rgba(46,74,112,0.88); line-height: 1.55;
+    }
+    .detail-card p:last-child { margin-bottom: 0; }
+    .detail-card a {
+      color: var(--teal); text-decoration: underline; text-underline-offset: 3px;
+    }
+    .detail-card .flag {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      margin-bottom: 0.55rem; font-size: 0.88rem; color: var(--navy);
+    }
+    .detail-card .flag img { width: 22px; height: 15px; }
+
+    .social-row {
+      display: flex; gap: 0.65rem; margin-top: 0.85rem; flex-wrap: wrap;
+    }
+    .social-row a {
+      width: 38px; height: 38px; display: grid; place-items: center;
+      border: 1px solid rgba(46,74,112,0.2); border-radius: 50%;
+      text-decoration: none; color: var(--navy);
+    }
+    .social-row a:hover { border-color: var(--teal); color: var(--teal); }
+    .social-row svg { width: 16px; height: 16px; fill: currentColor; }
+
+    .form-card {
+      background: rgba(255,255,255,0.97);
+      border: 1px solid rgba(46,74,112,0.1);
+      padding: clamp(1.5rem, 3vw, 2rem);
+    }
+    .form-card h2 { font-size: 1.5rem; margin-bottom: 0.35rem; }
+    .form-card .lede {
+      margin: 0 0 1.35rem; font-size: 0.92rem; color: rgba(46,74,112,0.8);
+    }
+    .form-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    .field { display: flex; flex-direction: column; gap: 0.35rem; }
+    .field.full { grid-column: 1 / -1; }
+    .field label {
+      font-family: var(--wide); font-size: 0.7rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--navy); font-weight: 500;
+    }
+    .field input,
+    .field select,
+    .field textarea {
+      font-family: var(--sans); font-size: 0.95rem; color: var(--navy);
+      border: 1px solid rgba(46,74,112,0.22);
+      background: #fff; padding: 0.85rem 0.95rem;
+      border-radius: 0; width: 100%;
+    }
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: 2px solid rgba(35,166,179,0.35); border-color: var(--teal);
+    }
+    .field textarea { min-height: 140px; resize: vertical; }
+    .form-actions {
+      margin-top: 1.15rem; display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center;
+    }
+    .form-note {
+      font-size: 0.8rem; color: rgba(46,74,112,0.7); margin: 0.85rem 0 0; line-height: 1.45;
+    }
+    .form-success {
+      display: none; margin-top: 1rem; padding: 0.95rem 1.1rem;
+      background: rgba(35,166,179,0.12); border: 1px solid rgba(35,166,179,0.35);
+      font-size: 0.9rem; color: var(--navy);
+    }
+    .form-success.show { display: block; }
+
+    .site-footer {
+      background: var(--navy); color: #fff;
+      padding: clamp(2.5rem, 5vw, 3.5rem) 0 0;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 2rem;
+      padding-bottom: 2rem;
+    }
+    .footer-grid h4 {
+      font-family: var(--wide); font-size: 0.75rem; letter-spacing: 0.16em;
+      text-transform: uppercase; margin: 0 0 1rem; color: var(--sky);
+    }
+    .footer-links {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem 1rem;
+    }
+    .footer-links a {
+      font-size: 0.88rem; text-decoration: underline; text-underline-offset: 3px;
+      text-decoration-color: rgba(255,255,255,0.35);
+    }
+    .footer-links a:hover { text-decoration-color: #fff; }
+    .footer-mid { text-align: center; }
+    .footer-logo { height: 56px; width: auto; margin: 0 auto 1rem; filter: brightness(0) invert(1); }
+    .footer-mid p { font-size: 0.88rem; color: rgba(255,255,255,0.8); margin: 0 0 0.75rem; }
+    .footer-mid .place {
+      font-family: var(--wide); font-size: 0.72rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--sky); margin-bottom: 1rem;
+    }
+    .socials { display: flex; gap: 0.75rem; justify-content: center; margin-bottom: 1.25rem; }
+    .socials a {
+      width: 36px; height: 36px; display: grid; place-items: center;
+      border: 1px solid rgba(255,255,255,0.3); border-radius: 50%;
+    }
+    .socials svg { width: 16px; height: 16px; fill: #fff; }
+    .footer-contact p { margin: 0 0 0.45rem; font-size: 0.88rem; }
+    .footer-contact a { text-decoration: underline; text-underline-offset: 3px; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding: 1rem 0; display: flex; justify-content: space-between;
+      font-size: 0.78rem; color: rgba(255,255,255,0.65);
+    }
+
+    @media (max-width: 980px) {
+      .nav {
+        display: none; position: absolute; top: 100%; left: 0; right: 0;
+        background: #fff; flex-direction: column; align-items: stretch;
+        padding: 0.5rem 1.25rem 1rem; border-bottom: 1px solid rgba(46,74,112,0.1);
+        gap: 0;
+      }
+      .nav.open { display: flex; }
+      .nav > a, .nav-item > .nav-trigger {
+        width: 100%; text-align: left; padding: 0.85rem 0.15rem;
+      }
+      .nav > a.is-active::after { bottom: 6px; }
+      .nav-item { display: block; height: auto; }
+      .submenu {
+        position: static; transform: none; visibility: hidden; opacity: 0;
+        min-width: 0; pointer-events: none;
+      }
+      .nav-item.open .submenu {
+        visibility: visible; opacity: 1; pointer-events: auto;
+      }
+      .submenu::before { display: none; }
+      .submenu-inner { box-shadow: none; border: 0; background: transparent; }
+      .menu-toggle { display: inline-flex; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { justify-content: center; text-align: center; }
+    }
+    @media (max-width: 560px) {
+      .footer-links { grid-template-columns: 1fr; }
+    }
+  
+    /* —— Mobile nav fix: compact items, closed dropdowns take no space —— */
+    @media (max-width: 980px) {
+      .site-header { overflow: visible; }
+      .header-inner { position: relative; flex-wrap: wrap; }
+      .menu-toggle { display: inline-flex; }
+      .site-header .nav {
+        display: none;
+        width: 100%;
+        order: 3;
+        flex: none !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        gap: 0 !important;
+        padding: 0.25rem 0 0.65rem !important;
+        margin: 0 !important;
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        background: transparent !important;
+        border-top: 1px solid rgba(46,74,112,0.1);
+        border-bottom: 0 !important;
+        box-shadow: none !important;
+        max-height: none !important;
+      }
+      .site-header .nav.open { display: flex !important; }
+      .site-header .nav > a,
+      .site-header .nav-item > .nav-trigger {
+        width: 100% !important;
+        text-align: left !important;
+        justify-content: space-between !important;
+        padding: 0.7rem 0.15rem !important;
+        height: auto !important;
+        min-height: 0 !important;
+        line-height: 1.3 !important;
+      }
+      .site-header .nav > a.is-active::after { bottom: 0.35rem !important; }
+      .site-header .nav-item {
+        display: block !important;
+        height: auto !important;
+        min-height: 0 !important;
+        align-self: auto !important;
+        flex: none !important;
+      }
+      .site-header .nav-trigger {
+        height: auto !important;
+        min-height: 0 !important;
+        width: 100% !important;
+      }
+      .site-header .nav-item:hover > .submenu,
+      .site-header .nav-item:focus-within > .submenu {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+      .site-header .submenu {
+        display: none !important;
+        position: static !important;
+        transform: none !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-height: none !important;
+        height: auto !important;
+        overflow: hidden !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .site-header .submenu::before {
+        display: none !important;
+        content: none !important;
+        height: 0 !important;
+      }
+      .site-header .submenu-inner {
+        box-shadow: none !important;
+        border: 0 !important;
+        background: rgba(35, 176, 185, 0.06) !important;
+        padding: 0.1rem 0 0.35rem !important;
+      }
+      .site-header .nav-item.open > .submenu {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        margin: 0 0 0.2rem !important;
+      }
+      .site-header .submenu a {
+        padding: 0.5rem 0.85rem !important;
+        white-space: normal !important;
+        line-height: 1.35 !important;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="announce" id="announce">
+    <span>2026: New Pendo Child &amp; Family Development Hub is open — <a href="hub.html">learn more</a>.</span>
+    <button class="x" type="button" aria-label="Close announcement" onclick="document.getElementById('announce').style.display='none'">×</button>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/pendo-logo.png" alt="Pendo International Projects" />
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <div class="nav-item" id="aboutItem">
+          <button class="nav-trigger" type="button" id="aboutTrigger" aria-expanded="false" aria-controls="aboutMenu" aria-haspopup="true">About</button>
+          <div class="submenu" id="aboutMenu">
+            <div class="submenu-inner" role="menu">
+              <a href="about.html" role="menuitem">Our Story</a>
+              <a href="team.html" role="menuitem">Meet the Team</a>
+              <a href="about.html#roadmap" role="menuitem">Road Map</a>
+              <a href="index.html#partners" role="menuitem">Our Partners</a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item" id="programsItem">
+          <button class="nav-trigger" type="button" id="programsTrigger" aria-expanded="false" aria-controls="programsMenu" aria-haspopup="true">Programs</button>
+          <div class="submenu" id="programsMenu">
+            <div class="submenu-inner" role="menu">
+              <a href="hub.html" role="menuitem">Child &amp; Family Development Hub</a>
+              <a href="scholarship.html" role="menuitem">Scholarships</a>
+              <a href="sisters.html" role="menuitem">Pendo Sisters</a>
+              <a href="safari.html" role="menuitem">Safari of a Lifetime</a>
+            </div>
+          </div>
+        </div>
+        <a href="blog.html">Blog</a>
+        <div class="nav-item" id="involvedItem">
+          <button class="nav-trigger" type="button" id="involvedTrigger" aria-expanded="false" aria-controls="involvedMenu" aria-haspopup="true">Get Involved</button>
+          <div class="submenu" id="involvedMenu">
+            <div class="submenu-inner" role="menu">
+              <a href="index.html#involved" role="menuitem">Ways to Help</a>
+              <a href="scholarship.html#give" role="menuitem">Ways to Give</a>
+              <a href="https://www.pendointl.org/causes" role="menuitem">The Need</a>
+              <a href="https://www.pendointl.org/" role="menuitem">Donate</a>
+            </div>
+          </div>
+        </div>
+        <a class="is-active" href="contact.html">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="menu-toggle" type="button" id="menuToggle" aria-expanded="false" aria-controls="nav">Menu</button>
+        <a class="btn btn-navy" href="https://www.pendointl.org/">Donate</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="contact-hero">
+    <p class="eyebrow">Get in touch</p>
+    <h1>Contact us</h1>
+    <p>Questions about the school, donations, partnerships, or Pendo Sisters—we’re here to help.</p>
+  </section>
+
+  <section class="contact-main">
+    <div class="wrap contact-grid">
+      <div class="detail-stack">
+        <article class="detail-card">
+          <div class="tag">General</div>
+          <h2>Pendo International Projects</h2>
+          <p>Canadian registered charity advancing early childhood education in Kenya and maternal wellbeing in Canada.</p>
+          <p><a href="mailto:ciro@pendointl.org">ciro@pendointl.org</a></p>
+          <p><a href="https://www.pendointl.org/" target="_blank" rel="noopener noreferrer">www.pendointl.org</a></p>
+          <div class="social-row">
+            <a href="https://www.instagram.com/pendointl/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/Pendo-International-Projects-2276622799326344/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/pendo-international-projects/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="detail-card">
+          <div class="tag">Canada</div>
+          <div class="flag">
+            <img src="https://flagcdn.com/w40/ca.png" width="22" height="15" alt="" />
+            Charity · Pendo Sisters
+          </div>
+          <h2>Canada office</h2>
+          <p>For donations, partnerships, media, and <a href="sisters.html">Pendo Sisters</a> referrals or support.</p>
+          <p><strong>Ciro Muiruri</strong> — Founder &amp; Executive Director</p>
+          <p><a href="mailto:ciro@pendointl.org">ciro@pendointl.org</a></p>
+        </article>
+
+        <article class="detail-card">
+          <div class="tag">Kenya</div>
+          <div class="flag">
+            <img src="https://flagcdn.com/w40/ke.png" width="22" height="15" alt="" />
+            School · Development Hub
+          </div>
+          <h2>Pendo School Kenya</h2>
+          <p>Child &amp; Family Development Hub — Ruiru. Early childhood education, family support, and community programs.</p>
+          <p>For school inquiries, use the form and select <em>School enrollment</em>, or email <a href="mailto:ciro@pendointl.org">ciro@pendointl.org</a>.</p>
+        </article>
+      </div>
+
+      <div class="form-card">
+        <h2>Send a message</h2>
+        <p class="lede">Tell us how we can help. We’ll get back to you as soon as we can.</p>
+        <form id="contactForm" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+            <div class="field">
+              <label for="interest">I am interested in</label>
+              <select id="interest" name="interest" required>
+                <option value="">Select one…</option>
+                <option>School enrollment</option>
+                <option>Sponsor a seat (scholarship)</option>
+                <option>Fund a classroom</option>
+                <option>Buy a school bus</option>
+                <option>Paint a classroom</option>
+                <option>Pendo Sisters</option>
+                <option>Partnership</option>
+                <option>Safari of a Lifetime</option>
+                <option>Media / press</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required placeholder="How can we help?"></textarea>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-navy" type="submit">Send Message</button>
+            <a class="btn btn-ember" href="mailto:ciro@pendointl.org">Email Directly</a>
+          </div>
+          <p class="form-note">This mockup opens your email client with the message. On Squarespace it will use a Form block to <strong>ciro@pendointl.org</strong>.</p>
+          <div class="form-success" id="formSuccess" role="status">Thanks — your email draft is ready. If nothing opened, write us at ciro@pendointl.org.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="team.html">Meet the Team</a>
+          <a href="sisters.html">Pendo Sisters</a>
+          <a href="hub.html">Development Hub</a>
+          <a href="safari.html">Safari</a>
+          <a href="index.html#partners">Partners</a>
+          <a href="https://www.pendointl.org/causes">The Need</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://www.pendointl.org/">Donate</a>
+        </div>
+      </div>
+      <div class="footer-mid">
+        <img class="footer-logo" src="assets/pendo-logo.png" alt="Pendo International Projects" />
+        <p>We increase access to affordable, high-quality early childhood care and education in Kenya’s low-income communities.</p>
+        <div class="place">Kenya · Canada</div>
+        <div class="socials">
+          <a href="https://www.instagram.com/pendointl/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/Pendo-International-Projects-2276622799326344/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/pendo-international-projects/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+          </a>
+        </div>
+        <a class="btn btn-white" href="https://www.pendointl.org/">Donate</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <p><strong>Pendo International Projects</strong></p>
+          <p><a href="mailto:ciro@pendointl.org">ciro@pendointl.org</a></p>
+          <p><a href="https://www.pendointl.org/">www.pendointl.org</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <span>© 2026 Pendo International Projects</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var nav = document.getElementById('nav');
+      var toggle = document.getElementById('menuToggle');
+      var items = Array.prototype.slice.call(nav.querySelectorAll('.nav-item'));
+
+      function closeAllMenus() {
+        items.forEach(function (item) {
+          item.classList.remove('open');
+          var trigger = item.querySelector('.nav-trigger');
+          if (trigger) trigger.setAttribute('aria-expanded', 'false');
+        });
+      }
+
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (!open) closeAllMenus();
+      });
+
+      items.forEach(function (item) {
+        var trigger = item.querySelector('.nav-trigger');
+        if (!trigger) return;
+        trigger.addEventListener('click', function (e) {
+          if (window.matchMedia('(max-width: 980px)').matches) {
+            e.preventDefault();
+            var willOpen = !item.classList.contains('open');
+            closeAllMenus();
+            if (willOpen) {
+              item.classList.add('open');
+              trigger.setAttribute('aria-expanded', 'true');
+            }
+          }
+        });
+      });
+
+      nav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (window.matchMedia('(max-width: 980px)').matches) {
+            nav.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+            closeAllMenus();
+          }
+        });
+      });
+
+      var form = document.getElementById('contactForm');
+      var success = document.getElementById('formSuccess');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.reportValidity()) return;
+        var name = document.getElementById('name').value.trim();
+        var email = document.getElementById('email').value.trim();
+        var phone = document.getElementById('phone').value.trim();
+        var interest = document.getElementById('interest').value;
+        var message = document.getElementById('message').value.trim();
+        var subject = encodeURIComponent('Pendo contact — ' + interest);
+        var body = encodeURIComponent(
+          'Name: ' + name + '\n' +
+          'Email: ' + email + '\n' +
+          'Phone: ' + (phone || '—') + '\n' +
+          'Interest: ' + interest + '\n\n' +
+          message
+        );
+        window.location.href = 'mailto:ciro@pendointl.org?subject=' + subject + '&body=' + body;
+        success.classList.add('show');
+      });
+    })();
+  </script>
+</body>
+</html>

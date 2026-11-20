@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pendo International Projects — Homepage Storyboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: "Classico";
+      src:
+        url("assets/fonts/classico-bold.woff2") format("woff2"),
+        url("assets/fonts/classico-bold.woff") format("woff");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --navy: hsl(214.55, 41.77%, 30.98%);
+      --teal: hsl(183.6, 68.18%, 43.14%);
+      --sky: hsl(194.46, 65.88%, 66.67%);
+      --ember: #ce8b40;
+      --magenta: #a3237b;
+      --foam: hsl(200, 33.33%, 98.24%);
+      --white: #ffffff;
+      --linen: url("assets/linen-light.jpg");
+      --linen-slate: url("assets/linen-slate.jpg");
+      --linen-size: 420px;
+      --max: 1180px;
+      --classico: "Classico", "Optima", "Segoe UI", Candara, sans-serif;
+      --serif: var(--classico);
+      --sans: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+      --wide: "Oswald", "Montserrat", sans-serif;
+      --script: "Great Vibes", cursive;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-weight: 400;
+      color: var(--navy);
+      background: var(--foam);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, h4 {
+      font-family: var(--classico);
+      font-weight: 400;
+      line-height: 1.2;
+      margin: 0;
+    }
+    .wrap { width: min(100% - 2.5rem, var(--max)); margin-inline: auto; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: var(--wide);
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      padding: 0.95rem 1.65rem;
+      border: 0;
+      cursor: pointer;
+      transition: opacity 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+    /* Kutoa: buttons keep color, fade to 0.8 opacity on hover */
+    .btn:hover,
+    .btn:focus-visible { opacity: 0.8; }
+    .btn-navy { background: var(--navy); color: #fff; }
+    .btn-white { background: #fff; color: var(--navy); }
+    .btn-outline {
+      background: transparent; color: #fff;
+      border: 1px solid rgba(255,255,255,0.7);
+    }
+    
+    .btn-ember { background: var(--ember); color: #fff; border: 1px solid var(--ember); }
+    .btn-teal { background: var(--teal); color: #fff; }
+    .btn-ember {
+      background: transparent; color: var(--navy);
+      border: 1px solid var(--navy);
+    }
+    .btn-outline-ember {
+      background: transparent; color: var(--navy);
+      border: 1px solid var(--ember);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.75rem, 3vw, 2.35rem);
+      color: var(--navy);
+      margin: 0 0 0.55rem;
+    }
+    .section-rule {
+      width: 48px; height: 3px; background: var(--ember);
+      margin: 0 auto 2.25rem; border: 0;
+    }
+
+    /* —— Announcement —— */
+    .announce {
+      background: var(--navy);
+      color: #dce5ef;
+      text-align: center;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      padding: 0.65rem 2.5rem 0.65rem 1.25rem;
+      position: relative;
+    }
+    .announce a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+    .announce .x {
+      position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+      background: none; border: 0; color: #fff; cursor: pointer; font-size: 1.1rem; line-height: 1;
+    }
+
+    /* —— Header —— */
+    .site-header {
+      background: rgba(249, 251, 252, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(46, 74, 112, 0.08);
+      position: sticky; top: 0; z-index: 50;
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; padding: 0; width: min(100% - 1.5rem, 1280px); margin-inline: auto;
+      min-height: 68px;
+    }
+    .brand {
+      display: flex; align-items: center; flex-shrink: 0;
+      padding: 0.55rem 0;
+    }
+    .brand img { height: 48px; width: auto; }
+    .header-actions {
+      display: flex; align-items: center; gap: 0.65rem; flex-shrink: 0;
+      margin-left: auto; padding: 0.55rem 0;
+    }
+
+    .nav {
+      display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; justify-content: center;
+      flex: 1;
+    }
+    .nav > a,
+    .nav-item > .nav-trigger {
+      font-family: var(--wide);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: none;
+      border: 0;
+      padding: 1.1rem 0;
+      cursor: pointer;
+    }
+    .nav > a:hover,
+    .nav-item > .nav-trigger:hover { color: var(--teal); }
+    .nav > a {
+      position: relative;
+    }
+    .nav > a.is-active::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: 1.05rem;
+      height: 2px; background: var(--navy);
+    }
+
+    .nav-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      align-self: stretch;
+    }
+    .nav-trigger {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      height: 100%;
+    }
+    .nav-trigger::after {
+      content: "";
+      width: 0; height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid currentColor;
+      opacity: 0.7;
+    }
+    .submenu {
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      min-width: 280px;
+      padding-top: 0;
+      z-index: 60;
+      transition: opacity 0.15s ease, visibility 0.15s ease;
+    }
+    /* Invisible bridge so the cursor never leaves .nav-item between trigger and panel */
+    .submenu::before {
+      content: "";
+      display: block;
+      height: 10px;
+    }
+    .submenu-inner {
+      background: #fff;
+      border: 1px solid rgba(46, 74, 112, 0.12);
+      box-shadow: 0 12px 28px rgba(46, 74, 112, 0.12);
+      padding: 0.45rem 0;
+    }
+    .submenu a {
+      display: block;
+      padding: 0.7rem 1.15rem;
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      text-transform: none;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+    .submenu a:hover { background: rgba(35, 166, 179, 0.1); color: var(--teal); }
+    .nav-item:hover .submenu,
+    .nav-item:focus-within .submenu,
+    .nav-item.open .submenu {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .menu-toggle {
+      display: none; background: none; border: 1px solid rgba(46,74,112,0.25);
+      padding: 0.45rem 0.7rem; font-family: var(--wide); letter-spacing: 0.12em;
+      text-transform: uppercase; font-size: 0.7rem; color: var(--navy); cursor: pointer;
+    }
+
+    
+    /* —— Hero (layout match only — same fonts/colors) —— */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr 1fr;
+      min-height: min(72vh, 620px);
+      background: #fff;
+    }
+    .hero-photo {
+      background-size: cover;
+      background-position: center;
+      min-height: 280px;
+    }
+    .hero-photo.left { background-position: center top; }
+    .hero-photo.right { background-position: center 20%; }
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: clamp(2.25rem, 4.5vw, 3.5rem) clamp(1.35rem, 3vw, 2.5rem);
+      background: #fff;
+      text-align: center;
+    }
+    .hero-copy h1 {
+      font-size: clamp(1.85rem, 3.2vw, 2.65rem);
+      color: var(--navy);
+      margin-bottom: 0.65rem;
+    }
+    .hero-copy .tagline {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-style: italic;
+      font-size: clamp(1rem, 1.7vw, 1.2rem);
+      color: var(--ember);
+      margin: 0 0 1.15rem;
+      line-height: 1.35;
+      max-width: 28ch;
+    }
+    .hero-copy p {
+      margin: 0 auto 1.5rem;
+      max-width: 36ch;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: rgba(46,74,112,0.82);
+    }
+    .hero-ctas {
+      display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center;
+    }
+    .hero-ctas .btn-outline-ember {
+      background: #fff;
+      color: var(--ember);
+      border: 1.5px solid var(--ember);
+    }
+
+    /* —— Pathways (Wajamama-style layout, Pendo styling) —— */
+    .pathways {
+      padding: clamp(3rem, 6.5vw, 4.75rem) 0;
+      background: var(--foam);
+    }
+    .pathways-heading {
+      font-family: var(--wide);
+      font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin: 0 0 clamp(1.75rem, 3.5vw, 2.5rem);
+      text-align: left;
+    }
+    .pathway-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(1.5rem, 3vw, 2.25rem);
+      align-items: start;
+    }
+    .pathway {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.85rem;
+      text-align: left;
+    }
+    .pathway-photo {
+      width: min(100%, 220px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+      flex-shrink: 0;
+    }
+    .pathway h3 {
+      font-family: var(--wide);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin: 0.15rem 0 0;
+      line-height: 1.3;
+    }
+    .pathway p {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color: rgba(46,74,112,0.82);
+      max-width: 22ch;
+    }
+    .pathway .btn { margin-top: 0.35rem; }
+
+    /* —— Programs (card layout match only) —— */
+    .programs {
+      padding: clamp(3.25rem, 7vw, 5rem) 0;
+      background: var(--foam);
+    }
+    .program-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.35rem;
+    }
+    .program-card {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      background: #fff;
+      border: 1px solid rgba(46,74,112,0.06);
+      border-radius: 14px;
+      box-shadow: 0 10px 28px rgba(46,74,112,0.08);
+      overflow: hidden;
+      min-height: 360px;
+    }
+    .program-body {
+      padding: 1.55rem 1.35rem 1.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .program-icon {
+      width: 42px; height: 42px; border-radius: 50%;
+      display: grid; place-items: center; flex-shrink: 0;
+      margin-bottom: 0.25rem;
+    }
+    .program-icon svg {
+      width: 20px; height: 20px;
+      fill: none; stroke: #fff; stroke-width: 1.7;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+    .program-icon.ember { background: var(--ember); }
+    .program-icon.teal { background: var(--navy); }
+    .program-body h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 1.35rem;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+    .program-body h3 .flag {
+      width: 26px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+    .program-body .program-name {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--ember);
+      margin: 0 0 0.15rem;
+      line-height: 1.35;
+    }
+    .program-body > p {
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.6;
+      color: rgba(46,74,112,0.88);
+    }
+    .program-list {
+      list-style: none; margin: 0.35rem 0 0.75rem; padding: 0;
+      display: grid; gap: 0.4rem;
+    }
+    .program-list li {
+      display: flex; align-items: flex-start; gap: 0.55rem;
+      font-size: 0.82rem; line-height: 1.35;
+      color: rgba(46,74,112,0.85);
+    }
+    .program-list svg {
+      width: 15px; height: 15px; flex-shrink: 0; margin-top: 0.1rem;
+      stroke: rgba(46,74,112,0.55); fill: none; stroke-width: 1.6;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+    .program-photo {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      min-height: 220px;
+    }
+    .program-photo::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 42%;
+      background: linear-gradient(90deg, #fff 0%, rgba(255,255,255,0) 100%);
+      pointer-events: none;
+    }
+    .program-body .btn { align-self: flex-start; margin-top: auto; }
+
+    /* —— Impact —— */
+    .impact {
+      padding: clamp(3.5rem, 8vw, 5.75rem) 0;
+      background: #fff;
+    }
+    .impact .wrap { width: min(100% - 2.5rem, 920px); }
+    .impact .section-title,
+    .impact .section-rule { text-align: left; margin-left: 0; }
+    .impact .section-rule { margin: 0 0 clamp(1.75rem, 3.5vw, 2.5rem); }
+    .flag {
+      width: 22px; height: 15px; object-fit: cover;
+      border: 1px solid rgba(46,74,112,0.15);
+    }
+    .impact-rows { display: grid; gap: 0; }
+    .impact-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      gap: 0.65rem 2rem;
+      align-items: end;
+      padding: clamp(1.4rem, 3.2vw, 2.1rem) 0;
+      border-top: 2px solid var(--ember);
+    }
+    .impact-row:last-of-type { border-bottom: 2px solid var(--ember); }
+    .impact-row .big {
+      margin: 0;
+      font-family: var(--classico);
+      font-size: clamp(2.6rem, 7.5vw, 4.35rem);
+      line-height: 0.98;
+      letter-spacing: -0.015em;
+      color: var(--navy);
+    }
+    .impact-row .detail {
+      margin: 0 0 0.2rem;
+      display: grid;
+      gap: 0.35rem;
+    }
+    .impact-row .region {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--wide);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ember);
+    }
+    .impact-row .region .flag {
+      width: 18px;
+      height: 12px;
+    }
+    .impact-row p {
+      margin: 0;
+      font-size: clamp(1rem, 1.7vw, 1.2rem);
+      font-weight: 300;
+      line-height: 1.35;
+      color: rgba(46,74,112,0.85);
+      max-width: 20ch;
+    }
+    .impact-close {
+      margin: clamp(2rem, 4vw, 3rem) 0 0;
+      font-family: var(--classico);
+      font-size: clamp(1.55rem, 3.2vw, 2.35rem);
+      line-height: 1.2;
+      color: var(--navy);
+      max-width: 22ch;
+    }
+
+    #pathways, #partners, #involved, #impact { scroll-margin-top: 5.5rem; }
+
+    /* —— Partners —— */
+    .partners {
+      padding: clamp(3rem, 6vw, 4.5rem) 0;
+      background: var(--foam);
+      background-image: var(--linen);
+      background-size: var(--linen-size);
+      background-blend-mode: multiply;
+      text-align: center;
+    }
+    .partners-logos {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+      gap: 1.25rem 1.75rem; margin: 0 0 2rem;
+    }
+    .partners-logos img {
+      max-height: 56px; width: auto; max-width: 120px;
+      object-fit: contain; filter: grayscale(0.15);
+      opacity: 0.92;
+    }
+    .sdg-band {
+      display: grid; grid-template-columns: auto 1fr; gap: 1.25rem;
+      align-items: center; text-align: left;
+      max-width: 720px; margin: 0 auto;
+      background: rgba(255,255,255,0.75);
+      border: 1px solid rgba(46,74,112,0.1);
+      padding: 1.25rem 1.4rem;
+    }
+    .sdg-band img { width: 72px; height: auto; }
+    .sdg-band h3 {
+      font-family: var(--wide); font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--teal); margin: 0 0 0.35rem;
+    }
+    .sdg-band p { margin: 0; font-size: 0.9rem; color: rgba(46,74,112,0.88); line-height: 1.55; }
+
+    /* —— Why —— */
+    .why {
+      display: grid;
+      grid-template-columns: auto 1.2fr 0.95fr;
+      gap: 1.75rem;
+      align-items: center;
+      padding: clamp(2.5rem, 5vw, 3.75rem) 0;
+      background: #eef3f7;
+      background-image: var(--linen);
+      background-size: var(--linen-size);
+      background-blend-mode: multiply;
+    }
+    .why-icon {
+      width: 88px; height: 88px; border-radius: 50%;
+      background: var(--navy); color: #fff;
+      display: grid; place-items: center; margin-left: clamp(1.25rem, 4vw, 0);
+    }
+    .why-icon svg { width: 40px; height: 40px; stroke: var(--ember); fill: none; stroke-width: 1.5; }
+    .why-copy { padding-right: 1rem; }
+    .why-copy h2 {
+      font-size: clamp(1.45rem, 2.4vw, 1.9rem);
+      margin-bottom: 0.75rem;
+    }
+    .why-copy p {
+      margin: 0; max-width: 48ch; font-size: 0.95rem;
+      color: rgba(46,74,112,0.88); line-height: 1.7;
+    }
+    .why-photo {
+      min-height: 220px;
+      background-size: cover; background-position: center 20%;
+      margin-right: clamp(0px, 2vw, 0);
+    }
+
+    /* —— Get involved —— */
+    .involved {
+      padding: clamp(3.25rem, 7vw, 5rem) 0;
+      background: #fff;
+      text-align: center;
+    }
+    .involve-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .involve-item h4 {
+      font-family: var(--wide); font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      margin: 0.85rem 0 0.4rem;
+    }
+    .involve-item p {
+      margin: 0; font-size: 0.82rem; line-height: 1.5;
+      color: rgba(46,74,112,0.8);
+    }
+    .involve-icon {
+      width: 56px; height: 56px; margin: 0 auto;
+      border-radius: 50%; background: rgba(206,139,64,0.12);
+      display: grid; place-items: center;
+    }
+    .involve-icon svg {
+      width: 24px; height: 24px; stroke: var(--ember); fill: none; stroke-width: 1.5;
+    }
+    .involve-ctas {
+      display: flex; flex-wrap: wrap; gap: 0.85rem; justify-content: center;
+    }
+
+    /* —— Footer —— */
+    .site-footer {
+      background: var(--navy);
+      color: #fff;
+      padding: clamp(2.5rem, 5vw, 3.5rem) 0 2rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr 1fr;
+      gap: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+    .footer-grid h4 {
+      font-family: var(--wide);
+      font-weight: 500;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin: 0 0 1rem;
+    }
+    .footer-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.45rem 1rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+    }
+    .footer-links a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: rgba(255,255,255,0.35);
+    }
+    .footer-links a:hover { text-decoration-color: #fff; }
+    .footer-mid { text-align: center; }
+    .footer-logo {
+      width: auto;
+      height: 56px;
+      margin: 0 auto 1.1rem;
+      filter: brightness(0) invert(1);
+    }
+    .footer-mid p {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      max-width: 36ch;
+      margin: 0 auto 1rem;
+      color: rgba(255,255,255,0.9);
+    }
+    .footer-mid .place {
+      font-family: var(--wide);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      margin-bottom: 1rem;
+    }
+    .socials { display: flex; gap: 0.75rem; justify-content: center; margin-bottom: 1.2rem; }
+    .socials a {
+      width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.35);
+      display: grid; place-items: center;
+      color: #fff;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .socials a:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.7);
+    }
+    .socials svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      display: block;
+    }
+    .footer-hours p, .footer-contact p { margin: 0 0 0.45rem; font-size: 0.88rem; }
+    .footer-contact a { text-decoration: underline; text-underline-offset: 3px; }
+    .footer-bottom {
+      display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+      padding-top: 1.4rem; font-size: 0.75rem; letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.7); text-transform: uppercase;
+    }
+
+    /* —— Motion —— */
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-copy, .dual-card, .belief, .service, .t-card {
+        animation: rise 0.7s ease both;
+      }
+      .dual-card:nth-child(2) { animation-delay: 0.08s; }
+      .service:nth-child(2) { animation-delay: 0.08s; }
+      .service:nth-child(3) { animation-delay: 0.16s; }
+      @keyframes rise {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+
+    /* —— Tablet —— */
+
+    /* —— Responsive —— */
+    @media (max-width: 980px) {
+      .menu-toggle { display: inline-flex; }
+      .header-inner { position: relative; flex-wrap: wrap; }
+      .header-actions { margin-left: 0; }
+      .nav {
+        display: none;
+        width: 100%;
+        order: 3;
+        flex: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0.25rem 0 0.65rem;
+        border-top: 1px solid rgba(46,74,112,0.1);
+      }
+      .nav.open { display: flex; }
+      .nav > a,
+      .nav-item > .nav-trigger {
+        padding: 0.7rem 0.15rem;
+        text-align: left;
+        width: 100%;
+        justify-content: space-between;
+        height: auto;
+        min-height: 0;
+        line-height: 1.3;
+      }
+      .nav > a.is-active::after {
+        bottom: 0.35rem;
+      }
+      .nav-item {
+        display: block;
+        align-self: auto;
+        height: auto !important;
+        min-height: 0;
+        flex: none;
+      }
+      .nav-trigger {
+        padding: 0.7rem 0.15rem;
+        height: auto !important;
+        min-height: 0;
+        width: 100%;
+      }
+      /* Closed dropdowns must not take space on mobile */
+      .nav-item:hover .submenu,
+      .nav-item:focus-within .submenu {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        max-height: 0 !important;
+      }
+      .submenu {
+        display: none;
+        position: static;
+        transform: none;
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        min-width: 0;
+        width: 100%;
+        max-height: none;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+        transition: none;
+      }
+      .submenu::before { display: none !important; height: 0 !important; }
+      .submenu-inner {
+        box-shadow: none;
+        border: 0;
+        background: rgba(35, 176, 185, 0.06);
+        padding: 0.1rem 0 0.35rem;
+      }
+      .nav-item.open > .submenu {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        max-height: none !important;
+        margin: 0 0 0.25rem;
+      }
+      .submenu a {
+        padding: 0.5rem 0.85rem;
+        white-space: normal;
+        line-height: 1.35;
+      }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { justify-content: center; text-align: center; }
+
+      .hero { grid-template-columns: 1fr; }
+      .hero-photo { min-height: 220px; }
+      .hero-photo.right { order: 3; }
+      .pathway-grid { grid-template-columns: 1fr 1fr; }
+      .pathway-photo { width: min(100%, 200px); }
+      .program-grid { grid-template-columns: 1fr; }
+      .impact-row { grid-template-columns: 1fr; gap: 0.4rem; }
+      .sdg-band { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+      .program-card { grid-template-columns: 1fr; }
+      .program-photo { min-height: 200px; }
+      .program-photo::before {
+        inset: 0 0 auto 0;
+        width: 100%;
+        height: 42%;
+        background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0) 100%);
+      }
+      .involve-grid { grid-template-columns: repeat(3, 1fr); }
+      .why { grid-template-columns: 1fr; text-align: center; padding-inline: 1.25rem; }
+      .why-icon { margin: 0 auto; }
+      .why-copy { padding: 0; }
+      .why-copy p { margin-inline: auto; }
+      .why-photo { min-height: 240px; }
+    }
+    @media (max-width: 640px) {
+      .brand img { height: 40px; }
+      .header-actions .btn { padding: 0.7rem 0.95rem; font-size: 0.72rem; }
+      .footer-links { grid-template-columns: 1fr; }
+      .hero-ctas { flex-direction: column; align-items: stretch; }
+      .pathway-grid { grid-template-columns: 1fr; }
+      .pathway { align-items: center; text-align: center; }
+      .pathway p { max-width: 32ch; }
+      .involve-grid { grid-template-columns: 1fr 1fr; }
+    }
+  
+    /* —— Mobile nav fix: compact items, closed dropdowns take no space —— */
+    @media (max-width: 980px) {
+      .site-header { overflow: visible; }
+      .header-inner { position: relative; flex-wrap: wrap; }
+      .menu-toggle { display: inline-flex; }
+      .site-header .nav {
+        display: none;
+        width: 100%;
+        order: 3;
+        flex: none !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        gap: 0 !important;
+        padding: 0.25rem 0 0.65rem !important;
+        margin: 0 !important;
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        background: transparent !important;
+        border-top: 1px solid rgba(46,74,112,0.1);
+        border-bottom: 0 !important;
+        box-shadow: none !important;
+        max-height: none !important;
+      }
+      .site-header .nav.open { display: flex !important; }
+      .site-header .nav > a,
+      .site-header .nav-item > .nav-trigger {
+        width: 100% !important;
+        text-align: left !important;
+        justify-content: space-between !important;
+        padding: 0.7rem 0.15rem !important;
+        height: auto !important;
+        min-height: 0 !important;
+        line-height: 1.3 !important;
+      }
+      .site-header .nav > a.is-active::after { bottom: 0.35rem !important; }
+      .site-header .nav-item {
+        display: block !important;
+        height: auto !important;
+        min-height: 0 !important;
+        align-self: auto !important;
+        flex: none !important;
+      }
+      .site-header .nav-trigger {
+        height: auto !important;
+        min-height: 0 !important;
+        width: 100% !important;
+      }
+      .site-header .nav-item:hover > .submenu,
+      .site-header .nav-item:focus-within > .submenu {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+      .site-header .submenu {
+        display: none !important;
+        position: static !important;
+        transform: none !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-height: none !important;
+        height: auto !important;
+        overflow: hidden !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .site-header .submenu::before {
+        display: none !important;
+        content: none !important;
+        height: 0 !important;
+      }
+      .site-header .submenu-inner {
+        box-shadow: none !important;
+        border: 0 !important;
+        background: rgba(35, 176, 185, 0.06) !important;
+        padding: 0.1rem 0 0.35rem !important;
+      }
+      .site-header .nav-item.open > .submenu {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        margin: 0 0 0.2rem !important;
+      }
+      .site-header .submenu a {
+        padding: 0.5rem 0.85rem !important;
+        white-space: normal !important;
+        line-height: 1.35 !important;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="announce" id="announce">
+    <span>2026: New Pendo Child &amp; Family Development Hub is open — <a href="hub.html">learn more</a>.</span>
+    <button class="x" type="button" aria-label="Close announcement" onclick="document.getElementById('announce').style.display='none'">×</button>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/pendo-logo.png" alt="Pendo International Projects" />
+      </a>
+      <nav class="nav" id="nav">
+        <a class="is-active" href="index.html">Home</a>
+        <div class="nav-item" id="aboutItem">
+          <button class="nav-trigger" type="button" id="aboutTrigger" aria-expanded="false" aria-controls="aboutMenu" aria-haspopup="true">About</button>
+          <div class="submenu" id="aboutMenu">
+            <div class="submenu-inner" role="menu">
+              <a href="about.html" role="menuitem">Our Story</a>
+              <a href="team.html" role="menuitem">Meet the Team</a>
+              <a href="about.html#roadmap" role="menuitem">Road Map</a>
+              <a href="#partners" role="menuitem">Our Partners</a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item" id="programsItem">
+          <button class="nav-trigger" type="button" id="programsTrigger" aria-expanded="false" aria-controls="programsMenu" aria-haspopup="true">Programs</button>
+          <div class="submenu" id="programsMenu">
+            <div class="submenu-inner" role="menu">
+              <a href="hub.html" role="menuitem">Child &amp; Family Development Hub</a>
+              <a href="scholarship.html" role="menuitem">Scholarships</a>
+              <a href="sisters.html" role="menuitem">Pendo Sisters</a>
+              <a href="safari.html" role="menuitem">Safari of a Lifetime</a>
+            </div>
+          </div>
+        </div>
+        <a href="blog.html">Blog</a>
+        <div class="nav-item" id="involvedItem">
+          <button class="nav-trigger" type="button" id="involvedTrigger" aria-expanded="false" aria-controls="involvedMenu" aria-haspopup="true">Get Involved</button>
+          <div class="submenu" id="involvedMenu">
+            <div class="submenu-inner" role="menu">
+              <a href="#involved" role="menuitem">Ways to Help</a>
+              <a href="scholarship.html#give" role="menuitem">Ways to Give</a>
+              <a href="https://www.pendointl.org/causes" role="menuitem">The Need</a>
+              <a href="https://www.pendointl.org/" role="menuitem">Donate</a>
+            </div>
+          </div>
+        </div>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="menu-toggle" type="button" id="menuToggle" aria-expanded="false" aria-controls="nav">Menu</button>
+        <a class="btn btn-navy" href="https://www.pendointl.org/">Donate</a>
+      </div>
+    </div>
+  </header>
+
+<section class="hero" aria-label="Hero">
+    <div class="hero-photo left" style="background-image:url('assets/hero-left.jpg')" role="img" aria-label="Smiling student at Pendo School Kenya"></div>
+    <div class="hero-copy">
+      <h1>Pendo International Projects</h1>
+      <p class="tagline">Building stronger futures in Kenya and Canada.</p>
+      <p>A Canadian charity advancing early childhood education in Kenya and maternal well-being for refugee mothers in Canada—rooted in dignity, community, and every child’s potential.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-navy" href="#pathways">Find Your Path</a>
+        <a class="btn btn-outline-ember" href="https://www.pendointl.org/">Donate</a>
+      </div>
+    </div>
+    <div class="hero-photo right" style="background-image:url('assets/hero-right.jpg')" role="img" aria-label="Community member supported by Pendo"></div>
+  </section>
+
+  <section class="pathways" id="pathways" aria-label="Choose your path">
+    <div class="wrap">
+      <h2 class="pathways-heading">Four paths to Pendo:</h2>
+      <div class="pathway-grid">
+        <article class="pathway">
+          <div class="pathway-photo" style="background-image:url('assets/hub-card.jpg')" role="img" aria-label="Children at Pendo School"></div>
+          <h3>Parents</h3>
+          <p>Scholarship support, early childhood education, and life at the Hub in Kenya.</p>
+          <a class="btn btn-navy" href="scholarship.html">Learn More</a>
+        </article>
+        <article class="pathway">
+          <div class="pathway-photo" style="background-image:url('assets/campus.jpg')" role="img" aria-label="Pendo campus and community"></div>
+          <h3>Donors</h3>
+          <p>Sponsor a seat, fund a classroom, buy a bus, or paint a room—clear ways to give.</p>
+          <a class="btn btn-navy" href="scholarship.html#give">Learn More</a>
+        </article>
+        <article class="pathway">
+          <div class="pathway-photo" style="background-image:url('assets/sisters-card.jpg')" role="img" aria-label="Pendo Sisters community"></div>
+          <h3>Pendo Sisters</h3>
+          <p>Peer community and maternal wellbeing for refugee mothers navigating separation.</p>
+          <a class="btn btn-navy" href="sisters.html">Learn More</a>
+        </article>
+        <article class="pathway">
+          <div class="pathway-photo" style="background-image:url('assets/safari/jeep.jpg')" role="img" aria-label="Safari of a Lifetime"></div>
+          <h3>Safari Enthusiasts</h3>
+          <p>Travel with purpose—experience Kenya and support Pendo’s work on the ground.</p>
+          <a class="btn btn-navy" href="safari.html">Learn More</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="programs" id="programs">
+    <div class="wrap">
+      <h2 class="section-title">Our Projects</h2>
+      <hr class="section-rule" />
+      <div class="program-grid">
+        <article class="program-card" id="hub">
+          <div class="program-body">
+            <div class="program-icon ember" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg>
+            </div>
+            <h3>
+              <img class="flag" src="https://flagcdn.com/w40/ke.png" width="26" height="18" alt="" />
+              Kenya
+            </h3>
+            <div class="program-name">Pendo Child &amp; Family Development Hub</div>
+            <p>Opened January 2026—already serving 300 children, with special education, a computer lab, dance &amp; wellness, and teacher training. Future capacity: 700.</p>
+            <ul class="program-list">
+              <li>
+                <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>
+                Early childhood education
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z"/></svg>
+                Family &amp; child wellness
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="1"/><path d="M8 21h8M12 18v3"/></svg>
+                Digital literacy lab
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M5 20c1.5-3 4-5 7-5s5.5 2 7 5"/></svg>
+                Teacher training
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg>
+                Community hub space
+              </li>
+            </ul>
+            <a class="btn btn-navy" href="hub.html">Learn More</a>
+          </div>
+          <div class="program-photo" style="background-image:url('assets/hub-card.jpg')" role="img" aria-label="Children learning together at Pendo"></div>
+        </article>
+
+        <article class="program-card" id="sisters">
+          <div class="program-body">
+            <div class="program-icon teal" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 11a3 3 0 100-6 3 3 0 000 6zM16 11a3 3 0 100-6 3 3 0 000 6zM4 20c.8-3 2.8-5 4.8-5h.4c1.2 0 2.2.5 3 1.3.8-.8 1.8-1.3 3-1.3h.4c2 0 4 2 4.8 5"/></svg>
+            </div>
+            <h3>
+              <img class="flag" src="https://flagcdn.com/w40/ca.png" width="26" height="18" alt="" />
+              Canada
+            </h3>
+            <div class="program-name">Pendo Sisters</div>
+            <p>No mother should wait alone—supporting refugee mothers separated from their children through peer community, wellbeing, and long-distance parenting.</p>
+            <ul class="program-list">
+              <li>
+                <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8v.5z"/></svg>
+                Peer &amp; community support
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+                Maternal wellbeing &amp; retreats
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z"/></svg>
+                Preserving mother–child bonds
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24"><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2M4 7h16v14H4z"/></svg>
+                Long-distance parenting
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2 20c.8-3 2.8-5 5.5-5H10c1.5 0 2.8.7 3.8 1.8M14 20c.5-2 1.8-3.5 3.5-3.5h.5c1.8 0 3.2 1.2 4 3.5"/></svg>
+                Reunification pathways
+              </li>
+            </ul>
+            <a class="btn btn-navy" href="sisters.html">Learn More</a>
+          </div>
+          <div class="program-photo" style="background-image:url('assets/sisters-card.jpg')" role="img" aria-label="Pendo Sisters community"></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="impact" id="impact">
+    <div class="wrap">
+      <h2 class="section-title">Our Impact</h2>
+      <hr class="section-rule" />
+      <div class="impact-rows">
+        <div class="impact-row">
+          <h3 class="big">Serving 300</h3>
+          <div class="detail">
+            <span class="region"><img class="flag" src="https://flagcdn.com/w40/ke.png" width="18" height="12" alt="" /> Kenya</span>
+            <p>children learning in the Hub today</p>
+          </div>
+        </div>
+        <div class="impact-row">
+          <h3 class="big">Supporting 150+</h3>
+          <div class="detail">
+            <span class="region"><img class="flag" src="https://flagcdn.com/w40/ca.png" width="18" height="12" alt="" /> Canada</span>
+            <p>mothers in the Pendo Sisters pilot</p>
+          </div>
+        </div>
+        <div class="impact-row">
+          <h3 class="big">Building to 700</h3>
+          <div class="detail">
+            <span class="region"><img class="flag" src="https://flagcdn.com/w40/ke.png" width="18" height="12" alt="" /> Kenya</span>
+            <p>future Hub capacity when floors 3 &amp; 4 are finished</p>
+          </div>
+        </div>
+        <div class="impact-row">
+          <h3 class="big">Reaching 400+</h3>
+          <div class="detail">
+            <span class="region"><img class="flag" src="https://flagcdn.com/w40/ke.png" width="18" height="12" alt="" /> Kenya</span>
+            <p>children weekly through dance &amp; wellness</p>
+          </div>
+        </div>
+        <div class="impact-row">
+          <h3 class="big">2 Retreats</h3>
+          <div class="detail">
+            <span class="region"><img class="flag" src="https://flagcdn.com/w40/ca.png" width="18" height="12" alt="" /> Canada</span>
+            <p>wellness gatherings for refugee mothers</p>
+          </div>
+        </div>
+      </div>
+      <p class="impact-close">With your support, we keep opening doors for children and mothers across Kenya and Canada.</p>
+    </div>
+  </section>
+
+  <section class="partners" id="partners">
+    <div class="wrap">
+      <h2 class="section-title">Our Partners</h2>
+      <hr class="section-rule" />
+      <div class="partners-logos">
+        <img src="assets/partners/p1.webp" alt="Partner" />
+        <img src="assets/partners/p2.webp" alt="Partner" />
+        <img src="assets/partners/p3.webp" alt="Partner" />
+        <img src="assets/partners/p4.webp" alt="Partner" />
+        <img src="assets/partners/p5.webp" alt="Partner" />
+        <img src="assets/partners/p6.webp" alt="Partner" />
+        <img src="assets/partners/foundation-1111.webp" alt="1111 Foundation" />
+        <img src="assets/partners/ducis.webp" alt="Ducis" />
+        <img src="assets/partners/p7.webp" alt="Partner" />
+        <img src="assets/partners/carego.webp" alt="CareGo" />
+      </div>
+      <div class="sdg-band">
+        <img src="assets/partners/unsdg.webp" alt="UN Sustainable Development Goals" />
+        <div>
+          <h3>We align our work with the UNSDGs</h3>
+          <p><strong>Goal 4: Quality Education — Target 4.2.</strong> Ensure that all girls and boys have access to quality early childhood development, care and pre-primary education so that they are ready for primary education.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why" id="why">
+    <div class="why-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z"/><path d="M8 10.5h8M9 13h6"/><path d="M10 8.5c.5-.8 1.2-1.2 2-1.2s1.5.4 2 1.2"/></svg>
+    </div>
+    <div class="why-copy">
+      <h2>Why we do this work</h2>
+      <p>Pendo International Projects is rooted in lived experience—building pathways of dignity for children and mothers across Kenya and Canada. We believe every child deserves a bright beginning, and every mother deserves a community that holds her up. <a href="about.html" style="color:var(--teal);text-decoration:underline;text-underline-offset:3px;">Read our story</a>.</p>
+    </div>
+    <div class="why-photo" style="background-image:url('assets/play.jpg')" role="img" aria-label="Caregiver with child"></div>
+  </section>
+
+  <section class="involved" id="involved">
+    <div class="wrap">
+      <h2 class="section-title">Get Involved</h2>
+      <hr class="section-rule" />
+      <div class="involve-grid">
+        <div class="involve-item">
+          <div class="involve-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z"/><path d="M8 12h8"/></svg></div>
+          <h4>Donate</h4>
+          <p>Fund classrooms, care, and community support.</p>
+        </div>
+        <div class="involve-item">
+          <div class="involve-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 14c-2 0-4 1.5-4 4v2h8v-2c0-2.5-2-4-4-4zM16 14c-1 0-2 .3-2.8.8M20 20v-2c0-2-1.5-3.5-3.2-3.9M12 11a3 3 0 100-6 3 3 0 000 6zM18 8a2.5 2.5 0 11-5 0"/></svg></div>
+          <h4>Partner</h4>
+          <p>Collaborate with us across Kenya and Canada.</p>
+        </div>
+        <div class="involve-item">
+          <div class="involve-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 11a3 3 0 100-6 3 3 0 000 6zM16 11a3 3 0 100-6 3 3 0 000 6zM4 20c.8-3 2.8-5 4.8-5h.4c1.2 0 2.2.5 3 1.3.8-.8 1.8-1.3 3-1.3h.4c2 0 4 2 4.8 5"/></svg></div>
+          <h4>Volunteer</h4>
+          <p>Share time and skills with families we serve.</p>
+        </div>
+        <div class="involve-item">
+          <div class="involve-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z"/></svg></div>
+          <h4>Refer a Mother</h4>
+          <p><a href="sisters.html">Connect a refugee mother to Pendo Sisters</a>—peer support through years of separation.</p>
+        </div>
+        <div class="involve-item">
+          <div class="involve-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h6"/></svg></div>
+          <h4>Sponsor</h4>
+          <p><a href="scholarship.html#give">Sponsor a seat</a> or fund a classroom, bus, or paint day at the Hub.</p>
+        </div>
+      </div>
+      <div class="involve-ctas">
+        <a class="btn btn-navy" href="https://www.pendointl.org/">Donate Today</a>
+        <a class="btn btn-ember" href="scholarship.html">Scholarships</a>
+        <a class="btn btn-ember" href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="contact">
+    <div class="wrap footer-grid">
+      <div>
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="#programs">Programs</a>
+          <a href="about.html">About Us</a>
+          <a href="team.html">Meet the Team</a>
+          <a href="#partners">Partners</a>
+          <a href="https://www.pendointl.org/causes">The Need</a>
+          <a href="blog.html">Blog</a>
+          <a href="hub.html">Our School</a>
+          <a href="hub.html">Development Hub</a>
+          <a href="scholarship.html">Scholarships</a>
+          <a href="sisters.html">Pendo Sisters</a>
+          <a href="safari.html">Safari</a>
+          <a href="#involved">Partner</a>
+          <a href="https://www.pendointl.org/">Donate</a>
+        </div>
+      </div>
+      <div class="footer-mid">
+        <img class="footer-logo" src="assets/pendo-logo.png" alt="Pendo International Projects" />
+        <p>We increase access to affordable, high-quality early childhood care and education in Kenya’s low-income communities.</p>
+        <div class="place">Kenya · Canada</div>
+        <div class="socials">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/pendo-international-projects/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+          </a>
+        </div>
+        <a class="btn btn-white" href="https://www.pendointl.org/">Donate</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <p><strong>Pendo International Projects</strong></p>
+          <p>Canadian registered charity operating Pendo School Kenya</p>
+          <p style="margin-top:0.9rem"><a href="https://www.pendointl.org/">www.pendointl.org</a></p>
+          <p><a href="mailto:ciro@pendointl.org">ciro@pendointl.org</a></p>
+        </div>
+        <h4 style="margin-top:1.5rem">Focus</h4>
+        <div class="footer-hours">
+          <p>Early childhood education · Teacher training · Family &amp; community hub</p>
+        </div>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <span>© 2026 Pendo International Projects</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var nav = document.getElementById('nav');
+      var toggle = document.getElementById('menuToggle');
+      var items = Array.prototype.slice.call(nav.querySelectorAll('.nav-item'));
+
+      function closeAllMenus() {
+        items.forEach(function (item) {
+          item.classList.remove('open');
+          var trigger = item.querySelector('.nav-trigger');
+          if (trigger) trigger.setAttribute('aria-expanded', 'false');
+        });
+      }
+
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (!open) closeAllMenus();
+      });
+
+      items.forEach(function (item) {
+        var trigger = item.querySelector('.nav-trigger');
+        if (!trigger) return;
+        trigger.addEventListener('click', function (e) {
+          if (window.matchMedia('(max-width: 980px)').matches) {
+            e.preventDefault();
+            var willOpen = !item.classList.contains('open');
+            closeAllMenus();
+            if (willOpen) {
+              item.classList.add('open');
+              trigger.setAttribute('aria-expanded', 'true');
+            }
+          }
+        });
+      });
+
+      nav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (window.matchMedia('(max-width: 980px)').matches) {
+            nav.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+            closeAllMenus();
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

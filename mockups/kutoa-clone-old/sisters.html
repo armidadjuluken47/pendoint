@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pendo Sisters — Pendo International Projects</title>
+  <meta name="description" content="No mother should wait alone. Pendo Sisters supports refugee mothers in Canada separated from their children—maternal wellbeing, peer community, and long-distance parenting." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: "Classico";
+      src:
+        url("assets/fonts/classico-bold.woff2") format("woff2"),
+        url("assets/fonts/classico-bold.woff") format("woff");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    :root {
+      --navy: hsl(214.55, 41.77%, 30.98%);
+      --teal: hsl(183.6, 68.18%, 43.14%);
+      --sky: hsl(194.46, 65.88%, 66.67%);
+      --ember: #ce8b40;
+      --magenta: #a3237b;
+      --foam: hsl(200, 33.33%, 98.24%);
+      --white: #ffffff;
+      --linen: url("assets/linen-light.jpg");
+      --linen-slate: url("assets/linen-slate.jpg");
+      --linen-size: 420px;
+      --max: 1180px;
+      --classico: "Classico", "Optima", "Segoe UI", Candara, sans-serif;
+      --serif: var(--classico);
+      --sans: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+      --wide: "Oswald", "Montserrat", sans-serif;
+      --script: "Great Vibes", cursive;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: var(--sans); color: var(--navy);
+      background: var(--foam); line-height: 1.65;
+      -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, h4 { font-family: var(--classico); font-weight: 400; line-height: 1.2; margin: 0; }
+    .wrap { width: min(100% - 2.5rem, var(--max)); margin-inline: auto; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: var(--wide); font-weight: 500; letter-spacing: 0.16em;
+      text-transform: uppercase; font-size: 0.8rem; padding: 0.95rem 1.65rem;
+      border: 0; cursor: pointer; transition: opacity 0.2s ease;
+    }
+    .btn:hover, .btn:focus-visible { opacity: 0.8; }
+    .btn-navy { background: var(--navy); color: #fff; }
+    .btn-ember { background: var(--ember); color: #fff; border: 1px solid var(--ember); }
+    .btn-white { background: #fff; color: var(--navy); }
+    .btn-outline-ember {
+      background: transparent; color: var(--navy); border: 1px solid var(--ember);
+    }
+    .btn-outline-white {
+      background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.55);
+    }
+
+    .section-title { text-align: center; font-size: clamp(1.75rem, 3vw, 2.35rem); color: var(--navy); margin: 0 0 0.55rem; }
+    .section-rule { width: 48px; height: 3px; background: var(--ember); margin: 0 auto 2.25rem; border: 0; }
+    .eyebrow {
+      font-family: var(--wide); font-size: 0.72rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--teal); margin: 0 0 0.75rem; font-weight: 500;
+    }
+
+    .announce {
+      background: var(--navy); color: #dce5ef; text-align: center;
+      font-size: 0.78rem; letter-spacing: 0.04em;
+      padding: 0.65rem 2.5rem 0.65rem 1.25rem; position: relative;
+    }
+    .announce a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+    .announce .x {
+      position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+      background: none; border: 0; color: #fff; cursor: pointer; font-size: 1.1rem; line-height: 1;
+    }
+
+    .site-header {
+      background: rgba(249, 251, 252, 0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(46, 74, 112, 0.08);
+      position: sticky; top: 0; z-index: 50;
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; padding: 0; width: min(100% - 1.5rem, 1280px); margin-inline: auto; min-height: 68px;
+    }
+    .brand { display: flex; align-items: center; flex-shrink: 0; padding: 0.55rem 0; }
+    .brand img { height: 48px; width: auto; }
+    .header-actions {
+      display: flex; align-items: center; gap: 0.65rem; flex-shrink: 0;
+      margin-left: auto; padding: 0.55rem 0;
+    }
+    .nav {
+      display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;
+      justify-content: center; flex: 1;
+    }
+    .nav > a, .nav-item > .nav-trigger {
+      font-family: var(--wide); font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--navy);
+      background: none; border: 0; padding: 1.1rem 0; cursor: pointer; position: relative;
+    }
+    .nav > a:hover, .nav-item > .nav-trigger:hover { color: var(--teal); }
+    .nav > a.is-active::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: 1.05rem;
+      height: 2px; background: var(--ember);
+    }
+    .nav-trigger.is-active { color: var(--navy); box-shadow: inset 0 -2px 0 var(--navy); }
+    .nav-item { position: relative; display: flex; align-items: center; height: 100%; align-self: stretch; }
+    .nav-trigger { display: inline-flex; align-items: center; gap: 0.35rem; height: 100%; }
+    .nav-trigger::after {
+      content: ""; width: 0; height: 0;
+      border-left: 4px solid transparent; border-right: 4px solid transparent;
+      border-top: 5px solid currentColor; opacity: 0.7;
+    }
+    .submenu {
+      visibility: hidden; opacity: 0; pointer-events: none;
+      position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+      min-width: 280px; z-index: 60; transition: opacity 0.15s ease, visibility 0.15s ease;
+    }
+    .submenu::before { content: ""; display: block; height: 10px; }
+    .submenu-inner {
+      background: #fff; border: 1px solid rgba(46, 74, 112, 0.12);
+      box-shadow: 0 12px 28px rgba(46, 74, 112, 0.12); padding: 0.45rem 0;
+    }
+    .submenu a {
+      display: block; padding: 0.7rem 1.15rem; font-family: var(--sans);
+      font-size: 0.82rem; color: var(--navy);
+    }
+    .submenu a:hover { background: rgba(35, 166, 179, 0.1); color: var(--teal); }
+    .nav-item:hover .submenu,
+    .nav-item:focus-within .submenu,
+    .nav-item.open .submenu { visibility: visible; opacity: 1; pointer-events: auto; }
+    .menu-toggle {
+      display: none; background: none; border: 1px solid rgba(46,74,112,0.25);
+      padding: 0.45rem 0.7rem; font-family: var(--wide); letter-spacing: 0.12em;
+      text-transform: uppercase; font-size: 0.7rem; color: var(--navy); cursor: pointer;
+    }
+
+    .sisters-hero {
+      position: relative; color: #fff; text-align: center;
+      padding: clamp(4rem, 10vw, 6.5rem) 1.25rem;
+      background:
+        linear-gradient(rgba(46,74,112,0.78), rgba(35,166,179,0.45)),
+        url("assets/community.jpg") center / cover no-repeat;
+    }
+    .sisters-hero .eyebrow { color: rgba(255,255,255,0.85); }
+    .sisters-hero h1 {
+      font-size: clamp(2.2rem, 4.5vw, 3.4rem); margin: 0 0 0.75rem;
+    }
+    .sisters-hero .lede {
+      font-family: var(--classico); font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+      color: var(--ember); margin: 0 auto 0.85rem; max-width: 22ch; line-height: 1.3;
+    }
+    .sisters-hero .sub {
+      margin: 0 auto 1.5rem; max-width: 36ch;
+      color: rgba(255,255,255,0.92); font-size: 1.02rem;
+    }
+    .sisters-hero .btns { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+    .program-of {
+      margin-top: 1.35rem; font-size: 0.78rem; letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.75); text-transform: uppercase;
+      font-family: var(--wide);
+    }
+
+    .pathways {
+      padding: clamp(2.5rem, 5vw, 3.5rem) 0 0;
+      background: #fff;
+    }
+    .path-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.15rem;
+      margin-top: -3.25rem; position: relative; z-index: 2;
+    }
+    .path-card {
+      background: var(--foam);
+      border: 1px solid rgba(46,74,112,0.12);
+      padding: 1.5rem 1.4rem;
+      box-shadow: 0 10px 28px rgba(46,74,112,0.08);
+    }
+    .path-card .tag {
+      font-family: var(--wide); font-size: 0.68rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--ember); margin-bottom: 0.4rem;
+    }
+    .path-card h2 { font-size: 1.35rem; margin-bottom: 0.55rem; }
+    .path-card p {
+      margin: 0 0 1rem; font-size: 0.9rem; color: rgba(46,74,112,0.88); line-height: 1.55;
+    }
+    .path-card .btn { width: 100%; }
+
+    .join {
+      padding: clamp(3.25rem, 7vw, 5rem) 0;
+      background: #fff;
+    }
+    .join-intro {
+      text-align: center; max-width: 48ch; margin: -1.1rem auto 2rem;
+      color: rgba(46,74,112,0.8); font-size: 0.95rem; line-height: 1.65;
+    }
+    .join-grid {
+      display: grid; grid-template-columns: 1fr 1.15fr; gap: 1.25rem; align-items: start;
+    }
+    .join-card {
+      background: var(--foam);
+      border: 1px solid rgba(46,74,112,0.1);
+      padding: 1.45rem 1.35rem;
+    }
+    .join-card h3 { font-size: 1.2rem; margin-bottom: 0.75rem; }
+    .join-card ul {
+      margin: 0; padding-left: 1.1rem; color: rgba(46,74,112,0.88); font-size: 0.92rem;
+    }
+    .join-card li { margin-bottom: 0.45rem; }
+    .join-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.75rem; }
+    .join-steps li {
+      display: grid; grid-template-columns: auto 1fr; gap: 0.75rem; align-items: start;
+      font-size: 0.92rem; color: rgba(46,74,112,0.88); line-height: 1.5;
+    }
+    .join-steps .n {
+      font-family: var(--wide); font-size: 0.72rem; letter-spacing: 0.1em;
+      color: #fff; background: var(--navy); width: 1.75rem; height: 1.75rem;
+      display: grid; place-items: center; border-radius: 50%; margin-top: 0.1rem;
+    }
+    .privacy-note {
+      margin-top: 1.25rem; padding: 1rem 1.15rem;
+      background: rgba(35,166,179,0.08);
+      border: 1px solid rgba(35,166,179,0.28);
+      font-size: 0.88rem; color: rgba(46,74,112,0.88); line-height: 1.55;
+    }
+    .privacy-note strong {
+      display: block; font-family: var(--wide); font-size: 0.68rem;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal);
+      margin-bottom: 0.35rem; font-weight: 500;
+    }
+    .join-actions {
+      display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 1.15rem;
+    }
+
+    /* Problem / Solution / Impact — Wajamama layout, Pendo styling */
+    .problem {
+      padding: clamp(3rem, 7vw, 4.75rem) 0;
+      background: var(--navy);
+      color: #fff;
+    }
+    .problem-label {
+      font-family: var(--wide);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin: 0 0 clamp(1.75rem, 3.5vw, 2.5rem);
+      color: rgba(255,255,255,0.88);
+    }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+    }
+    .problem-item .num {
+      font-family: var(--classico);
+      font-size: clamp(2.75rem, 6vw, 4.5rem);
+      line-height: 1;
+      margin: 0 0 0.75rem;
+      color: #fff;
+    }
+    .problem-item .num.long {
+      font-size: clamp(1.85rem, 3.8vw, 2.85rem);
+      letter-spacing: 0.02em;
+    }
+    .problem-item p {
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.88);
+      max-width: 28ch;
+    }
+
+    .bridge {
+      padding: clamp(3.5rem, 8vw, 5.5rem) 0;
+      background: var(--foam);
+    }
+    .bridge-cause {
+      margin: 0 0 clamp(1.5rem, 3vw, 2.25rem);
+      font-size: clamp(1.25rem, 2.6vw, 1.85rem);
+      line-height: 1.4;
+      color: rgba(46,74,112,0.88);
+      max-width: 40ch;
+    }
+    .bridge-claim {
+      margin: 0;
+      font-family: var(--classico);
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      line-height: 1.15;
+      color: var(--navy);
+      max-width: 16ch;
+    }
+
+    .mission {
+      padding: clamp(3.5rem, 8vw, 5.75rem) 0 clamp(2.5rem, 5vw, 3.5rem);
+      background: #fff;
+    }
+    .mission-title {
+      margin: 0 0 1.35rem;
+      font-family: var(--classico);
+      font-size: clamp(2.4rem, 7vw, 5.5rem);
+      line-height: 1.05;
+      color: var(--navy);
+      max-width: 14ch;
+    }
+    .mission p {
+      margin: 0 0 1rem;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: rgba(46,74,112,0.88);
+      max-width: 48ch;
+    }
+    .mission .quote {
+      font-family: var(--classico);
+      font-size: 1.15rem;
+      line-height: 1.45;
+      border-left: 3px solid var(--ember);
+      padding-left: 1rem;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--navy);
+      max-width: 42ch;
+    }
+    .mission .attrib {
+      font-family: var(--wide);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ember);
+      margin: 0;
+    }
+
+    .impact-story {
+      padding: clamp(3rem, 7vw, 5rem) 0;
+      background: #fff;
+    }
+    .impact-story-label {
+      font-family: var(--wide);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin: 0 0 clamp(1.5rem, 3vw, 2.25rem);
+    }
+    .impact-rows { display: grid; gap: 0; }
+    .impact-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1rem 2rem;
+      align-items: baseline;
+      padding: clamp(1.35rem, 3vw, 1.85rem) 0;
+      border-top: 2px solid var(--ember);
+    }
+    .impact-row:last-of-type { border-bottom: 2px solid var(--ember); }
+    .impact-row .big {
+      margin: 0;
+      font-family: var(--classico);
+      font-size: clamp(2.4rem, 6.5vw, 4.75rem);
+      line-height: 1;
+      color: var(--navy);
+    }
+    .impact-row p {
+      margin: 0;
+      font-size: clamp(1rem, 1.8vw, 1.25rem);
+      font-weight: 300;
+      line-height: 1.35;
+      color: rgba(46,74,112,0.88);
+      max-width: 24ch;
+    }
+    .impact-close {
+      margin: clamp(2rem, 4vw, 3rem) 0 0;
+      font-family: var(--classico);
+      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+      line-height: 1.2;
+      color: var(--navy);
+      max-width: 24ch;
+    }
+
+    .pillars {
+      padding: clamp(3.25rem, 7vw, 5rem) 0;
+      background: var(--foam);
+      background-image: var(--linen);
+      background-size: var(--linen-size);
+      background-blend-mode: multiply;
+    }
+    .pillars-intro {
+      text-align: center; max-width: 52ch; margin: -1.1rem auto 2.25rem;
+      color: rgba(46,74,112,0.8); font-size: 0.95rem;
+    }
+    .pillar-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.15rem;
+    }
+    .pillar {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(46,74,112,0.1);
+      padding: 1.5rem 1.35rem;
+    }
+    .pillar .num {
+      font-family: var(--wide); font-size: 0.7rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--ember); margin-bottom: 0.45rem;
+    }
+    .pillar h3 { font-size: 1.25rem; margin-bottom: 0.55rem; color: var(--navy); }
+    .pillar p { margin: 0; font-size: 0.9rem; color: rgba(46,74,112,0.88); line-height: 1.6; }
+
+    .founder {
+      padding: clamp(3.25rem, 7vw, 5rem) 0;
+      background: #fff;
+    }
+    .founder-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2.25rem; align-items: center;
+    }
+    .founder-photo {
+      min-height: 340px;
+      background:
+        linear-gradient(rgba(46,74,112,0.15), rgba(46,74,112,0.35)),
+        url("assets/community.jpg") center / cover no-repeat;
+    }
+    .founder h2 { font-size: clamp(1.6rem, 2.8vw, 2.1rem); margin: 0 0 0.85rem; }
+    .founder p { margin: 0 0 1rem; color: rgba(46,74,112,0.88); }
+    .founder .quote {
+      font-family: var(--classico); font-size: 1.15rem; line-height: 1.45;
+      color: var(--navy); margin: 1.25rem 0 0.5rem;
+    }
+    .founder .attrib {
+      font-size: 0.82rem; color: var(--teal);
+      font-family: var(--wide); letter-spacing: 0.1em; text-transform: uppercase;
+    }
+
+    .why {
+      padding: clamp(3.25rem, 7vw, 5rem) 0;
+      background: var(--foam);
+      background-image: var(--linen);
+      background-size: var(--linen-size);
+      background-blend-mode: multiply;
+    }
+    .why-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.15rem;
+    }
+    .why-card {
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(46,74,112,0.1);
+      padding: 1.4rem 1.25rem;
+    }
+    .why-card h3 { font-size: 1.15rem; margin-bottom: 0.55rem; }
+    .why-card p { margin: 0; font-size: 0.9rem; color: rgba(46,74,112,0.88); }
+
+    .toc {
+      padding: clamp(3rem, 6vw, 4.25rem) 0;
+      background: #fff;
+    }
+    .toc-flow {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.65rem;
+      margin-bottom: 1.75rem;
+    }
+    .toc-step {
+      text-align: center; padding: 1rem 0.65rem;
+      border: 1px solid rgba(46,74,112,0.12);
+      background: var(--foam); font-size: 0.82rem; line-height: 1.35;
+    }
+    .toc-step strong {
+      display: block; font-family: var(--wide); font-size: 0.68rem;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal);
+      margin-bottom: 0.35rem; font-weight: 500;
+    }
+    .toc-outcomes {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;
+    }
+    .toc-outcomes article {
+      padding: 1.25rem 1.2rem;
+      border-left: 3px solid var(--ember);
+      background: var(--foam);
+    }
+    .toc-outcomes h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+    .toc-outcomes p { margin: 0; font-size: 0.9rem; color: rgba(46,74,112,0.88); }
+    .impact-line {
+      margin-top: 1.75rem; text-align: center;
+      font-family: var(--classico); font-size: clamp(1.15rem, 2vw, 1.4rem);
+      color: var(--navy); max-width: 40ch; margin-inline: auto; line-height: 1.4;
+    }
+
+    .stakeholders {
+      padding: clamp(3.25rem, 7vw, 5rem) 0;
+      background: #fff;
+    }
+    .stakeholders-intro {
+      text-align: center; max-width: 52ch; margin: -1.1rem auto 2.25rem;
+      color: rgba(46,74,112,0.8); font-size: 0.95rem; line-height: 1.65;
+    }
+    .stake-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+    }
+    .stake-card {
+      border: 1px solid rgba(46,74,112,0.1);
+      background: var(--foam);
+      padding: 1.35rem 1.2rem;
+    }
+    .stake-card .tag {
+      font-family: var(--wide); font-size: 0.68rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--ember); margin-bottom: 0.4rem;
+    }
+    .stake-card h3 {
+      font-size: 1.15rem; margin: 0 0 0.75rem; color: var(--navy);
+    }
+    .stake-card ul {
+      margin: 0; padding: 0; list-style: none;
+      display: flex; flex-direction: column; gap: 0.35rem;
+    }
+    .stake-card li {
+      font-size: 0.84rem; line-height: 1.45; color: rgba(46,74,112,0.88);
+      padding-left: 0.85rem; position: relative;
+    }
+    .stake-card li::before {
+      content: ""; position: absolute; left: 0; top: 0.55em;
+      width: 5px; height: 5px; border-radius: 50%; background: var(--teal);
+    }
+    .stake-card.span-all { grid-column: 1 / -1; }
+    .stake-card .org-row {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.35rem 1.25rem;
+    }
+    @media (max-width: 980px) {
+      .stake-grid { grid-template-columns: 1fr 1fr; }
+      .stake-card .org-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .stake-grid { grid-template-columns: 1fr; }
+    }
+
+    .faq {
+      padding: clamp(3.25rem, 7vw, 5rem) 0;
+      background: var(--foam);
+      background-image: var(--linen);
+      background-size: var(--linen-size);
+      background-blend-mode: multiply;
+    }
+    .faq-list {
+      max-width: 720px; margin: 0 auto;
+      display: flex; flex-direction: column; gap: 0.65rem;
+    }
+    .faq-item {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(46,74,112,0.12);
+    }
+    .faq-item summary {
+      list-style: none; cursor: pointer;
+      padding: 1.1rem 1.25rem;
+      font-family: var(--classico); font-size: 1.08rem;
+      color: var(--navy); line-height: 1.35;
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: "+";
+      font-family: var(--wide); font-size: 1.1rem; color: var(--teal);
+      flex-shrink: 0; line-height: 1;
+    }
+    .faq-item[open] summary::after { content: "–"; }
+    .faq-item .answer {
+      padding: 0 1.25rem 1.2rem;
+      margin: 0; font-size: 0.92rem;
+      color: rgba(46,74,112,0.88); line-height: 1.65;
+    }
+    .faq-item .answer a {
+      color: var(--teal); text-decoration: underline; text-underline-offset: 3px;
+    }
+
+    .cta-band {
+      text-align: center;
+      padding: clamp(2.75rem, 6vw, 4rem) 1.25rem;
+      background: #fff;
+    }
+    .cta-band h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 0.65rem; }
+    .cta-band p {
+      margin: 0 auto 1.35rem; max-width: 44ch; color: rgba(46,74,112,0.85); font-size: 0.95rem;
+    }
+    .cta-band .btns { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+
+    .site-footer {
+      background: var(--navy); color: #fff;
+      padding: clamp(2.5rem, 5vw, 3.5rem) 0 0;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 2rem;
+      padding-bottom: 2rem;
+    }
+    .footer-grid h4 {
+      font-family: var(--wide); font-size: 0.75rem; letter-spacing: 0.16em;
+      text-transform: uppercase; margin: 0 0 1rem; color: var(--sky);
+    }
+    .footer-links {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem 1rem;
+    }
+    .footer-links a {
+      font-size: 0.88rem; text-decoration: underline; text-underline-offset: 3px;
+      text-decoration-color: rgba(255,255,255,0.35);
+    }
+    .footer-links a:hover { text-decoration-color: #fff; }
+    .footer-mid { text-align: center; }
+    .footer-logo { height: 56px; width: auto; margin: 0 auto 1rem; filter: brightness(0) invert(1); }
+    .footer-mid p { font-size: 0.88rem; color: rgba(255,255,255,0.8); margin: 0 0 0.75rem; }
+    .footer-mid .place {
+      font-family: var(--wide); font-size: 0.72rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--sky); margin-bottom: 1rem;
+    }
+    .socials { display: flex; gap: 0.75rem; justify-content: center; margin-bottom: 1.25rem; }
+    .socials a {
+      width: 36px; height: 36px; display: grid; place-items: center;
+      border: 1px solid rgba(255,255,255,0.3); border-radius: 50%;
+    }
+    .socials svg { width: 16px; height: 16px; fill: #fff; }
+    .footer-contact p, .footer-hours p { margin: 0 0 0.45rem; font-size: 0.88rem; }
+    .footer-contact a { text-decoration: underline; text-underline-offset: 3px; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding: 1rem 0; display: flex; justify-content: space-between;
+      font-size: 0.78rem; color: rgba(255,255,255,0.65);
+    }
+
+    @media (max-width: 980px) {
+      .nav {
+        display: none; position: absolute; top: 100%; left: 0; right: 0;
+        background: #fff; flex-direction: column; align-items: stretch;
+        padding: 0.5rem 1.25rem 1rem; border-bottom: 1px solid rgba(46,74,112,0.1);
+        gap: 0;
+      }
+      .nav.open { display: flex; }
+      .nav > a, .nav-item > .nav-trigger {
+        width: 100%; text-align: left; padding: 0.85rem 0.15rem;
+      }
+      .nav-item { display: block; height: auto; }
+      .submenu {
+        position: static; transform: none; visibility: hidden; opacity: 0;
+        min-width: 0; pointer-events: none;
+      }
+      .nav-item.open .submenu {
+        visibility: visible; opacity: 1; pointer-events: auto;
+      }
+      .submenu::before { display: none; }
+      .submenu-inner { box-shadow: none; border: 0; background: transparent; }
+      .menu-toggle { display: inline-flex; }
+      .problem-grid { grid-template-columns: 1fr; }
+      .impact-row { grid-template-columns: 1fr; gap: 0.45rem; }
+      .founder-grid, .path-grid, .join-grid { grid-template-columns: 1fr; }
+      .path-grid { margin-top: 0; }
+      .pillar-grid, .toc-outcomes { grid-template-columns: 1fr; }
+      .toc-flow { grid-template-columns: 1fr 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { justify-content: center; text-align: center; }
+    }
+    @media (max-width: 560px) {
+      .toc-flow { grid-template-columns: 1fr; }
+      .footer-links { grid-template-columns: 1fr; }
+    }
+  
+    /* —— Mobile nav fix: compact items, closed dropdowns take no space —— */
+    @media (max-width: 980px) {
+      .site-header { overflow: visible; }
+      .header-inner { position: relative; flex-wrap: wrap; }
+      .menu-toggle { display: inline-flex; }
+      .site-header .nav {
+        display: none;
+        width: 100%;
+        order: 3;
+        flex: none !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        gap: 0 !important;
+        padding: 0.25rem 0 0.65rem !important;
+        margin: 0 !important;
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        background: transparent !important;
+        border-top: 1px solid rgba(46,74,112,0.1);
+        border-bottom: 0 !important;
+        box-shadow: none !important;
+        max-height: none !important;
+      }
+      .site-header .nav.open { display: flex !important; }
+      .site-header .nav > a,
+      .site-header .nav-item > .nav-trigger {
+        width: 100% !important;
+        text-align: left !important;
+        justify-content: space-between !important;
+        padding: 0.7rem 0.15rem !important;
+        height: auto !important;
+        min-height: 0 !important;
+        line-height: 1.3 !important;
+      }
+      .site-header .nav > a.is-active::after { bottom: 0.35rem !important; }
+      .site-header .nav-item {
+        display: block !important;
+        height: auto !important;
+        min-height: 0 !important;
+        align-self: auto !important;
+        flex: none !important;
+      }
+      .site-header .nav-trigger {
+        height: auto !important;
+        min-height: 0 !important;
+        width: 100% !important;
+      }
+      .site-header .nav-item:hover > .submenu,
+      .site-header .nav-item:focus-within > .submenu {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+      .site-header .submenu {
+        display: none !important;
+        position: static !important;
+        transform: none !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-height: none !important;
+        height: auto !important;
+        overflow: hidden !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .site-header .submenu::before {
+        display: none !important;
+        content: none !important;
+        height: 0 !important;
+      }
+      .site-header .submenu-inner {
+        box-shadow: none !important;
+        border: 0 !important;
+        background: rgba(35, 176, 185, 0.06) !important;
+        padding: 0.1rem 0 0.35rem !important;
+      }
+      .site-header .nav-item.open > .submenu {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        margin: 0 0 0.2rem !important;
+      }
+      .site-header .submenu a {
+        padding: 0.5rem 0.85rem !important;
+        white-space: normal !important;
+        line-height: 1.35 !important;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="announce" id="announce">
+    <span>Pendo Sisters — a program of Pendo International Projects · <a href="contact.html">Get support or partner</a>.</span>
+    <button class="x" type="button" aria-label="Close announcement" onclick="document.getElementById('announce').style.display='none'">×</button>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/pendo-logo.png" alt="Pendo International Projects" />
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <div class="nav-item" id="aboutItem">
+          <button class="nav-trigger" type="button" id="aboutTrigger" aria-expanded="false" aria-controls="aboutMenu" aria-haspopup="true">About</button>
+          <div class="submenu" id="aboutMenu">
+            <div class="submenu-inner" role="menu">
+              <a href="about.html" role="menuitem">Our Story</a>
+              <a href="team.html" role="menuitem">Meet the Team</a>
+              <a href="about.html#roadmap" role="menuitem">Road Map</a>
+              <a href="index.html#partners" role="menuitem">Our Partners</a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item" id="programsItem">
+          <button class="nav-trigger is-active" type="button" id="programsTrigger" aria-expanded="false" aria-controls="programsMenu" aria-haspopup="true">Programs</button>
+          <div class="submenu" id="programsMenu">
+            <div class="submenu-inner" role="menu">
+              <a href="hub.html" role="menuitem">Child &amp; Family Development Hub</a>
+              <a href="scholarship.html" role="menuitem">Scholarships</a>
+              <a class="is-active" href="sisters.html" role="menuitem">Pendo Sisters</a>
+              <a href="safari.html" role="menuitem">Safari of a Lifetime</a>
+            </div>
+          </div>
+        </div>
+        <a href="blog.html">Blog</a>
+        <div class="nav-item" id="involvedItem">
+          <button class="nav-trigger" type="button" id="involvedTrigger" aria-expanded="false" aria-controls="involvedMenu" aria-haspopup="true">Get Involved</button>
+          <div class="submenu" id="involvedMenu">
+            <div class="submenu-inner" role="menu">
+              <a href="index.html#involved" role="menuitem">Ways to Help</a>
+              <a href="scholarship.html#give" role="menuitem">Ways to Give</a>
+              <a href="https://www.pendointl.org/causes" role="menuitem">The Need</a>
+              <a href="https://www.pendointl.org/" role="menuitem">Donate</a>
+            </div>
+          </div>
+        </div>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="menu-toggle" type="button" id="menuToggle" aria-expanded="false" aria-controls="nav">Menu</button>
+        <a class="btn btn-navy" href="https://www.pendointl.org/">Donate</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="sisters-hero">
+    <p class="eyebrow">Canada · Refugee mothers</p>
+    <h1>Pendo Sisters</h1>
+    <p class="lede">No Mother Should Wait Alone</p>
+    <p class="sub">Supporting maternal wellbeing. Preserving the mother–child bond.</p>
+    <div class="btns">
+      <a class="btn btn-navy" href="#join">I’m a mother — get support</a>
+      <a class="btn btn-outline-white" href="#partner">I want to partner or fund</a>
+    </div>
+    <p class="program-of">A program of Pendo International Projects</p>
+  </section>
+
+  <section class="pathways" aria-label="Choose your path">
+    <div class="wrap path-grid">
+      <article class="path-card">
+        <div class="tag">For mothers</div>
+        <h2>Get support</h2>
+        <p>If you are a refugee mother in Canada separated from your children, Pendo Sisters is here to walk with you.</p>
+        <a class="btn btn-navy" href="#join">How to join</a>
+      </article>
+      <article class="path-card" id="partner">
+        <div class="tag">For partners &amp; donors</div>
+        <h2>Partner or fund</h2>
+        <p>Help expand peer support, wellbeing programs, and long-distance parenting tools through funding, referrals, or collaboration.</p>
+        <a class="btn btn-navy" href="contact.html">Contact &amp; partner</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="problem" id="crisis" aria-label="The problem in numbers">
+    <div class="wrap">
+      <h2 class="problem-label">The Problem in Numbers</h2>
+      <div class="problem-grid">
+        <article class="problem-item">
+          <div class="num">8 yrs</div>
+          <p>Separations that should be short can stretch up to eight years because of immigration backlogs.</p>
+        </article>
+        <article class="problem-item">
+          <div class="num">~0</div>
+          <p>Programs exist that walk with refugee mothers specifically through those long years of waiting.</p>
+        </article>
+        <article class="problem-item">
+          <div class="num long">Countless</div>
+          <p>Mothers face isolation, anxiety, and depression—while mother–child bonds weaken across distance and time.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bridge" aria-label="Why Pendo Sisters exists">
+    <div class="wrap">
+      <p class="bridge-cause">Refugee mothers flee to Canada for safety—often forced to leave children behind. Pathways for reunification exist, but almost no support holds mothers through the wait.</p>
+      <h2 class="bridge-claim">Pendo Sisters exists to change this.</h2>
+    </div>
+  </section>
+
+  <section class="mission" id="story">
+    <div class="wrap">
+      <h2 class="mission-title">No mother should wait alone.</h2>
+      <p>Every year, refugee mothers arrive in Canada while their children remain overseas. Prolonged separation harms maternal wellbeing and the bond that shapes a child’s development.</p>
+      <p>Through peer community, mental health support, and long-distance parenting tools, Pendo Sisters walks with mothers so the wait does not break them—or the bond with their children.</p>
+      <p class="quote">“I lived this separation for more than eight years. There were no programs to support mothers like me. Pendo Sisters was created to fill that gap.”</p>
+      <p class="attrib">— Ciro Muiruri, Founder &amp; Executive Director</p>
+    </div>
+  </section>
+
+  <section class="join" id="join">
+    <div class="wrap">
+      <h2 class="section-title">How to join</h2>
+      <hr class="section-rule" />
+      <p class="join-intro">Pendo Sisters is for refugee mothers in Canada navigating prolonged separation from their children. Reaching out is confidential and without pressure.</p>
+      <div class="join-grid">
+        <article class="join-card">
+          <h3>Who it’s for</h3>
+          <ul>
+            <li>Refugee or newcomer mothers living in Canada</li>
+            <li>Mothers separated from children who remain overseas</li>
+            <li>Anyone seeking peer support, wellbeing care, or long-distance parenting tools during the wait for reunification</li>
+          </ul>
+          <div class="privacy-note">
+            <strong>Your privacy matters</strong>
+            Conversations and participation are confidential. We never require public stories or photos to receive support.
+          </div>
+        </article>
+        <article class="join-card">
+          <h3>What happens next</h3>
+          <ol class="join-steps">
+            <li><span class="n">1</span><span>Reach out by email or our contact form and tell us you’re interested in Pendo Sisters.</span></li>
+            <li><span class="n">2</span><span>We’ll respond personally, learn a little about your situation, and answer questions.</span></li>
+            <li><span class="n">3</span><span>If it’s a fit, we’ll welcome you into peer community, wellbeing support, and parenting tools at a pace that feels safe.</span></li>
+          </ol>
+          <div class="join-actions">
+            <a class="btn btn-navy" href="mailto:ciro@pendointl.org?subject=Pendo%20Sisters%20—%20Get%20support">Email for support</a>
+            <a class="btn btn-ember" href="contact.html">Contact form</a>
+          </div>
+          <div class="privacy-note">
+            <strong>Safe space</strong>
+            You control what you share. Support is available whether or not you ever speak publicly about your journey.
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pillars" id="approach">
+    <div class="wrap">
+      <h2 class="section-title">How Pendo Sisters makes a difference</h2>
+      <hr class="section-rule" />
+      <p class="pillars-intro">Pendo Sisters walks alongside refugee mothers with peer community, mental health support, and practical tools for long-distance parenting and reunification.</p>
+      <div class="pillar-grid">
+        <article class="pillar">
+          <div class="num">01 · Peer &amp; community</div>
+          <h3>Peer &amp; Community Support</h3>
+          <p>A community of mothers who understand the journey—daily gatherings, monthly virtual group calls, and spaces that reduce isolation.</p>
+        </article>
+        <article class="pillar">
+          <div class="num">02 · Wellbeing</div>
+          <h3>Maternal Wellbeing</h3>
+          <p>Mental health programs, wellness retreats, and access to professional expertise so mothers can heal and stay strong.</p>
+        </article>
+        <article class="pillar">
+          <div class="num">03 · Bond</div>
+          <h3>Preserving Mother–Child Bonds</h3>
+          <p>Daily practices and tools that strengthen attachment and meaningful connection across distance.</p>
+        </article>
+        <article class="pillar">
+          <div class="num">04 · Reunification</div>
+          <h3>Long-Distance Parenting &amp; Reunification</h3>
+          <p>Practical guidance to parent from afar and prepare for reunion—so the return is steadier for mother and child.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="impact-story" id="results" aria-label="Pendo Sisters impact">
+    <div class="wrap">
+      <h2 class="impact-story-label">Our Impact</h2>
+      <div class="impact-rows">
+        <div class="impact-row">
+          <h3 class="big">Supporting 150+</h3>
+          <p>mothers in the pilot—peer community through years of separation</p>
+        </div>
+        <div class="impact-row">
+          <h3 class="big">Daily</h3>
+          <p>community gatherings where mothers who understand the journey show up for each other</p>
+        </div>
+        <div class="impact-row">
+          <h3 class="big">Monthly</h3>
+          <p>virtual group calls that keep connection strong across cities and seasons</p>
+        </div>
+        <div class="impact-row">
+          <h3 class="big">2 Retreats</h3>
+          <p>wellness retreats held so mothers can rest, heal, and return steadier</p>
+        </div>
+      </div>
+      <p class="impact-close">With your support, no mother has to wait alone for the day her children come home.</p>
+    </div>
+  </section>
+
+  <section class="toc" id="theory">
+    <div class="wrap">
+      <h2 class="section-title">Theory of Change</h2>
+      <hr class="section-rule" />
+      <div class="toc-flow">
+        <div class="toc-step"><strong>1</strong>Mothers in the pilot</div>
+        <div class="toc-step"><strong>2</strong>Peer support</div>
+        <div class="toc-step"><strong>3</strong>Virtual group calls</div>
+        <div class="toc-step"><strong>4</strong>Community gatherings</div>
+        <div class="toc-step"><strong>5</strong>Retreats</div>
+      </div>
+      <div class="toc-outcomes">
+        <article>
+          <h3>Intermediate outcomes</h3>
+          <p>Stronger maternal wellbeing · Peer &amp; community support · Mother–child bond preserved · Mothers better equipped to navigate separation</p>
+        </article>
+        <article>
+          <h3>Primary outcome</h3>
+          <p>Better remote parenting and preparation for reunification—so families reunite on firmer ground.</p>
+        </article>
+      </div>
+      <p class="impact-line">A healthy mother today creates confident children, stable families, and resilient communities tomorrow.</p>
+    </div>
+  </section>
+
+  <section class="why" id="why">
+    <div class="wrap">
+      <h2 class="section-title">Why Pendo Sisters</h2>
+      <hr class="section-rule" />
+      <div class="why-grid">
+        <article class="why-card">
+          <h3>Identified service gap</h3>
+          <p>Created to fill a neglected gap in the settlement sector—support for mothers separated from their children for years.</p>
+        </article>
+        <article class="why-card">
+          <h3>Specialized insight</h3>
+          <p>Led by a team that understands protecting maternal wellbeing, maintaining the bond, and preparing for reunion.</p>
+        </article>
+        <article class="why-card">
+          <h3>Built on lived experience</h3>
+          <p>Founder Ciro Muiruri lived more than eight years of mother–child separation—and built the program she needed.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="founder" id="founder">
+    <div class="wrap founder-grid">
+      <div class="founder-photo" role="img" aria-label="Pendo Sisters community"></div>
+      <div>
+        <p class="eyebrow">Founder’s story</p>
+        <h2>Ciro Muiruri</h2>
+        <p>Founder &amp; Executive Director, Pendo International Projects. Speaker, advocate, and author.</p>
+        <p>Ciro arrived in Canada as a refugee in 2016. Her story was featured in Toronto Life’s “Brave Heart,” which led to a book offer from House of Anansi Press. Her forthcoming memoir chronicles prolonged mother–child separation, resettlement, and community leadership.</p>
+        <p>In Canada, Pendo Sisters is inspired by Ciro’s own eight-year separation from her child—peer support, mental health services, and long-distance parenting tools so no mother waits alone.</p>
+        <p class="quote">“I lived this separation for more than eight years. There were no programs to support mothers like me. Pendo Sisters was created to fill that gap.”</p>
+        <p class="attrib">— Ciro Muiruri</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="stakeholders" id="stakeholders">
+    <div class="wrap">
+      <h2 class="section-title">Stakeholder Map</h2>
+      <hr class="section-rule" />
+      <p class="stakeholders-intro">The ecosystem Pendo Sisters engages across government, settlement, health, advocacy, philanthropy, community, and research—partners and audiences for referrals, collaboration, and support.</p>
+      <div class="stake-grid">
+        <article class="stake-card">
+          <div class="tag">01 · Government</div>
+          <h3>Government stakeholders</h3>
+          <ul>
+            <li><strong>Federal:</strong> IRCC; Minister of Immigration; Minister of Women and Gender Equality; Public Health Agency of Canada (maternal mental health)</li>
+            <li><strong>Ontario:</strong> Ministry of Children, Community and Social Services; Ministry of Health; Ontario Women’s Directorate; OCASI</li>
+            <li><strong>Toronto:</strong> Toronto Newcomer Office; Toronto Public Health (perinatal mental health)</li>
+          </ul>
+        </article>
+        <article class="stake-card">
+          <div class="tag">02 · Settlement</div>
+          <h3>Settlement sector</h3>
+          <ul>
+            <li>COSTI Immigrant Services</li>
+            <li>YMCA Newcomer Services</li>
+            <li>ISSofBC · MOSAIC</li>
+            <li>Catholic Cross-Cultural Services</li>
+            <li>Afghan Women’s Organization</li>
+            <li>FCJ Refugee Centre · Romero House</li>
+            <li>Red Cross Resettlement Services</li>
+          </ul>
+        </article>
+        <article class="stake-card">
+          <div class="tag">03 · Health</div>
+          <h3>Mental &amp; maternal health</h3>
+          <ul>
+            <li>CAMH (Women’s Mental Health Program)</li>
+            <li>Women’s College Hospital</li>
+            <li>SickKids (Child Development &amp; Attachment)</li>
+            <li>Perinatal mental health networks</li>
+            <li>Canadian Paediatric Society</li>
+            <li>Canadian Association of Social Workers</li>
+          </ul>
+        </article>
+        <article class="stake-card">
+          <div class="tag">04 · Advocacy</div>
+          <h3>Refugee advocacy &amp; policy</h3>
+          <ul>
+            <li>Refugee Hub (University of Ottawa)</li>
+            <li>Canadian Council for Refugees</li>
+            <li>UNHCR Canada</li>
+            <li>Amnesty International Canada</li>
+            <li>Human Rights Watch (migration)</li>
+          </ul>
+        </article>
+        <article class="stake-card">
+          <div class="tag">05 · Philanthropy</div>
+          <h3>Funding stakeholders</h3>
+          <ul>
+            <li>Laidlaw Foundation</li>
+            <li>Maytree Foundation</li>
+            <li>McConnell Foundation</li>
+            <li>Lyle S. Hallman Foundation</li>
+            <li>Canadian Women’s Foundation &amp; women’s philanthropic networks</li>
+          </ul>
+        </article>
+        <article class="stake-card">
+          <div class="tag">06 · Community</div>
+          <h3>Community &amp; cultural</h3>
+          <ul>
+            <li>Kenyan Canadian Association</li>
+            <li>African diaspora organizations</li>
+            <li>Faith-based newcomer support groups</li>
+            <li>Community health centres (e.g. TAIBU CHC)</li>
+          </ul>
+        </article>
+        <article class="stake-card span-all">
+          <div class="tag">07 · Research</div>
+          <h3>Academic &amp; research partners</h3>
+          <ul class="org-row">
+            <li>University of Toronto — Social Work, Public Health</li>
+            <li>York University — Refugee &amp; Migration Studies</li>
+            <li>Toronto Metropolitan University — Immigration &amp; Settlement Studies</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <h2 class="section-title">Questions &amp; Answers</h2>
+      <hr class="section-rule" />
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Why was Pendo Sisters created?</summary>
+          <p class="answer">Refugee mothers often spend several years separated from their children, with no programs supporting their mental health or helping them preserve the mother–child bond. Ciro lived this experience and built the program to fill this gap.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What makes Pendo Sisters unique?</summary>
+          <p class="answer">Pendo Sisters is the only program in Canada focused specifically on maternal wellbeing during prolonged separation.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How long are mothers typically separated from their children?</summary>
+          <p class="answer">Immigration backlogs can mean mothers and children are separated for several years. In Ciro’s case, it took eight years for her to be reunited with her daughter.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What does the program offer?</summary>
+          <p class="answer">Pendo Sisters offers peer support, mental health programs, wellness retreats, long-distance parenting tools, and reunification preparation.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How many mothers have been supported so far?</summary>
+          <p class="answer">More than 150 mothers in the pilot phase.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How can people support the program?</summary>
+          <p class="answer">Through partnerships, funding, referrals, and amplifying awareness. Reach out at <a href="mailto:ciro@pendointl.org">ciro@pendointl.org</a> or visit <a href="https://www.pendointl.org/">www.pendointl.org</a>.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="get-involved">
+    <h2>Two ways to walk with us</h2>
+    <p>Whether you need support or want to help another mother—start here.</p>
+    <div class="btns">
+      <a class="btn btn-navy" href="#join">I’m a mother — get support</a>
+      <a class="btn btn-ember" href="contact.html">Partner, fund, or refer</a>
+      <a class="btn btn-ember" href="https://www.pendointl.org/">Donate</a>
+    </div>
+    <p class="privacy-note" style="max-width:40rem;margin:1.35rem auto 0;text-align:left;">
+      <strong>Privacy</strong>
+      Mothers seeking support are never asked to share their story publicly. Referrals and inquiries are handled with care and confidentiality.
+    </p>
+  </section>
+
+  <footer class="site-footer" id="contact">
+    <div class="wrap footer-grid">
+      <div>
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="team.html">Meet the Team</a>
+          <a href="sisters.html">Pendo Sisters</a>
+          <a href="hub.html">Development Hub</a>
+          <a href="safari.html">Safari</a>
+          <a href="index.html#partners">Partners</a>
+          <a href="https://www.pendointl.org/causes">The Need</a>
+          <a href="index.html#involved">Get Involved</a>
+          <a href="https://www.pendointl.org/">Donate</a>
+        </div>
+      </div>
+      <div class="footer-mid">
+        <img class="footer-logo" src="assets/pendo-logo.png" alt="Pendo International Projects" />
+        <p>Pendo Sisters is a program of Pendo International Projects—supporting refugee mothers in Canada while Pendo School Kenya advances early education.</p>
+        <div class="place">Kenya · Canada</div>
+        <div class="socials">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/pendo-international-projects/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+          </a>
+        </div>
+        <a class="btn btn-white" href="https://www.pendointl.org/">Donate</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <p><strong>Pendo Sisters</strong></p>
+          <p>Ciro Muiruri · Founder &amp; Executive Director</p>
+          <p style="margin-top:0.9rem"><a href="mailto:ciro@pendointl.org">ciro@pendointl.org</a></p>
+          <p><a href="https://www.pendointl.org/">www.pendointl.org</a></p>
+        </div>
+        <h4 style="margin-top:1.5rem">Focus</h4>
+        <div class="footer-hours">
+          <p>Maternal wellbeing · Peer support · Long-distance parenting · Reunification</p>
+        </div>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <span>© 2026 Pendo International Projects</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var nav = document.getElementById('nav');
+      var toggle = document.getElementById('menuToggle');
+      var items = Array.prototype.slice.call(nav.querySelectorAll('.nav-item'));
+
+      function closeAllMenus() {
+        items.forEach(function (item) {
+          item.classList.remove('open');
+          var trigger = item.querySelector('.nav-trigger');
+          if (trigger) trigger.setAttribute('aria-expanded', 'false');
+        });
+      }
+
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (!open) closeAllMenus();
+      });
+
+      items.forEach(function (item) {
+        var trigger = item.querySelector('.nav-trigger');
+        if (!trigger) return;
+        trigger.addEventListener('click', function (e) {
+          if (window.matchMedia('(max-width: 980px)').matches) {
+            e.preventDefault();
+            var willOpen = !item.classList.contains('open');
+            closeAllMenus();
+            if (willOpen) {
+              item.classList.add('open');
+              trigger.setAttribute('aria-expanded', 'true');
+            }
+          }
+        });
+      });
+
+      nav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (window.matchMedia('(max-width: 980px)').matches) {
+            nav.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+            closeAllMenus();
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

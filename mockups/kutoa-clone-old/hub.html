@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Child &amp; Family Development Hub — Pendo International Projects</title>
+  <meta name="description" content="The Pendo Child &amp; Family Development Hub in Ruiru — 300+ children learning today, special education, digital literacy, mental health, and teacher training. Future capacity 700." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: "Classico";
+      src: url("assets/fonts/classico-bold.woff2") format("woff2"), url("assets/fonts/classico-bold.woff") format("woff");
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    :root {
+      --navy: hsl(214.55, 41.77%, 30.98%);
+      --teal: hsl(183.6, 68.18%, 43.14%);
+      --sky: hsl(194.46, 65.88%, 66.67%);
+      --ember: #ce8b40;
+      --magenta: #a3237b;
+      --foam: hsl(200, 33.33%, 98.24%);
+      --white: #ffffff;
+      --linen: url("assets/linen-light.jpg");
+      --linen-slate: url("assets/linen-slate.jpg");
+      --linen-size: 420px;
+      --max: 1180px;
+      --classico: "Classico", "Optima", "Segoe UI", Candara, sans-serif;
+      --serif: var(--classico);
+      --sans: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+      --wide: "Oswald", "Montserrat", sans-serif;
+      --script: "Great Vibes", cursive;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: var(--sans); color: var(--navy); background: var(--foam); line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, h4 { font-family: var(--classico); font-weight: 400; line-height: 1.2; margin: 0; }
+    .wrap { width: min(100% - 2.5rem, var(--max)); margin-inline: auto; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; font-family: var(--wide); font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; font-size: 0.8rem; padding: 0.95rem 1.65rem; border: 0; cursor: pointer; transition: opacity 0.2s ease; }
+    .btn:hover, .btn:focus-visible { opacity: 0.8; }
+    .btn-navy { background: var(--navy); color: #fff; }
+    .btn-ember { background: var(--ember); color: #fff; border: 1px solid var(--ember); }
+    .btn-white { background: #fff; color: var(--navy); }
+    .btn-outline-ember { background: transparent; color: var(--navy); border: 1px solid var(--ember); }
+    .section-title { text-align: center; font-size: clamp(1.75rem, 3vw, 2.35rem); color: var(--navy); margin: 0 0 0.55rem; }
+    .section-rule { width: 48px; height: 3px; background: var(--ember); margin: 0 auto 2.25rem; border: 0; }
+    .eyebrow { font-family: var(--wide); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ember); margin: 0 0 0.75rem; font-weight: 500; }
+
+    .announce { background: var(--navy); color: #efe8f2; text-align: center; font-size: 0.78rem; letter-spacing: 0.04em; padding: 0.65rem 2.5rem 0.65rem 1.25rem; position: relative; }
+    .announce a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+    .announce .x { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); background: none; border: 0; color: #fff; cursor: pointer; font-size: 1.1rem; }
+
+    .site-header { background: rgba(249,251,252,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(46,74,112,0.08); position: sticky; top: 0; z-index: 50; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; width: min(100% - 1.5rem, 1280px); margin-inline: auto; min-height: 68px; }
+    .brand img { height: 48px; width: auto; }
+    .header-actions { display: flex; align-items: center; gap: 0.65rem; margin-left: auto; }
+    .nav { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; justify-content: center; flex: 1; }
+    .nav > a, .nav-item > .nav-trigger { font-family: var(--wide); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--navy); background: none; border: 0; padding: 1.1rem 0; cursor: pointer; position: relative; }
+    .nav > a:hover, .nav-item > .nav-trigger:hover { color: var(--teal); }
+    .nav-trigger.is-active { color: var(--navy); box-shadow: inset 0 -2px 0 var(--navy); }
+    .nav-item { position: relative; display: flex; align-items: center; height: 100%; align-self: stretch; }
+    .nav-trigger { display: inline-flex; align-items: center; gap: 0.35rem; height: 100%; }
+    .nav-trigger::after { content: ""; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid currentColor; opacity: 0.7; }
+    .submenu { visibility: hidden; opacity: 0; pointer-events: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); min-width: 280px; z-index: 60; transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .submenu::before { content: ""; display: block; height: 10px; }
+    .submenu-inner { background: #fff; border: 1px solid rgba(46,74,112,0.12); box-shadow: 0 12px 28px rgba(46,74,112,0.12); padding: 0.45rem 0; }
+    .submenu a { display: block; padding: 0.7rem 1.15rem; font-size: 0.82rem; color: var(--navy); }
+    .submenu a:hover { background: rgba(35,166,179,0.1); color: var(--teal); }
+    .nav-item:hover .submenu, .nav-item:focus-within .submenu, .nav-item.open .submenu { visibility: visible; opacity: 1; pointer-events: auto; }
+    .menu-toggle { display: none; background: none; border: 1px solid rgba(46,74,112,0.25); padding: 0.45rem 0.7rem; font-family: var(--wide); letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.7rem; color: var(--navy); cursor: pointer; }
+
+    .hub-hero { position: relative; color: #fff; text-align: center; padding: clamp(4rem, 10vw, 6.5rem) 1.25rem; background: linear-gradient(rgba(46,74,112,0.78), rgba(46,74,112,0.82)), url("assets/hub.jpg") center / cover no-repeat; }
+    .hub-hero .eyebrow { color: rgba(255,255,255,0.85); }
+    .hub-hero h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); margin: 0 0 0.75rem; }
+    .hub-hero .lede { font-family: var(--sans); font-weight: 500; font-size: clamp(1rem, 2vw, 1.2rem); color: var(--ember); margin: 0 auto 1rem; max-width: 36ch; }
+    .hub-hero p { margin: 0 auto 1.4rem; max-width: 48ch; color: rgba(255,255,255,0.92); }
+    .hub-hero .btns { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+
+    /* Problem / Solution / Impact — Wajamama layout, Pendo styling */
+    .problem {
+      padding: clamp(3rem, 7vw, 4.75rem) 0;
+      background: var(--navy);
+      color: #fff;
+    }
+    .problem-label {
+      font-family: var(--wide);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin: 0 0 clamp(1.75rem, 3.5vw, 2.5rem);
+      color: rgba(255,255,255,0.88);
+    }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+    }
+    .problem-item .num {
+      font-family: var(--classico);
+      font-size: clamp(2.75rem, 6vw, 4.5rem);
+      line-height: 1;
+      margin: 0 0 0.75rem;
+      color: #fff;
+    }
+    .problem-item p {
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.88);
+      max-width: 28ch;
+    }
+
+    .bridge {
+      padding: clamp(3.5rem, 8vw, 5.5rem) 0;
+      background: var(--foam);
+    }
+    .bridge-cause {
+      margin: 0 0 clamp(1.5rem, 3vw, 2.25rem);
+      font-size: clamp(1.25rem, 2.6vw, 1.85rem);
+      line-height: 1.4;
+      color: rgba(46,74,112,0.88);
+      max-width: 38ch;
+    }
+    .bridge-claim {
+      margin: 0;
+      font-family: var(--classico);
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      line-height: 1.15;
+      color: var(--navy);
+      max-width: 16ch;
+    }
+
+    .mission {
+      padding: clamp(3.5rem, 8vw, 5.75rem) 0 clamp(2.5rem, 5vw, 3.5rem);
+      background: #fff;
+    }
+    .mission-title {
+      margin: 0 0 1.35rem;
+      font-family: var(--classico);
+      font-size: clamp(2.4rem, 7vw, 5.5rem);
+      line-height: 1.05;
+      color: var(--navy);
+      max-width: 14ch;
+    }
+    .mission p {
+      margin: 0 0 1rem;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: rgba(46,74,112,0.88);
+      max-width: 48ch;
+    }
+    .mission .quote {
+      font-family: var(--classico);
+      font-size: 1.15rem;
+      line-height: 1.45;
+      border-left: 3px solid var(--ember);
+      padding-left: 1rem;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--navy);
+      max-width: 42ch;
+    }
+    .mission .attrib {
+      font-family: var(--wide);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ember);
+      margin: 0;
+    }
+
+    .impact-story {
+      padding: clamp(3rem, 7vw, 5rem) 0;
+      background: var(--foam);
+    }
+    .impact-story-label {
+      font-family: var(--wide);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin: 0 0 clamp(1.5rem, 3vw, 2.25rem);
+    }
+    .impact-rows { display: grid; gap: 0; }
+    .impact-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1rem 2rem;
+      align-items: baseline;
+      padding: clamp(1.35rem, 3vw, 1.85rem) 0;
+      border-top: 2px solid var(--ember);
+    }
+    .impact-row:last-of-type { border-bottom: 2px solid var(--ember); }
+    .impact-row .big {
+      margin: 0;
+      font-family: var(--classico);
+      font-size: clamp(2.4rem, 6.5vw, 4.75rem);
+      line-height: 1;
+      color: var(--navy);
+    }
+    .impact-row p {
+      margin: 0;
+      font-size: clamp(1rem, 1.8vw, 1.25rem);
+      font-weight: 300;
+      line-height: 1.35;
+      color: rgba(46,74,112,0.88);
+      max-width: 22ch;
+    }
+    .impact-close {
+      margin: clamp(2rem, 4vw, 3rem) 0 0;
+      font-family: var(--classico);
+      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+      line-height: 1.2;
+      color: var(--navy);
+      max-width: 22ch;
+    }
+
+    .pillars { padding: clamp(3.25rem, 7vw, 5rem) 0; background: var(--foam); }
+    .pillars-intro { text-align: center; max-width: 52ch; margin: -1.1rem auto 2.25rem; color: rgba(46,74,112,0.8); font-size: 0.95rem; }
+    .pillar-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.15rem; }
+    .pillar { background: #fff; border: 1px solid rgba(46,74,112,0.1); padding: 1.5rem 1.35rem; }
+    .pillar .num { font-family: var(--wide); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ember); margin-bottom: 0.45rem; }
+    .pillar h3 { font-size: 1.25rem; margin-bottom: 0.45rem; }
+    .pillar .partner { font-size: 0.78rem; color: var(--teal); margin-bottom: 0.65rem; }
+    .pillar p { margin: 0; font-size: 0.9rem; color: rgba(46,74,112,0.88); line-height: 1.6; }
+    .pillar ul { margin: 0.75rem 0 0; padding-left: 1.1rem; font-size: 0.88rem; color: rgba(46,74,112,0.88); }
+    .pillar li { margin-bottom: 0.3rem; }
+
+    .journey { padding: clamp(3rem, 6vw, 4.5rem) 0; background: #fff; }
+    .timeline { display: grid; gap: 0; position: relative; max-width: 720px; margin: 0 auto; }
+    .timeline::before { content: ""; position: absolute; left: 4.5rem; top: 0; bottom: 0; width: 2px; background: rgba(46,74,112,0.12); }
+    .t-item { display: grid; grid-template-columns: 5.5rem 1fr; gap: 1.25rem; padding: 0.85rem 0; position: relative; }
+    .t-year { font-family: var(--wide); font-size: 0.78rem; letter-spacing: 0.08em; color: var(--ember); padding-top: 0.15rem; }
+    .t-body { background: var(--foam); border: 1px solid rgba(46,74,112,0.1); padding: 1rem 1.15rem; }
+    .t-body h3 { font-size: 1.05rem; margin-bottom: 0.35rem; }
+    .t-body p { margin: 0; font-size: 0.9rem; color: rgba(46,74,112,0.88); }
+
+    .ahead { padding: clamp(3.25rem, 7vw, 5rem) 0; background: var(--foam); }
+    .need-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .need { background: #fff; border: 1px solid rgba(46,74,112,0.1); padding: 1.35rem 1.2rem; }
+    .need.urgent { border-color: rgba(206,139,64,0.45); }
+    .need .tag { font-family: var(--wide); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ember); margin-bottom: 0.4rem; }
+    .need h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+    .need p { margin: 0; font-size: 0.9rem; color: rgba(46,74,112,0.88); }
+
+    .parent { padding: clamp(2.75rem, 6vw, 4rem) 0; background: var(--navy); color: #fff; text-align: center; }
+    .parent blockquote { margin: 0 auto 1rem; max-width: 40ch; font-family: var(--classico); font-size: clamp(1.25rem, 2.5vw, 1.65rem); line-height: 1.4; }
+    .parent .who { font-family: var(--wide); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sky); }
+
+    .cta-band { text-align: center; padding: clamp(2.75rem, 6vw, 4rem) 1.25rem; background: #fff; }
+    .cta-band h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 0.65rem; }
+    .cta-band p { margin: 0 auto 1.35rem; max-width: 44ch; color: rgba(46,74,112,0.85); }
+    .cta-band .btns { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+    .cta-band.scholarship-band { background: var(--foam); }
+    .cta-band.scholarship-band h2 { color: var(--navy); }
+    .cta-band.scholarship-band p { color: rgba(46,74,112,0.85); }
+
+    .site-footer { background: var(--navy); color: #fff; padding: clamp(2.5rem, 5vw, 3.5rem) 0 0; }
+    .footer-grid { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 2rem; padding-bottom: 2rem; }
+    .footer-grid h4 { font-family: var(--wide); font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; margin: 0 0 1rem; color: var(--sky); }
+    .footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem 1rem; }
+    .footer-links a { font-size: 0.88rem; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255,255,255,0.35); }
+    .footer-links a:hover { text-decoration-color: #fff; }
+    .footer-mid { text-align: center; }
+    .footer-logo { height: 56px; width: auto; margin: 0 auto 1rem; filter: brightness(0) invert(1); }
+    .footer-mid p { font-size: 0.88rem; color: rgba(255,255,255,0.8); margin: 0 0 0.75rem; }
+    .footer-mid .place { font-family: var(--wide); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sky); margin-bottom: 1rem; }
+    .footer-contact p { margin: 0 0 0.45rem; font-size: 0.88rem; }
+    .footer-contact a { text-decoration: underline; text-underline-offset: 3px; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.12); padding: 1rem 0; font-size: 0.78rem; color: rgba(255,255,255,0.65); }
+
+    @media (max-width: 980px) {
+      .nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; flex-direction: column; align-items: stretch; padding: 0.5rem 1.25rem 1rem; border-bottom: 1px solid rgba(46,74,112,0.1); gap: 0; }
+      .nav.open { display: flex; }
+      .nav > a, .nav-item > .nav-trigger { width: 100%; text-align: left; padding: 0.85rem 0.15rem; }
+      .nav-item { display: block; height: auto; }
+      .submenu { position: static; transform: none; visibility: hidden; opacity: 0; min-width: 0; pointer-events: none; }
+      .nav-item.open .submenu { visibility: visible; opacity: 1; pointer-events: auto; }
+      .submenu::before { display: none; }
+      .submenu-inner { box-shadow: none; border: 0; background: transparent; }
+      .menu-toggle { display: inline-flex; }
+      .problem-grid { grid-template-columns: 1fr; }
+      .impact-row { grid-template-columns: 1fr; gap: 0.45rem; }
+      .pillar-grid, .need-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .timeline::before { left: 14px; }
+      .t-item { grid-template-columns: 1fr; padding-left: 2rem; }
+      .t-year { position: relative; }
+    }
+    @media (max-width: 560px) {
+      .pillar-grid, .need-grid, .footer-links { grid-template-columns: 1fr; }
+    }
+  
+    /* —— Mobile nav fix: compact items, closed dropdowns take no space —— */
+    @media (max-width: 980px) {
+      .site-header { overflow: visible; }
+      .header-inner { position: relative; flex-wrap: wrap; }
+      .menu-toggle { display: inline-flex; }
+      .site-header .nav {
+        display: none;
+        width: 100%;
+        order: 3;
+        flex: none !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        gap: 0 !important;
+        padding: 0.25rem 0 0.65rem !important;
+        margin: 0 !important;
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        background: transparent !important;
+        border-top: 1px solid rgba(46,74,112,0.1);
+        border-bottom: 0 !important;
+        box-shadow: none !important;
+        max-height: none !important;
+      }
+      .site-header .nav.open { display: flex !important; }
+      .site-header .nav > a,
+      .site-header .nav-item > .nav-trigger {
+        width: 100% !important;
+        text-align: left !important;
+        justify-content: space-between !important;
+        padding: 0.7rem 0.15rem !important;
+        height: auto !important;
+        min-height: 0 !important;
+        line-height: 1.3 !important;
+      }
+      .site-header .nav > a.is-active::after { bottom: 0.35rem !important; }
+      .site-header .nav-item {
+        display: block !important;
+        height: auto !important;
+        min-height: 0 !important;
+        align-self: auto !important;
+        flex: none !important;
+      }
+      .site-header .nav-trigger {
+        height: auto !important;
+        min-height: 0 !important;
+        width: 100% !important;
+      }
+      .site-header .nav-item:hover > .submenu,
+      .site-header .nav-item:focus-within > .submenu {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+      .site-header .submenu {
+        display: none !important;
+        position: static !important;
+        transform: none !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-height: none !important;
+        height: auto !important;
+        overflow: hidden !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .site-header .submenu::before {
+        display: none !important;
+        content: none !important;
+        height: 0 !important;
+      }
+      .site-header .submenu-inner {
+        box-shadow: none !important;
+        border: 0 !important;
+        background: rgba(35, 176, 185, 0.06) !important;
+        padding: 0.1rem 0 0.35rem !important;
+      }
+      .site-header .nav-item.open > .submenu {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        margin: 0 0 0.2rem !important;
+      }
+      .site-header .submenu a {
+        padding: 0.5rem 0.85rem !important;
+        white-space: normal !important;
+        line-height: 1.35 !important;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="announce" id="announce">
+    <span>January 2026: Pendo School moved into the new Hub — enrollment grew from 200 to 300 children.</span>
+    <button class="x" type="button" aria-label="Close" onclick="document.getElementById('announce').style.display='none'">×</button>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html"><img src="assets/pendo-logo.png" alt="Pendo International Projects" /></a>
+      <nav class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-haspopup="true">About</button>
+          <div class="submenu"><div class="submenu-inner" role="menu">
+            <a href="about.html" role="menuitem">Our Story</a>
+            <a href="team.html" role="menuitem">Meet the Team</a>
+            <a href="about.html#roadmap" role="menuitem">Road Map</a>
+            <a href="index.html#partners" role="menuitem">Our Partners</a>
+          </div></div>
+        </div>
+        <div class="nav-item">
+          <button class="nav-trigger is-active" type="button" aria-expanded="false" aria-haspopup="true">Programs</button>
+          <div class="submenu"><div class="submenu-inner" role="menu">
+            <a href="hub.html" role="menuitem">Child &amp; Family Development Hub</a>
+            <a href="scholarship.html" role="menuitem">Scholarships</a>
+            <a href="sisters.html" role="menuitem">Pendo Sisters</a>
+            <a href="safari.html" role="menuitem">Safari of a Lifetime</a>
+          </div></div>
+        </div>
+        <a href="blog.html">Blog</a>
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-haspopup="true">Get Involved</button>
+          <div class="submenu"><div class="submenu-inner" role="menu">
+            <a href="index.html#involved" role="menuitem">Ways to Help</a>
+            <a href="scholarship.html#give" role="menuitem">Ways to Give</a>
+            <a href="https://www.pendointl.org/causes" role="menuitem">The Need</a>
+            <a href="https://www.pendointl.org/" role="menuitem">Donate</a>
+          </div></div>
+        </div>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="menu-toggle" type="button" id="menuToggle" aria-expanded="false" aria-controls="nav">Menu</button>
+        <a class="btn btn-navy" href="https://www.pendointl.org/">Donate</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hub-hero">
+    <p class="eyebrow">Kenya · Ruiru</p>
+    <h1>Pendo Child &amp; Family Development Hub</h1>
+    <p class="lede">Celebrating our journey: 2019–2026</p>
+    <p>From a small daycare to a four-storey learning facility already serving more than 300 children—and built for a future capacity of 700.</p>
+    <div class="btns">
+      <a class="btn btn-navy" href="#programs">Explore Hub programs</a>
+      <a class="btn btn-white" href="scholarship.html">Scholarships</a>
+      <a class="btn btn-white" href="#ahead">What’s still needed</a>
+    </div>
+  </section>
+
+  <section class="problem" id="problem" aria-label="The problem in numbers">
+    <div class="wrap">
+      <h2 class="problem-label">The Problem in Numbers</h2>
+      <div class="problem-grid">
+        <article class="problem-item">
+          <div class="num">200</div>
+          <p>Children filled the old school to capacity—many more families could not be accommodated.</p>
+        </article>
+        <article class="problem-item">
+          <div class="num">&lt;6%</div>
+          <p>Of primary schools in Kenya have computer labs. Digital literacy was out of reach for most children.</p>
+        </article>
+        <article class="problem-item">
+          <div class="num">0</div>
+          <p>Special education units existed nearby. Children with disabilities had nowhere local to learn and belong.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bridge" aria-label="Why the Hub exists">
+    <div class="wrap">
+      <p class="bridge-cause">Crowded classrooms, missing special education, and almost no digital access left children without the start they deserve.</p>
+      <h2 class="bridge-claim">Pendo built the Hub to change this.</h2>
+    </div>
+  </section>
+
+  <section class="mission" id="story">
+    <div class="wrap">
+      <h2 class="mission-title">Every child deserves the best start in life.</h2>
+      <p>Pendo School began in 2019 on a small piece of land Ciro inherited from her late father. Completing the first and second floors of the Hub marked a turning point—driving enrollment, team growth, and new programs for children, families, and educators.</p>
+      <p>Through early childhood education, inclusion, digital literacy, wellbeing, and teacher training, the Hub is transforming what is possible for children and families in Ruiru.</p>
+      <p class="quote">“Watching children walk through the doors of the Pendo Child &amp; Family Development Hub for the first time reminded me why we started this journey.”</p>
+      <p class="attrib">— Ciro Muiruri, Founder &amp; Executive Director</p>
+    </div>
+  </section>
+
+  <section class="pillars" id="programs">
+    <div class="wrap">
+      <h2 class="section-title">How the Hub makes a difference</h2>
+      <hr class="section-rule" />
+      <p class="pillars-intro">The Hub created more than classroom space. It unlocked special education, digital learning, mental health programming, and a centre for teacher training.</p>
+      <div class="pillar-grid">
+        <article class="pillar">
+          <div class="num">01 · Inclusion</div>
+          <h3>Community’s first Special Education Unit</h3>
+          <p class="partner">Partner: Jade, Brazil · 15 children in specialized support</p>
+          <p>Individualized instruction, specialized teaching, speech and language therapy, occupational and physiotherapy, assistive technology, and IEPs—so every child is valued and included.</p>
+          <ul>
+            <li>5 iPads + assistive learning software</li>
+            <li>Ongoing technical support and resources</li>
+          </ul>
+        </article>
+        <article class="pillar">
+          <div class="num">02 · Digital</div>
+          <h3>Computer lab &amp; digital literacy</h3>
+          <p class="partner">Partner: TechLit Africa</p>
+          <p>Less than 6% of primary schools in Kenya have computer labs. At Pendo, students gain regular access to computers, coding, and foundational digital skills for an increasingly digital world.</p>
+        </article>
+        <article class="pillar">
+          <div class="num">03 · Wellbeing</div>
+          <h3>Child &amp; youth mental health</h3>
+          <p class="partner">Partner: ChezaCheza Dance Foundation, Kenya · 400+ reached weekly</p>
+          <p>The Pendo Dance &amp; Wellness Initiative combines dance movement therapy, social-emotional learning, and mindfulness—open to community children every Saturday and during school holidays.</p>
+          <ul>
+            <li>Mentorship · dance therapy · counselling</li>
+            <li>Nutritious meals · parent engagement</li>
+          </ul>
+        </article>
+        <article class="pillar">
+          <div class="num">04 · Educators</div>
+          <h3>A centre for teacher training</h3>
+          <p class="partner">Partner: Nesting Play, Hungary · 25 teachers</p>
+          <p>Nesting Play’s team travelled to Kenya for professional development with Pendo educators and teachers from neighbouring schools—raising the standard of early childhood education across the wider community.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="impact-story" id="impact" aria-label="Hub impact">
+    <div class="wrap">
+      <h2 class="impact-story-label">Our Impact</h2>
+      <div class="impact-rows">
+        <div class="impact-row">
+          <h3 class="big">Serving 300</h3>
+          <p>children learning in the Hub today—up from 200 after move-in</p>
+        </div>
+        <div class="impact-row">
+          <h3 class="big">Grew 50%</h3>
+          <p>enrollment in the first weeks after opening the new campus</p>
+        </div>
+        <div class="impact-row">
+          <h3 class="big">Employing 32</h3>
+          <p>full and support staff growing with the Hub’s programs</p>
+        </div>
+        <div class="impact-row">
+          <h3 class="big">Building to 700</h3>
+          <p>future capacity when floors 3 and 4 are completed</p>
+        </div>
+      </div>
+      <p class="impact-close">With your support, we can finish the Hub and open its doors to every child waiting.</p>
+    </div>
+  </section>
+
+  <section class="journey" id="journey">
+    <div class="wrap">
+      <h2 class="section-title">Our journey</h2>
+      <hr class="section-rule" />
+      <div class="timeline">
+        <div class="t-item"><div class="t-year">2019–20</div><div class="t-body"><h3>Daycare beginnings</h3><p>Pendo begins as a small daycare serving six children on land inherited from Ciro’s father—then weathers COVID by keeping every staff member employed and delivering learning materials door-to-door by motorbike.</p></div></div>
+        <div class="t-item"><div class="t-year">2020–23</div><div class="t-body"><h3>Steady growth</h3><p>Demand grows; limited classroom space means many families cannot be accommodated. The vision for a purpose-built Hub takes shape.</p></div></div>
+        <div class="t-item"><div class="t-year">2023–26</div><div class="t-body"><h3>Hub construction</h3><p>With partners including 11:11 Foundation ($75,000 CAD across 2023, 2025, 2026) and others, floors 1 and 2 are completed.</p></div></div>
+        <div class="t-item"><div class="t-year">Jan 2026</div><div class="t-body"><h3>Pendo moves in</h3><p>After two years of fundraising and construction, Pendo School moves into the Hub. Within two weeks, enrollment rises from 200 to 300—the largest increase in Pendo’s history.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ahead" id="ahead">
+    <div class="wrap">
+      <h2 class="section-title">Looking ahead</h2>
+      <hr class="section-rule" />
+      <p class="pillars-intro">The exterior of the four-storey Hub is complete, but floors 3 and 4 remain unfinished. These are our most urgent priorities.</p>
+      <div class="need-grid">
+        <article class="need urgent"><div class="tag">Urgent</div><h3>Running water</h3><p>Reliable water for classrooms, meals, hygiene, and daily Hub operations.</p></article>
+        <article class="need urgent"><div class="tag">Urgent</div><h3>Kitchen</h3><p>A proper kitchen to sustain nutritious meals for growing enrollment.</p></article>
+        <article class="need"><div class="tag">Priority</div><h3>Completed classrooms</h3><p>Finish flooring and interior works on remaining floors for child-friendly learning spaces.</p></article>
+        <article class="need"><div class="tag">Priority</div><h3>Safe outdoor play</h3><p>Playgrounds and recreation areas where children can explore, exercise, and learn through play.</p></article>
+        <article class="need"><div class="tag">Priority</div><h3>School bus</h3><p>Safe, reliable transport so more children can reach Pendo and community programs.</p></article>
+        <article class="need"><div class="tag">Vision</div><h3>Floors 3 &amp; 4</h3><p>Completing the upper floors unlocks the Hub’s full 700-child capacity.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="parent">
+    <div class="wrap">
+      <blockquote>“We have the best teachers in Kiambu County. During the rainy season, they carry our children on their backs to help them cross stagnant water. They care for our children as if they were their own.”</blockquote>
+      <p class="who">— Pendo School parent</p>
+    </div>
+  </section>
+
+  <section class="cta-band scholarship-band" id="scholarships">
+    <h2>Scholarships &amp; ways to give</h2>
+    <p>Parents can apply for a seat. Donors can sponsor a seat, fund a classroom, buy a school bus, or paint a classroom.</p>
+    <div class="btns">
+      <a class="btn btn-navy" href="scholarship.html#parents">Apply as a parent</a>
+      <a class="btn btn-ember" href="scholarship.html#give">Ways to give</a>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <h2>Help finish what we’ve started</h2>
+    <p>Your partnership helps complete the Hub and expand education, inclusion, and wellbeing for children and families in Ruiru.</p>
+    <div class="btns">
+      <a class="btn btn-navy" href="https://www.pendointl.org/">Donate</a>
+      <a class="btn btn-ember" href="contact.html">Partner with us</a>
+      <a class="btn btn-ember" href="safari.html">Visit on Safari</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="hub.html">The Hub</a>
+          <a href="scholarship.html">Scholarships</a>
+          <a href="sisters.html">Pendo Sisters</a>
+          <a href="blog.html">Blog</a>
+          <a href="team.html">Team</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://www.pendointl.org/">Donate</a>
+        </div>
+      </div>
+      <div class="footer-mid">
+        <img class="footer-logo" src="assets/pendo-logo.png" alt="Pendo International Projects" />
+        <p>Building the Pendo Child &amp; Family Development Hub—high-quality early education and family support in Ruiru, Kenya.</p>
+        <div class="place">Kenya · Canada</div>
+        <a class="btn btn-white" href="https://www.pendointl.org/">Donate</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <p><strong>Ciro Muiruri</strong></p>
+          <p><a href="mailto:ciro@pendointl.org">ciro@pendointl.org</a></p>
+          <p><a href="https://www.pendointl.org/">www.pendointl.org</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="wrap footer-bottom"><span>© 2026 Pendo International Projects</span></div>
+  </footer>
+
+  <script>
+    (function () {
+      var nav = document.getElementById('nav');
+      var toggle = document.getElementById('menuToggle');
+      var items = Array.prototype.slice.call(nav.querySelectorAll('.nav-item'));
+      function closeAllMenus() {
+        items.forEach(function (item) {
+          item.classList.remove('open');
+          var t = item.querySelector('.nav-trigger');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        });
+      }
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (!open) closeAllMenus();
+      });
+      items.forEach(function (item) {
+        var trigger = item.querySelector('.nav-trigger');
+        if (!trigger) return;
+        trigger.addEventListener('click', function (e) {
+          if (window.matchMedia('(max-width: 980px)').matches) {
+            e.preventDefault();
+            var willOpen = !item.classList.contains('open');
+            closeAllMenus();
+            if (willOpen) { item.classList.add('open'); trigger.setAttribute('aria-expanded', 'true'); }
+          }
+        });
+      });
+      nav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (window.matchMedia('(max-width: 980px)').matches) {
+            nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); closeAllMenus();
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

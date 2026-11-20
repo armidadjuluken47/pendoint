@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scholarships &amp; Ways to Give — Riverside Murera / Pendo School</title>
+  <meta name="description" content="Sponsor a seat, fund a classroom, buy a school bus, or paint a classroom—plus scholarship applications for families at Riverside Murera School (Pendo Hub)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: "Classico";
+      src: url("assets/fonts/classico-bold.woff2") format("woff2"), url("assets/fonts/classico-bold.woff") format("woff");
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    :root {
+      --navy: hsl(214.55, 41.77%, 30.98%);
+      --teal: hsl(183.6, 68.18%, 43.14%);
+      --sky: hsl(194.46, 65.88%, 66.67%);
+      --ember: #ce8b40;
+      --foam: hsl(200, 33.33%, 98.24%);
+      --max: 1180px;
+      --classico: "Classico", "Optima", "Segoe UI", Candara, sans-serif;
+      --sans: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+      --wide: "Oswald", "Montserrat", sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: var(--sans); color: var(--navy); background: var(--foam); line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, h4 { font-family: var(--classico); font-weight: 400; line-height: 1.2; margin: 0; }
+    .wrap { width: min(100% - 2.5rem, var(--max)); margin-inline: auto; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; font-family: var(--wide); font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; font-size: 0.8rem; padding: 0.95rem 1.65rem; border: 0; cursor: pointer; transition: opacity 0.2s ease; }
+    .btn:hover, .btn:focus-visible { opacity: 0.8; }
+    .btn-navy { background: var(--navy); color: #fff; }
+    .btn-ember { background: var(--ember); color: #fff; border: 1px solid var(--ember); }
+    .btn-white { background: #fff; color: var(--navy); }
+    .btn-outline-ember { background: transparent; color: var(--navy); border: 1px solid var(--ember); }
+    .section-title { text-align: center; font-size: clamp(1.75rem, 3vw, 2.35rem); color: var(--navy); margin: 0 0 0.55rem; }
+    .section-rule { width: 48px; height: 3px; background: var(--ember); margin: 0 auto 2.25rem; border: 0; }
+    .eyebrow { font-family: var(--wide); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ember); margin: 0 0 0.75rem; font-weight: 500; }
+
+    .announce { background: var(--navy); color: #efe8f2; text-align: center; font-size: 0.78rem; letter-spacing: 0.04em; padding: 0.65rem 2.5rem 0.65rem 1.25rem; position: relative; }
+    .announce a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+    .announce .x { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); background: none; border: 0; color: #fff; cursor: pointer; font-size: 1.1rem; }
+
+    .site-header { background: rgba(249,251,252,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(46,74,112,0.08); position: sticky; top: 0; z-index: 50; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; width: min(100% - 1.5rem, 1280px); margin-inline: auto; min-height: 68px; }
+    .brand img { height: 48px; width: auto; }
+    .header-actions { display: flex; align-items: center; gap: 0.65rem; margin-left: auto; }
+    .nav { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; justify-content: center; flex: 1; }
+    .nav > a, .nav-item > .nav-trigger { font-family: var(--wide); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--navy); background: none; border: 0; padding: 1.1rem 0; cursor: pointer; position: relative; }
+    .nav > a:hover, .nav-item > .nav-trigger:hover { color: var(--teal); }
+    .nav-trigger.is-active { color: var(--navy); box-shadow: inset 0 -2px 0 var(--navy); }
+    .nav-item { position: relative; display: flex; align-items: center; height: 100%; align-self: stretch; }
+    .nav-trigger { display: inline-flex; align-items: center; gap: 0.35rem; height: 100%; }
+    .nav-trigger::after { content: ""; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid currentColor; opacity: 0.7; }
+    .submenu { visibility: hidden; opacity: 0; pointer-events: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); min-width: 280px; z-index: 60; transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .submenu::before { content: ""; display: block; height: 10px; }
+    .submenu-inner { background: #fff; border: 1px solid rgba(46,74,112,0.12); box-shadow: 0 12px 28px rgba(46,74,112,0.12); padding: 0.45rem 0; }
+    .submenu a { display: block; padding: 0.7rem 1.15rem; font-size: 0.82rem; color: var(--navy); }
+    .submenu a:hover { background: rgba(35,166,179,0.1); color: var(--teal); }
+    .nav-item:hover .submenu, .nav-item:focus-within .submenu, .nav-item.open .submenu { visibility: visible; opacity: 1; pointer-events: auto; }
+    .menu-toggle { display: none; background: none; border: 1px solid rgba(46,74,112,0.25); padding: 0.45rem 0.7rem; font-family: var(--wide); letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.7rem; color: var(--navy); cursor: pointer; }
+
+    .page-hero {
+      position: relative; color: #fff; text-align: center;
+      padding: clamp(4rem, 10vw, 6.5rem) 1.25rem;
+      background: linear-gradient(rgba(46,74,112,0.78), rgba(46,74,112,0.82)), url("assets/classroom.jpg") center / cover no-repeat;
+    }
+    .page-hero .eyebrow { color: rgba(255,255,255,0.85); }
+    .page-hero h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); margin: 0 0 0.75rem; }
+    .page-hero .lede { font-family: var(--sans); font-weight: 500; font-size: clamp(1rem, 2vw, 1.2rem); color: var(--ember); margin: 0 auto 1rem; max-width: 34ch; }
+    .page-hero p { margin: 0 auto 1.4rem; max-width: 48ch; color: rgba(255,255,255,0.92); }
+    .page-hero .btns { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+
+    .audiences {
+      padding: 0 0 clamp(2.5rem, 5vw, 3.5rem);
+      background: #fff;
+    }
+    .audience-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.15rem;
+      margin-top: -3rem; position: relative; z-index: 2;
+    }
+    .audience-card {
+      background: var(--foam);
+      border: 1px solid rgba(46,74,112,0.12);
+      padding: 1.5rem 1.4rem;
+      box-shadow: 0 10px 28px rgba(46,74,112,0.08);
+    }
+    .audience-card .tag {
+      font-family: var(--wide); font-size: 0.68rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--ember); margin-bottom: 0.4rem;
+    }
+    .audience-card h2 { font-size: 1.35rem; margin-bottom: 0.55rem; }
+    .audience-card p { margin: 0 0 1rem; font-size: 0.9rem; color: rgba(46,74,112,0.88); line-height: 1.55; }
+    .audience-card .btn { width: 100%; }
+
+    .give {
+      padding: clamp(3.25rem, 7vw, 5rem) 0;
+      background: var(--foam);
+    }
+    .give-intro {
+      text-align: center; max-width: 48ch; margin: -1.1rem auto 2.25rem;
+      color: rgba(46,74,112,0.8); font-size: 0.95rem; line-height: 1.65;
+    }
+    .give-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.15rem;
+    }
+    .give-card {
+      background: #fff;
+      border: 1px solid rgba(46,74,112,0.1);
+      padding: 1.5rem 1.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+    .give-card .tag {
+      font-family: var(--wide); font-size: 0.68rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--ember);
+    }
+    .give-card h3 { font-size: 1.3rem; }
+    .give-card p { margin: 0; font-size: 0.9rem; color: rgba(46,74,112,0.88); line-height: 1.6; flex: 1; }
+    .give-card .btn { align-self: flex-start; margin-top: 0.35rem; }
+
+    .model { padding: clamp(3.25rem, 7vw, 5rem) 0; background: #fff; }
+    .model-intro {
+      text-align: center; max-width: 52ch; margin: -1.1rem auto 2.25rem;
+      color: rgba(46,74,112,0.8); font-size: 0.95rem; line-height: 1.65;
+    }
+    .cover-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 1.25rem; }
+    .cover-card, .tier-card {
+      border: 1px solid rgba(46,74,112,0.1);
+      background: var(--foam);
+      padding: 1.5rem 1.35rem;
+    }
+    .cover-card h3, .tier-card h3 { font-size: 1.25rem; margin: 0 0 0.65rem; }
+    .cover-card p, .tier-card p { margin: 0 0 0.85rem; font-size: 0.92rem; color: rgba(46,74,112,0.88); }
+    .cover-card ul, .tier-list { margin: 0; padding-left: 1.1rem; font-size: 0.9rem; color: rgba(46,74,112,0.88); }
+    .cover-card li, .tier-list li { margin-bottom: 0.4rem; }
+    .note {
+      margin-top: 1rem; padding: 0.95rem 1.1rem;
+      background: rgba(206,139,64,0.1);
+      border: 1px solid rgba(206,139,64,0.35);
+      font-size: 0.88rem; color: rgba(46,74,112,0.9);
+    }
+    .tier-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.15rem; margin-top: 1.25rem; }
+    .tier-card .label {
+      font-family: var(--wide); font-size: 0.68rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--teal); margin-bottom: 0.45rem;
+    }
+
+    .partner-expect {
+      padding: clamp(3rem, 6vw, 4.5rem) 0;
+      background: var(--foam);
+    }
+    .expect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.15rem; }
+    .expect {
+      background: #fff; border: 1px solid rgba(46,74,112,0.1);
+      padding: 1.45rem 1.3rem;
+    }
+    .expect h3 { font-size: 1.2rem; margin-bottom: 0.55rem; }
+    .expect p { margin: 0; font-size: 0.9rem; color: rgba(46,74,112,0.88); line-height: 1.6; }
+
+    .apply {
+      padding: clamp(3.25rem, 7vw, 5rem) 0;
+      background: #fff;
+    }
+    .apply-box {
+      max-width: 640px; margin: 0 auto; text-align: center;
+      border: 1px solid rgba(46,74,112,0.1);
+      background: var(--foam);
+      padding: clamp(1.75rem, 4vw, 2.5rem) 1.5rem;
+    }
+    .apply-box p { margin: 0 auto 1.25rem; max-width: 42ch; color: rgba(46,74,112,0.88); font-size: 0.95rem; }
+    .apply-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+    .apply-note { margin-top: 1.1rem; font-size: 0.84rem; color: rgba(46,74,112,0.75); }
+
+    .cta-band { text-align: center; padding: clamp(2.75rem, 6vw, 4rem) 1.25rem; background: var(--navy); color: #fff; }
+    .cta-band h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 0.65rem; color: #fff; }
+    .cta-band p { margin: 0 auto 1.35rem; max-width: 44ch; color: rgba(255,255,255,0.88); }
+    .cta-band .btns { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+
+    .site-footer { background: var(--navy); color: #fff; padding: clamp(2.5rem, 5vw, 3.5rem) 0 0; }
+    .footer-grid { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 2rem; padding-bottom: 2rem; }
+    .footer-grid h4 { font-family: var(--wide); font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; margin: 0 0 1rem; color: var(--sky); }
+    .footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem 1rem; }
+    .footer-links a { font-size: 0.88rem; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255,255,255,0.35); }
+    .footer-links a:hover { text-decoration-color: #fff; }
+    .footer-mid { text-align: center; }
+    .footer-logo { height: 56px; width: auto; margin: 0 auto 1rem; filter: brightness(0) invert(1); }
+    .footer-mid p { font-size: 0.88rem; color: rgba(255,255,255,0.8); margin: 0 0 0.75rem; }
+    .footer-mid .place { font-family: var(--wide); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sky); margin-bottom: 1rem; }
+    .footer-contact p { margin: 0 0 0.45rem; font-size: 0.88rem; }
+    .footer-contact a { text-decoration: underline; text-underline-offset: 3px; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.12); padding: 1rem 0; font-size: 0.78rem; color: rgba(255,255,255,0.65); }
+
+    @media (max-width: 980px) {
+      .menu-toggle { display: inline-flex; }
+      .nav {
+        display: none; width: 100%; flex-direction: column; align-items: stretch;
+        gap: 0; padding: 0.35rem 0 0.85rem; border-top: 1px solid rgba(46,74,112,0.1);
+      }
+      .nav.open { display: flex; }
+      .nav > a, .nav-trigger { width: 100%; text-align: left; justify-content: space-between; padding: 0.7rem 0.15rem; }
+      .submenu { position: static; transform: none; visibility: hidden; opacity: 0; min-width: 0; pointer-events: none; display: none; }
+      .nav-item.open > .submenu { display: block; visibility: visible; opacity: 1; pointer-events: auto; }
+      .submenu::before { display: none; }
+      .submenu-inner { box-shadow: none; border: 0; background: rgba(35,176,185,0.06); }
+      .audience-grid, .cover-grid, .tier-grid, .expect-grid, .give-grid, .footer-grid { grid-template-columns: 1fr; }
+      .footer-links { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 981px) {
+      .give-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <div class="announce" id="announce">
+    <span>Scholarships at Riverside Murera School support tuition and meals — <a href="#apply">apply or fund a place</a>.</span>
+    <button class="x" type="button" aria-label="Close" onclick="document.getElementById('announce').style.display='none'">×</button>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html"><img src="assets/pendo-logo.png" alt="Pendo International Projects" /></a>
+      <nav class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-haspopup="true">About</button>
+          <div class="submenu"><div class="submenu-inner" role="menu">
+            <a href="about.html" role="menuitem">Our Story</a>
+            <a href="team.html" role="menuitem">Meet the Team</a>
+            <a href="about.html#roadmap" role="menuitem">Road Map</a>
+            <a href="index.html#partners" role="menuitem">Our Partners</a>
+          </div></div>
+        </div>
+        <div class="nav-item">
+          <button class="nav-trigger is-active" type="button" aria-expanded="false" aria-haspopup="true">Programs</button>
+          <div class="submenu"><div class="submenu-inner" role="menu">
+            <a href="hub.html" role="menuitem">Child &amp; Family Development Hub</a>
+            <a href="scholarship.html" role="menuitem">Scholarships</a>
+            <a href="sisters.html" role="menuitem">Pendo Sisters</a>
+            <a href="safari.html" role="menuitem">Safari of a Lifetime</a>
+          </div></div>
+        </div>
+        <a href="blog.html">Blog</a>
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-haspopup="true">Get Involved</button>
+          <div class="submenu"><div class="submenu-inner" role="menu">
+            <a href="index.html#involved" role="menuitem">Ways to Help</a>
+            <a href="scholarship.html#give" role="menuitem">Ways to Give</a>
+            <a href="https://www.pendointl.org/causes" role="menuitem">The Need</a>
+            <a href="https://www.pendointl.org/" role="menuitem">Donate</a>
+          </div></div>
+        </div>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="menu-toggle" type="button" id="menuToggle" aria-expanded="false" aria-controls="nav">Menu</button>
+        <a class="btn btn-navy" href="https://www.pendointl.org/">Donate</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <p class="eyebrow">Kenya · Riverside Murera School</p>
+    <h1>Scholarships &amp; ways to give</h1>
+    <p class="lede">Sponsor a seat · Fund a classroom · Buy a bus · Paint a room</p>
+    <p>Families apply for scholarship support. Donors choose a clear need—from a child’s seat to the spaces and transport that keep the Hub running.</p>
+    <div class="btns">
+      <a class="btn btn-navy" href="#parents">I’m a parent</a>
+      <a class="btn btn-white" href="#give">I want to give</a>
+    </div>
+  </section>
+
+  <section class="audiences" aria-label="Choose your path">
+    <div class="wrap audience-grid">
+      <article class="audience-card" id="parents">
+        <div class="tag">For parents</div>
+        <h2>Apply for a scholarship</h2>
+        <p>If your child needs support for early education at Riverside Murera School, download the form or contact the school to begin.</p>
+        <a class="btn btn-navy" href="#apply">How to apply</a>
+      </article>
+      <article class="audience-card" id="donors">
+        <div class="tag">For donors &amp; partners</div>
+        <h2>Pick a way to give</h2>
+        <p>Sponsor a seat, fund a classroom, help buy a school bus, or paint a classroom—concrete gifts with clear purpose.</p>
+        <a class="btn btn-navy" href="#give">See ways to give</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="give" id="give">
+    <div class="wrap">
+      <h2 class="section-title">Ways to give</h2>
+      <hr class="section-rule" />
+      <p class="give-intro">Four clear gifts—so you know exactly what your support does at the Hub.</p>
+      <div class="give-grid">
+        <article class="give-card">
+          <div class="tag">Scholarship</div>
+          <h3>Sponsor a seat</h3>
+          <p>Cover a child’s tuition and food—full or half—so they can learn and eat at Riverside Murera School.</p>
+          <a class="btn btn-navy" href="#model">How seats work</a>
+        </article>
+        <article class="give-card">
+          <div class="tag">Campus</div>
+          <h3>Fund a classroom</h3>
+          <p>Help finish and furnish learning spaces so more children can take their place as the Hub grows.</p>
+          <a class="btn btn-navy" href="https://www.pendointl.org/">Fund a classroom</a>
+        </article>
+        <article class="give-card">
+          <div class="tag">Transport</div>
+          <h3>Buy a school bus</h3>
+          <p>Safe, reliable transport so rural children can reach school, field trips, and community programs.</p>
+          <a class="btn btn-navy" href="https://www.pendointl.org/">Support transport</a>
+        </article>
+        <article class="give-card">
+          <div class="tag">Care</div>
+          <h3>Paint a classroom</h3>
+          <p>Bright, welcoming rooms matter—help refresh classrooms so children learn in spaces that feel cared for.</p>
+          <a class="btn btn-navy" href="https://www.pendointl.org/">Paint a classroom</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="model" id="model">
+    <div class="wrap">
+      <h2 class="section-title">How the scholarship works</h2>
+      <hr class="section-rule" />
+      <p class="model-intro">Built for clarity: what is covered, what full and half mean, and how families partner with the school.</p>
+      <div class="cover-grid">
+        <article class="cover-card">
+          <h3>What sponsorship covers</h3>
+          <p>Scholarships are focused so families and donors know exactly what is included.</p>
+          <ul>
+            <li><strong>Tuition</strong> — school fees for the child’s place</li>
+            <li><strong>Food</strong> — meals provided through the school</li>
+          </ul>
+          <div class="note"><strong>Important:</strong> Sponsorship caters for tuition and food only. Uniforms, transport, and other costs are not included unless arranged separately.</div>
+        </article>
+        <div>
+          <div class="tier-grid" style="margin-top:0">
+            <article class="tier-card">
+              <div class="label">Type</div>
+              <h3>Full</h3>
+              <p>Full scholarship support for the child’s tuition and food for the agreed period.</p>
+            </article>
+            <article class="tier-card">
+              <div class="label">Type</div>
+              <h3>Half</h3>
+              <p>Shared support—part of tuition and food is covered so the family and sponsor share the cost.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="partner-expect" id="partnership">
+    <div class="wrap">
+      <h2 class="section-title">Family partnership</h2>
+      <hr class="section-rule" />
+      <p class="model-intro">Scholarships are a partnership. Parents stay involved in school life, and we treat media consent as its own clear choice.</p>
+      <div class="expect-grid">
+        <article class="expect">
+          <h3>Volunteer Saturdays</h3>
+          <p>Parents who receive sponsorship agree to volunteer at Riverside Murera School two days each month—the first and third Saturday—supporting the community that supports their child.</p>
+        </article>
+        <article class="expect">
+          <h3>Photos &amp; stories</h3>
+          <p>With permission, the school may share a child’s photos or videos on school channels to celebrate learning and invite support. Families can discuss this when applying; it should never feel like a condition buried in fine print.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="apply" id="apply">
+    <div class="wrap">
+      <h2 class="section-title">Apply</h2>
+      <hr class="section-rule" />
+      <div class="apply-box">
+        <p>Download the Riverside Murera School Scholarship Form, complete it, and return it to the school—or email us and we’ll walk you through the next step.</p>
+        <div class="apply-actions">
+          <a class="btn btn-navy" href="assets/riverside-murera-scholarship-form.pdf" download>Download PDF form</a>
+          <a class="btn btn-outline-ember" href="assets/riverside-murera-scholarship-form.docx" download>Download Word form</a>
+          <a class="btn btn-ember" href="mailto:ciro@pendointl.org?subject=Scholarship%20enquiry%20—%20Riverside%20Murera">Email to apply</a>
+          <a class="btn btn-outline-ember" href="contact.html">Contact form</a>
+        </div>
+        <p class="apply-note">Prefer WhatsApp or an in-person conversation at the Hub? Reach out and we’ll connect you with the school team.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <h2>Every child’s place matters</h2>
+    <p>Whether you are applying for your child or funding a scholarship, you help keep learning and meals within reach at the Hub.</p>
+    <div class="btns">
+      <a class="btn btn-white" href="hub.html">Learn about the Hub</a>
+      <a class="btn btn-ember" href="https://www.pendointl.org/">Donate</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="hub.html">The Hub</a>
+          <a href="scholarship.html">Scholarships</a>
+          <a href="sisters.html">Pendo Sisters</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://www.pendointl.org/">Donate</a>
+        </div>
+      </div>
+      <div class="footer-mid">
+        <img class="footer-logo" src="assets/pendo-logo.png" alt="Pendo International Projects" />
+        <p>Scholarship support at Riverside Murera School—tuition and food for children at the Pendo Child &amp; Family Development Hub.</p>
+        <div class="place">Kenya · Canada</div>
+        <a class="btn btn-white" href="https://www.pendointl.org/">Donate</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <p><strong>Ciro Muiruri</strong></p>
+          <p><a href="mailto:ciro@pendointl.org">ciro@pendointl.org</a></p>
+          <p><a href="https://www.pendointl.org/">www.pendointl.org</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="wrap footer-bottom"><span>© 2026 Pendo International Projects</span></div>
+  </footer>
+
+  <script>
+    (function () {
+      var nav = document.getElementById('nav');
+      var toggle = document.getElementById('menuToggle');
+      var items = Array.prototype.slice.call(nav.querySelectorAll('.nav-item'));
+      function closeAllMenus() {
+        items.forEach(function (item) {
+          item.classList.remove('open');
+          var t = item.querySelector('.nav-trigger');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        });
+      }
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (!open) closeAllMenus();
+      });
+      items.forEach(function (item) {
+        var trigger = item.querySelector('.nav-trigger');
+        if (!trigger) return;
+        trigger.addEventListener('click', function (e) {
+          if (window.matchMedia('(max-width: 980px)').matches) {
+            e.preventDefault();
+            var willOpen = !item.classList.contains('open');
+            closeAllMenus();
+            if (willOpen) { item.classList.add('open'); trigger.setAttribute('aria-expanded', 'true'); }
+          }
+        });
+      });
+      nav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (window.matchMedia('(max-width: 980px)').matches) {
+            nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); closeAllMenus();
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
